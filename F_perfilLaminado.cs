@@ -28,7 +28,7 @@ namespace VerPerfisLaminados
         {
             //obter caminho do arquivo automaticamente
             //TODO
-            string filename = @"C:\Users\renan\Documents\GitHub\DimPerfilLaminado\DimPerfilLaminado\perfis3.txt";
+            string filename = @"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\perfis.txt";
 
             for (int i = id; i < id+1; i++)
             {
