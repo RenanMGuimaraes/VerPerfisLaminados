@@ -28,7 +28,15 @@ namespace VerPerfisLaminados
  
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            ruptura = double.Parse(txt_ruptura.Text);
+            if (txt_ruptura.Text == "")
+            {
+
+            }
+            else
+            {
+                ruptura = double.Parse(txt_ruptura.Text) /10.0;
+            }
+            
         }
 
         //Propriedades do aço
@@ -85,12 +93,28 @@ namespace VerPerfisLaminados
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            escoamento = double.Parse(txt_escoamento.Text) / 10.0;
+            if (txt_escoamento.Text == "")
+            {
+
+            }
+            else
+            {
+                escoamento = double.Parse(txt_escoamento.Text) / 10.0;
+            }
+            
         }
 
         private void txt_elasticidade_TextChanged(object sender, EventArgs e)
         {
-            elasticidade = double.Parse(txt_elasticidade.Text) / 10.0;
+            if (txt_elasticidade.Text == "")
+            {
+
+            }
+            else
+            {
+                elasticidade = double.Parse(txt_elasticidade.Text) / 10.0;
+            }
+                
         }
 
         
@@ -500,7 +524,35 @@ namespace VerPerfisLaminados
                 ver2 = "NÃO PASSOU!";
             }
 
-            if (ver1 == "PASSOU!" && ver2 == "PASSOU!")
+            
+            //Calcula a taxa de aproveitamento do perfil
+            double Ftrd = Math.Min(Ftrd1, Ftrd2);
+            double taxa = (Ftsd / Ftrd) * 100.0;
+
+            //Calcula ELS
+            double Lt = double.Parse(txt_comprimento.Text) / 10.0;
+            double r;
+            double esb;
+            string ver3;
+            if (tipoperfil =="i" || tipoperfil =="u")
+            {
+                r = ry;
+            }
+            else
+            {
+                r = rx;
+            }
+            esb = Lt / r;
+            if (esb <= 300)
+            {
+                ver3 = "PASSOU!";
+            }
+            else
+            {
+                ver3 = "NÃO PASSOU!";
+            }
+
+            if (ver1 == "PASSOU!" && ver2 == "PASSOU!" && ver3 == "PASSOU!")
             {
                 verfinal = "PASSOU!";
             }
@@ -508,22 +560,27 @@ namespace VerPerfisLaminados
             {
                 verfinal = "NÃO PASSOU!";
             }
-            //Calcula a taxa de aproveitamento do perfil
-            double Ftrd = Math.Min(Ftrd1, Ftrd2);
-            double taxa = (Ftsd / Ftrd) * 100.0;
 
             txt_resultado.Text = $"RESULTADO: {verfinal}\r\n \r\n" +
                             $"1 - ESCOAMENTO DA SEÇÃO BRUTA:{ver1} \r\n" +
-                            $"Força resistente: Ft,rd = ({area.ToString("F2")} x {escoamento.ToString("F2")}) / 1,10 = {Ftrd1.ToString("F2")} \r\n" +
-                            $"Força solicitante: {Ftsd.ToString("F2")} \r\n \r\n" +
+                            $"Força resistente: Ft,rd = ({area.ToString("F2")} x {escoamento.ToString("F2")}) / 1,10 = {Ftrd1.ToString("F2")} kN\r\n" +
+                            $"Força solicitante: {Ftsd.ToString("F2")} kN \r\n \r\n" +
                             $"2 - RUPTURA DA SEÇÃO EFETIVA: {ver2}\r\n"+
                             $"Diâmetro do furo: {diamfuro.ToString("F2")} cm \r\n" +
                             $"Ct: {ct.ToString("F2")} - {verCt} \r\n"+
-                            $"Área líquida: An = Area x n°furos x Df x t ={area.ToString("F2")} - {numfuros.ToString("F2")} x {diamfuro.ToString("F2")} x {t.ToString("F2")} = {An.ToString("F2")} \r\n" +
-                            $"Área líquida efetiva: Ae = {ct.ToString("F2")} x {An.ToString("F2")} \r\n \r\n" +
-                            $"Força resistente: Ftrd = {Ae.ToString("F2")} x {ruptura.ToString("F2")} / 1.35  = {Ftrd2.ToString("F2")} \r\n" +
-                            $"Força solicitante: {Ftsd.ToString("F2")} \r\n \r\n" +
-                            $"A taxa de aproveitamento do perfil é de {taxa.ToString("F2")} %";
+                            $"Área líquida: An = A x nf x df x t ={area.ToString("F2")} - {numfuros.ToString("F2")} x {diamfuro.ToString("F2")} x {t.ToString("F2")} = {An.ToString("F2")}  cm2\r\n" +
+                            $"Área líquida efetiva: Ae = Ct x An = {ct.ToString("F2")} x {An.ToString("F2")} = {Ae.ToString("F2")} cm2\r\n" +
+                            $"Força resistente: Ftrd = {Ae.ToString("F2")} x {ruptura.ToString("F2")} / 1.35  = {Ftrd2.ToString("F2")} kN\r\n" +
+                            $"Força solicitante: {Ftsd.ToString("F2")} kN\r\n \r\n" +
+                            $"3 - ESTADO LIMITE DE SERVIÇO: {ver3} \r\n" +
+                            $"Esbeltez: L / r,min = {Lt.ToString("F2")} / {r.ToString("F2")} = {esb.ToString("F2")}\r\n \r\n"+
+                            $"A taxa de aproveitamento do perfil é de {taxa.ToString("F2")} % \r\n \r\n"+
+                            "=============================================================================== \r\n"+
+                            "LEGENDA: \r\n" +
+                            "A: Área da seção transversal do perfil (cm2) \r\n"+
+                            "nf: Número de furos na seção transversal \r\n" +
+                            "df: Diâmetro do furo (cm) \r\n"+
+                            "t: Espessura da chapa que está sendo ligada";
 
         }
     }

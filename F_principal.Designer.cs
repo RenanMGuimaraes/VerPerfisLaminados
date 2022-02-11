@@ -74,7 +74,13 @@
             this.cb_diamparafusos = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txt_lc = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.rb_ct3 = new System.Windows.Forms.RadioButton();
+            this.txt_ag = new System.Windows.Forms.TextBox();
             this.rb_ct2 = new System.Windows.Forms.RadioButton();
             this.rb_ct1 = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
@@ -90,13 +96,7 @@
             this.tabCisalhamento = new System.Windows.Forms.TabPage();
             this.tabEstabilidade = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label18 = new System.Windows.Forms.Label();
-            this.txt_lc = new System.Windows.Forms.TextBox();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.label19 = new System.Windows.Forms.Label();
-            this.txt_ag = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -579,6 +579,7 @@
             this.txt_resultado.Location = new System.Drawing.Point(3, 237);
             this.txt_resultado.Multiline = true;
             this.txt_resultado.Name = "txt_resultado";
+            this.txt_resultado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_resultado.Size = new System.Drawing.Size(634, 294);
             this.txt_resultado.TabIndex = 5;
             // 
@@ -606,7 +607,7 @@
             this.groupBox1.Size = new System.Drawing.Size(634, 228);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ELU - Esforço Solicitante";
+            this.groupBox1.Text = "Entrada de dados";
             // 
             // label16
             // 
@@ -701,6 +702,54 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Ct";
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(105, 113);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(141, 13);
+            this.label21.TabIndex = 24;
+            this.label21.Text = "Lc - Comprimento da ligação";
+            this.toolTip1.SetToolTip(this.label21, "Comprimento do cordão de solda ou distância entre o CG do primeiro ao último para" +
+        "fuso");
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(78, 113);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(21, 13);
+            this.label18.TabIndex = 21;
+            this.label18.Text = "cm";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(105, 169);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(199, 13);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "(Ag - Área da parte conectada por solda)";
+            // 
+            // txt_lc
+            // 
+            this.txt_lc.Enabled = false;
+            this.txt_lc.Location = new System.Drawing.Point(19, 110);
+            this.txt_lc.Name = "txt_lc";
+            this.txt_lc.Size = new System.Drawing.Size(53, 20);
+            this.txt_lc.TabIndex = 20;
+            this.txt_lc.Text = "1";
+            this.txt_lc.TextChanged += new System.EventHandler(this.txt_lc_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(78, 169);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(21, 13);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "cm";
+            // 
             // rb_ct3
             // 
             this.rb_ct3.Location = new System.Drawing.Point(6, 136);
@@ -711,6 +760,16 @@
             this.rb_ct3.Text = "Forças transmitadas por solda transversal";
             this.rb_ct3.UseVisualStyleBackColor = true;
             this.rb_ct3.CheckedChanged += new System.EventHandler(this.rb_ct3_CheckedChanged);
+            // 
+            // txt_ag
+            // 
+            this.txt_ag.Enabled = false;
+            this.txt_ag.Location = new System.Drawing.Point(19, 166);
+            this.txt_ag.Name = "txt_ag";
+            this.txt_ag.Size = new System.Drawing.Size(53, 20);
+            this.txt_ag.TabIndex = 22;
+            this.txt_ag.Text = "1";
+            this.txt_ag.TextChanged += new System.EventHandler(this.txt_ag_TextChanged);
             // 
             // rb_ct2
             // 
@@ -854,64 +913,6 @@
             this.tabEstabilidade.TabIndex = 5;
             this.tabEstabilidade.Text = "Estabilidade Global";
             this.tabEstabilidade.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(78, 113);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(21, 13);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "cm";
-            // 
-            // txt_lc
-            // 
-            this.txt_lc.Enabled = false;
-            this.txt_lc.Location = new System.Drawing.Point(19, 110);
-            this.txt_lc.Name = "txt_lc";
-            this.txt_lc.Size = new System.Drawing.Size(53, 20);
-            this.txt_lc.TabIndex = 20;
-            this.txt_lc.Text = "1";
-            this.txt_lc.TextChanged += new System.EventHandler(this.txt_lc_TextChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(78, 169);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(21, 13);
-            this.label19.TabIndex = 23;
-            this.label19.Text = "cm";
-            // 
-            // txt_ag
-            // 
-            this.txt_ag.Enabled = false;
-            this.txt_ag.Location = new System.Drawing.Point(19, 166);
-            this.txt_ag.Name = "txt_ag";
-            this.txt_ag.Size = new System.Drawing.Size(53, 20);
-            this.txt_ag.TabIndex = 22;
-            this.txt_ag.Text = "1";
-            this.txt_ag.TextChanged += new System.EventHandler(this.txt_ag_TextChanged);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(105, 169);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(199, 13);
-            this.label20.TabIndex = 19;
-            this.label20.Text = "(Ag - Área da parte conectada por solda)";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(105, 113);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(141, 13);
-            this.label21.TabIndex = 24;
-            this.label21.Text = "Lc - Comprimento da ligação";
-            this.toolTip1.SetToolTip(this.label21, "Comprimento do cordão de solda ou distância entre o CG do primeiro ao último para" +
-        "fuso");
             // 
             // F_principal
             // 
