@@ -52,19 +52,10 @@
     <Compile Include="F_principal.Designer.cs">
       <DependentUpon>F_principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_perfilLaminado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_perfilLaminado.Designer.cs">
-      <DependentUpon>F_perfilLaminado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="F_principal.resx">
       <DependentUpon>F_principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_perfilLaminado.resx">
-      <DependentUpon>F_perfilLaminado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
