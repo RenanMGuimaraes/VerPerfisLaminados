@@ -18,56 +18,26 @@ namespace VerPerfisLaminados
             InitializeComponent();
         }
 
-        //Propriedades Atuais do perfil
+        //Propriedades gerais do perfil
         string perfil;
         string tipoperfil = "i"; //Usado para checar o tipo de perfil a ser plotado na listbox
         double t, area, Ix, Wx, rx, Zx, Iy, Wy, Zy, ry, rz, x, h, d, tw, tf, bf,rt, It, Cw, dlinha, peso;
-        double ct = 1.0;
-        double lc = 1.0;
 
- 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void btn_apagar_Click(object sender, EventArgs e)
         {
-            if (txt_ruptura.Text == "")
-            {
-
-            }
-            else
-            {
-                ruptura = double.Parse(txt_ruptura.Text) /10.0;
-            }
-            
+            txt_resultado.Text = "";
         }
 
-        //Propriedades do aço
-        double escoamento = 34.5;
-        double elasticidade = 20.000;
 
-        private void txt_lc_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_lc.Text == "")
-            {
-                
-            }
-            else
-            {
-                CalculoEc();
-            }
-            
-        }
+        //Propriedades gerais do aço
+        double escoamento;
+        double ruptura;
+        double elasticidade;
 
-        private void txt_ag_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+        //Variaveis gerais - tração
+        int tipoCt = 1;        
 
-        double ruptura = 45.0;
-
-       
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void lb_perfis_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -84,60 +54,8 @@ namespace VerPerfisLaminados
             {
                 EscrevePerfilU(id);
             }
-        }
-
-        private void tabComb_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_escoamento.Text == "")
-            {
-
-            }
-            else
-            {
-                escoamento = double.Parse(txt_escoamento.Text) / 10.0;
-            }
-            
-        }
-
-        private void txt_elasticidade_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_elasticidade.Text == "")
-            {
-
-            }
-            else
-            {
-                elasticidade = double.Parse(txt_elasticidade.Text) / 10.0;
-            }
-                
-        }
-
+        }  
         
-       
-
-        
-        private void btn_selecionar_Click(object sender, EventArgs e)
-        {
-            int id = lb_perfis.SelectedIndex;
-            if (tipoperfil == "i")
-            {
-                EscrevePerfilI(id);
-            }
-            if(tipoperfil == "l")
-            {
-                EscrevePerfilL(id);
-            }
-            if (tipoperfil == "u")
-            {
-                EscrevePerfilU(id);
-            }
-            
-        }
         public void EscrevePerfilI(int id)
         {
             //obter caminho do arquivo automaticamente
@@ -359,57 +277,12 @@ namespace VerPerfisLaminados
         }
         private void rb_ct1_CheckedChanged(object sender, EventArgs e)
         {
-            ct = 1.0;
+            tipoCt = 1;
         }
 
         private void rb_ct2_CheckedChanged(object sender, EventArgs e)
         {
-            CalculoEc();
-        }
-
-        private void rb_ct3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rb_ct3.Checked)
-            {
-                txt_ag.Enabled = true;
-            }
-            else
-            {
-                txt_ag.Enabled = false;
-            }
-        }
-
-        private void rb_ct1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void rb_ct2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        
-        private void rb_perfilSoldado_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_calcularTracao_Click(object sender, EventArgs e)
-        {
-            string solicitacao = tabControl1.SelectedTab.Name;
-
-            if (solicitacao == "tabTracao")
-            {
-                Tracao();
-            }               
-
-            
-        }
-
-        public void CalculoEc()
-        {
-            lc = double.Parse(txt_lc.Text);
+            tipoCt = 2;
             if (rb_ct2.Checked)
             {
                 txt_lc.Enabled = true;
@@ -417,172 +290,65 @@ namespace VerPerfisLaminados
             else
             {
                 txt_lc.Enabled = false;
-            }
-            switch (tipoperfil)
-            {
-                case "i":
-                    Ct_I();
-                    break;
-                case "l":
-                    Ct_L();
-                    break;
-                case "u":
-                    Ct_U();
-                    break;
-            }
-
-            void Ct_L()
-            {
-                ct = 1 - x / lc;
-                if (ct > 0.9)
-                {
-                    ct = 0.9;
-                }
-            }
-
-            void Ct_U()
-            {
-                ct = 1 - x / lc;
-                if (ct > 0.9)
-                {
-                    ct = 0.9;
-                }
-            }
-            void Ct_I()
-            {
-                //calculo do ec
-                double amesa = ((bf / 2.0) - (tw / 2.0)) * tf * 2; //area das duas abas
-                double aalma = d * (tw / 2.0); //area da alma
-                double ymesa = bf / 2.0; //Y da mesa
-                double yalma = tw / 4.0; //Y da alma
-                double cg = ((amesa * ymesa * 2.0) + (aalma * yalma)) / (amesa * 2.0 + aalma); //calculo do cg em mm
-                double ec = (cg - (tw / 2.0)) / 10;
-
-                ct = 1 - ec / lc;
-                //MessageBox.Show($"Ct: {ct.ToString("F2")}", $"ec: {ec.ToString("F2")}");
-                if (ct > 0.9)
-                {
-                    ct = 0.9;
-                }
-            }
+            }          
         }
-        public void Tracao()
+
+        private void rb_ct3_CheckedChanged(object sender, EventArgs e)
         {
-            //Calcula a tração na seção bruta
-            double Ftrd1 = (area * escoamento) / 1.10;
-            double Ftsd = double.Parse(txt_tracao.Text);
-            string ver1;
-
-            if (Ftrd1 >= Ftsd)
+            tipoCt = 3;
+            if (rb_ct3.Checked)
             {
-                ver1 = "PASSOU!";
+                txt_ac.Enabled = true;
             }
             else
             {
-                ver1 = "NÃO PASSOU!";
+                txt_ac.Enabled = false;
             }
+        }
 
-
-            //Calcula a tração na seção líquida
-            double punc = double.Parse(txt_puncionamento.Text) / 10.0;
-            double folga = double.Parse(txt_folgaFuro.Text) / 10.0;
-            double diam = double.Parse(cb_diamparafusos.Text) / 10.0;
-            int numfuros = int.Parse(cb_numfuros.Text);
-            string verCt;
-            double diamfuro = diam + folga + punc;
-            double An = area - numfuros * diamfuro * t;
-            double Ae = ct * An;
-            double Ftrd2 = (Ae * ruptura) / 1.35;
-            string ver2;
-            string verfinal;
-
-            //Calcula o valor de "t" considerando a ligação pela alma
-            if (tipoperfil =="i" || tipoperfil =="u")
-            {
-                t = tw / 10.0;
-            }
-            if(tipoperfil == "l")
-            {
-                t = t / 10.0;
-            }
-
-            if (ct < 0.6)
-            {
-                verCt = "ATENÇÃO: Ct menor do que 0.6! REVER!!";
-            }
-            else
-            {
-                verCt = "OK";
-            }
-
-            if (Ftrd2 >= Ftsd)
-            {
-                ver2 = "PASSOU!";
-            }
-            else
-            {
-                ver2 = "NÃO PASSOU!";
-            }
-
-            
-            //Calcula a taxa de aproveitamento do perfil
-            double Ftrd = Math.Min(Ftrd1, Ftrd2);
-            double taxa = (Ftsd / Ftrd) * 100.0;
-
-            //Calcula ELS
-            double Lt = double.Parse(txt_comprimento.Text) / 10.0;
-            double r;
-            double esb;
-            string ver3;
-            if (tipoperfil =="i" || tipoperfil =="u")
-            {
-                r = ry;
-            }
-            else
-            {
-                r = rx;
-            }
-            esb = Lt / r;
-            if (esb <= 300)
-            {
-                ver3 = "PASSOU!";
-            }
-            else
-            {
-                ver3 = "NÃO PASSOU!";
-            }
-
-            if (ver1 == "PASSOU!" && ver2 == "PASSOU!" && ver3 == "PASSOU!")
-            {
-                verfinal = "PASSOU!";
-            }
-            else
-            {
-                verfinal = "NÃO PASSOU!";
-            }
-
-            txt_resultado.Text = $"RESULTADO: {verfinal}\r\n \r\n" +
-                            $"1 - ESCOAMENTO DA SEÇÃO BRUTA:{ver1} \r\n" +
-                            $"Força resistente: Ft,rd = ({area.ToString("F2")} x {escoamento.ToString("F2")}) / 1,10 = {Ftrd1.ToString("F2")} kN\r\n" +
-                            $"Força solicitante: {Ftsd.ToString("F2")} kN \r\n \r\n" +
-                            $"2 - RUPTURA DA SEÇÃO EFETIVA: {ver2}\r\n"+
-                            $"Diâmetro do furo: {diamfuro.ToString("F2")} cm \r\n" +
-                            $"Ct: {ct.ToString("F2")} - {verCt} \r\n"+
-                            $"Área líquida: An = A x nf x df x t ={area.ToString("F2")} - {numfuros.ToString("F2")} x {diamfuro.ToString("F2")} x {t.ToString("F2")} = {An.ToString("F2")}  cm2\r\n" +
-                            $"Área líquida efetiva: Ae = Ct x An = {ct.ToString("F2")} x {An.ToString("F2")} = {Ae.ToString("F2")} cm2\r\n" +
-                            $"Força resistente: Ftrd = {Ae.ToString("F2")} x {ruptura.ToString("F2")} / 1.35  = {Ftrd2.ToString("F2")} kN\r\n" +
-                            $"Força solicitante: {Ftsd.ToString("F2")} kN\r\n \r\n" +
-                            $"3 - ESTADO LIMITE DE SERVIÇO: {ver3} \r\n" +
-                            $"Esbeltez: L / r,min = {Lt.ToString("F2")} / {r.ToString("F2")} = {esb.ToString("F2")}\r\n \r\n"+
-                            $"A taxa de aproveitamento do perfil é de {taxa.ToString("F2")} % \r\n \r\n"+
-                            "=============================================================================== \r\n"+
-                            "LEGENDA: \r\n" +
-                            "A: Área da seção transversal do perfil (cm2) \r\n"+
-                            "nf: Número de furos na seção transversal \r\n" +
-                            "df: Diâmetro do furo (cm) \r\n"+
-                            "t: Espessura da chapa que está sendo ligada";
+        
+        private void rb_perfilSoldado_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
+        
+        private void btn_calcularTracao_Click(object sender, EventArgs e)
+        {
+            string solicitacao = tabControl1.SelectedTab.Name;
+
+            if (solicitacao == "tabTracao")
+            {
+                try
+                {
+                    escoamento = double.Parse(txt_escoamento.Text);
+                    double Ftsd = double.Parse(txt_tracao.Text);
+                    double punc = double.Parse(txt_puncionamento.Text);
+                    double folga = double.Parse(txt_folgaFuro.Text);
+                    double diam = double.Parse(cb_diamparafusos.Text);
+                    double ruptura = double.Parse(txt_ruptura.Text);
+                    double Lt = double.Parse(txt_comprimento.Text);
+                    int numfuros = int.Parse(cb_numfuros.Text);
+                    double lc = double.Parse(txt_lc.Text);
+                    double ac = double.Parse(txt_ac.Text);
+                    CalculaTracao calculaTracao = new CalculaTracao();
+                    txt_resultado.Text = calculaTracao.Tracao(area, bf, tf, d, lc, ac, escoamento, Ftsd, punc, folga, diam, x, ruptura, t, tw, Lt, rx, ry,rz, tipoCt, numfuros, tipoperfil);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (solicitacao == "tabCompressao")
+            {
+
+            }
+            if (solicitacao == "tabFlexao")
+            {
+
+            }
+        }
+        
     }
 
 }

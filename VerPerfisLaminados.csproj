@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculaTracao.cs" />
     <Compile Include="F_principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Imagens\varinha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagens\borracha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
