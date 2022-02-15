@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculaTracao.cs" />
-    <Compile Include="PropPerfilI.cs" />
+    <Compile Include="Compressao\CalculaCompressao.cs" />
+    <Compile Include="Compressao\CalculaQ.cs" />
+    <Compile Include="Compressao\CalculaX.cs" />
+    <Compile Include="Tracao\CalculaTracao.cs" />
+    <Compile Include="PropriedadesPerfis\PropPerfilI.cs" />
     <Compile Include="F_principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,8 +59,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropPerfilL.cs" />
-    <Compile Include="PropPerfilU.cs" />
+    <Compile Include="PropriedadesPerfis\PropPerfilL.cs" />
+    <Compile Include="PropriedadesPerfis\PropPerfilU.cs" />
     <EmbeddedResource Include="F_principal.resx">
       <DependentUpon>F_principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,28 +88,40 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\I.png" />
+    <EmbeddedResource Include="Imagens\I.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\C.png" />
+    <EmbeddedResource Include="Imagens\U.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\L.png" />
+    <EmbeddedResource Include="Imagens\L.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\Duplo C.png" />
+    <EmbeddedResource Include="Imagens\Duplo C.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\Duplo L.png" />
+    <EmbeddedResource Include="Imagens\Duplo L.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\Prop_i.png" />
+    <EmbeddedResource Include="Imagens\Prop_i.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\varinha.png" />
+    <EmbeddedResource Include="Imagens\varinha.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Imagens\borracha.png" />
+    <EmbeddedResource Include="Imagens\borracha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Txt\lista_perfisI.txt" />
+    <EmbeddedResource Include="Txt\lista_perfisL.txt" />
+    <EmbeddedResource Include="Txt\lista_perfisU.txt" />
+    <EmbeddedResource Include="Txt\perfisI.txt" />
+    <EmbeddedResource Include="Txt\perfisL.txt" />
+    <EmbeddedResource Include="Txt\perfisU.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\Prop_L.png" />
+    <EmbeddedResource Include="Imagens\Prop_U.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

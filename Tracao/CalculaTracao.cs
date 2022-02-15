@@ -187,7 +187,7 @@ namespace VerPerfisLaminados
                             $"Força resistente: Ft,rd = ({area:F2} x {escoamento:F2}) / 1,10 = {Ftrd1:F2} kN\r\n" +
                             $"Força solicitante: {Ftsd:F2} kN \r\n \r\n" +
                             $"2 - RUPTURA DA SEÇÃO EFETIVA: {ver2}\r\n" +
-                            $"Diâmetro do furo: {diamfuro:F2)} cm \r\n" +
+                            $"Diâmetro do furo: {diamfuro:F2} cm \r\n" +
                             $"Ct: {ct:F2} - {verCt} \r\n" +
                             $"Área líquida: An = A - nf x df x tw = {area:F2} - {numfuros:F2} x {diamfuro:F2} x {t:F2} = {An:F2}  cm2\r\n" +
                             $"Área líquida efetiva: Ae = Ct x An = {ct:F2} x {An:F2} = {Ae:F2} cm2\r\n" +

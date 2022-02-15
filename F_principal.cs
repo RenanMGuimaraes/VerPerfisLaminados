@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection;
 
 namespace VerPerfisLaminados
 {
@@ -56,38 +57,52 @@ namespace VerPerfisLaminados
         private void rb_perfilI_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "i";
-            pct_perfil.Image = Image.FromFile(@"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\Imagens\Prop_i.png");
-            List<string> perfisI = new List<string>();
-            string filename = @"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\lista_perfisI.txt";
 
-            string[] nomePerfisI = File.ReadAllLines(filename);
-            List<string> ListaPerfisI = new List<string>(nomePerfisI);
-            lb_perfis.DataSource = ListaPerfisI;
+            //Carrega Imagem Perfil I
+            Assembly imagemI = Assembly.GetExecutingAssembly();
+            Stream streamPerfilI = imagemI.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_i.png");
+            pct_perfil.Image = new Bitmap(streamPerfilI);
+
+            //Carrega lista de perfis I
+            Assembly ListaI = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfilI = new StreamReader(ListaI.GetManifestResourceStream("VerPerfisLaminados.Txt.lista_perfisI.txt"));
+            string[] convertePerfilI = readerPerfilI.ReadToEnd().Split('\u000A');
+            List<string> listaFinalI = new List<string>(convertePerfilI);
+            lb_perfis.DataSource = listaFinalI;
         }
 
         private void rb_cantoneira_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "l";
-            pct_perfil.Image = Image.FromFile(@"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\Imagens\Prop_L.png");
-            List<string> perfisCantoneira = new List<string>();
-            string filename = @"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\lista_cantoneiras.txt";
 
-            string[] nomeCantoneiras = File.ReadAllLines(filename);
-            List<string> ListaCantoneiras = new List<string>(nomeCantoneiras);
-            lb_perfis.DataSource = ListaCantoneiras;
+            //Carrega Imagem Perfil L
+            Assembly imagemL = Assembly.GetExecutingAssembly();
+            Stream streamPerfilL = imagemL.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_L.png");
+            pct_perfil.Image = new Bitmap(streamPerfilL);
+
+            //Carrega lista de perfis L
+            Assembly ListaL = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfilL = new StreamReader(ListaL.GetManifestResourceStream("VerPerfisLaminados.Txt.lista_perfisL.txt"));
+            string[] convertePerfilL = readerPerfilL.ReadToEnd().Split('\u000A');
+            List<string> listaFinalL = new List<string>(convertePerfilL);
+            lb_perfis.DataSource = listaFinalL;
         }
 
         private void rb_perfilU_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "u";
-            pct_perfil.Image = Image.FromFile(@"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\Imagens\Prop_U.png");
-            List<string> perfisU = new List<string>();
-            string filename = @"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\lista_perfisU.txt";
 
-            string[] nomePerfisU = File.ReadAllLines(filename);
-            List<string> ListaPerfisU = new List<string>(nomePerfisU);
-            lb_perfis.DataSource = ListaPerfisU;
+            //Carrega Imagem Perfil U
+            Assembly imagemU = Assembly.GetExecutingAssembly();
+            Stream streamPerfilU = imagemU.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_U.png");
+            pct_perfil.Image = new Bitmap(streamPerfilU);
 
+            //Carrega lista de perfis U
+            Assembly ListaU = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfilU = new StreamReader(ListaU.GetManifestResourceStream("VerPerfisLaminados.Txt.lista_perfisU.txt"));
+            string[] convertePerfilU = readerPerfilU.ReadToEnd().Split('\u000A');
+            List<string> listaFinalU = new List<string>(convertePerfilU);
+            lb_perfis.DataSource = listaFinalU;
         }
         private void rb_ct1_CheckedChanged(object sender, EventArgs e)
         {

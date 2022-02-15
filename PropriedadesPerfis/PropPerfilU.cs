@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 
 namespace VerPerfisLaminados
 {
@@ -13,27 +14,27 @@ namespace VerPerfisLaminados
         public string PlotarU(int id)
         {
             string perfil;
-           
-            //obter caminho do arquivo automaticamente
-            //TODO
-            string filename = @"C:\Users\renan\Documents\GitHub\VerPerfisLaminados\perfisU.txt";
 
-                string line = File.ReadLines(filename).Skip(id).Take(1).First();
-                string[] subs = line.Split(' ');
-                perfil = $" {subs[0]}";
-                peso = double.Parse($"{subs[1]}");
-                d = double.Parse($"{subs[2]}");
-                tw = double.Parse($"{subs[3]}");
-                bf = double.Parse($"{subs[4]}");
-                tf = double.Parse($"{subs[5]}");
-                area = double.Parse($"{subs[6]}");
-                Ix = double.Parse($"{subs[7]}");
-                Wx = double.Parse($"{subs[8]}");
-                rx = double.Parse($"{subs[9]}");
-                Iy = double.Parse($"{subs[10]}");
-                Wy = double.Parse($"{subs[11]}");
-                ry = double.Parse($"{subs[12]}");
-                x = double.Parse($"{subs[13]}");
+            Assembly ListaPerfil = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfil = new StreamReader(ListaPerfil.GetManifestResourceStream("VerPerfisLaminados.Txt.perfisU.txt"));
+            string perfis = readerPerfil.ReadToEnd(); //lê todo o arquivo
+            string[] linhas = perfis.Split('\u000A'); //Quebra o arquivo lido em linhas
+            string[] subs = linhas[id].Split(' '); //Quebra as linhas em propriedades
+
+            perfil = $" {subs[0]}";
+            peso = double.Parse($"{subs[1]}");
+            d = double.Parse($"{subs[2]}");
+            tw = double.Parse($"{subs[3]}");
+            bf = double.Parse($"{subs[4]}");
+            tf = double.Parse($"{subs[5]}");
+            area = double.Parse($"{subs[6]}");
+            Ix = double.Parse($"{subs[7]}");
+            Wx = double.Parse($"{subs[8]}");
+            rx = double.Parse($"{subs[9]}");
+            Iy = double.Parse($"{subs[10]}");
+            Wy = double.Parse($"{subs[11]}");
+            ry = double.Parse($"{subs[12]}");
+            x = double.Parse($"{subs[13]}");
 
                 return $"Perfil: {perfil} \r\n \r\n" +
                            $"Peso: {peso} kg/m \r\n" +
