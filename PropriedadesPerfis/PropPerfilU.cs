@@ -10,10 +10,11 @@ namespace VerPerfisLaminados
 {
     internal class PropPerfilU
     {
-        public static double area, Ix, Wx, rx, Iy, Wy, ry, x, d, tw, tf, bf, peso;
+        public static double area, Ix, Wx, rx, Iy, Wy, ry, x, d, tw, tf, bf, peso, It, Cw;
         public string PlotarU(int id)
         {
             string perfil;
+           
 
             Assembly ListaPerfil = Assembly.GetExecutingAssembly();
             StreamReader readerPerfil = new StreamReader(ListaPerfil.GetManifestResourceStream("VerPerfisLaminados.Txt.perfisU.txt"));
@@ -36,6 +37,12 @@ namespace VerPerfisLaminados
             ry = double.Parse($"{subs[12]}");
             x = double.Parse($"{subs[13]}");
 
+            //Calcula It
+            It = (1.0 / 3.0) * ((d /10.0) - 2 * (bf /10.0)*(tw/10.0))*(2* (bf/10.0)*(tf/10.0));
+
+            //Calcula Cw
+            Cw = ((tf*Math.Pow((bf - 0.5*tw), 3.0)*Math.Pow((d - tf),2.0) / 12.0))*((3*(bf-0.5*tw)*tf + 2*(d - tf)*tw)/(6*(bf -0.5*tw)*tf + (d - tf)*tw));
+
                 return $"Perfil: {perfil} \r\n \r\n" +
                            $"Peso: {peso} kg/m \r\n" +
                            $"d: {d}  mm \r\n" +
@@ -51,7 +58,9 @@ namespace VerPerfisLaminados
                            $"Iy: {Iy} cm4 \r\n" +
                            $"Wy: {Wy} cm3 \r\n" +
                            $"ry: {ry} cm \r\n \r\n" +
-                           $"x: {x} cm \r\n";
+                           $"x: {x} cm \r\n" +
+                           $"It: {It} cm4 " +
+                           $"Cw: {Cw} cm6";
             
         }
     }

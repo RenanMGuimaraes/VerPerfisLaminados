@@ -12,9 +12,9 @@ using System.Reflection;
 
 namespace VerPerfisLaminados
 {
-    public partial class F_principal : Form
+    public partial class F_Tracao : Form
     {
-        public F_principal()
+        public F_Tracao()
         {
             InitializeComponent();
         }
@@ -175,10 +175,8 @@ namespace VerPerfisLaminados
                     double lx = double.Parse(txt_lx.Text);
                     double ly = double.Parse(txt_ly.Text);
                     double lz = double.Parse(txt_lz.Text);
-                    elasticidade = double.Parse(txt_elasticidade.Text);
-                    escoamento = double.Parse(txt_escoamento.Text);
                     CalculaCompressao calculaCompressao = new CalculaCompressao();
-                    txt_resultadoCompressao.Text = calculaCompressao.Compressao(tipoperfil, elasticidade, escoamento, lx, ly, lz);
+                    //txt_resultadoCompressao.Text = calculaCompressao.Compressao(tipoperfil, elasticidade, escoamento, lx, ly, lz);
                 }
                 catch (Exception ex)
                 {

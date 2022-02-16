@@ -145,7 +145,8 @@ namespace VerPerfisLaminados
 
         public double CalculaX(string tipoperfil, double e, double lx, double ly, double lz)
         {
-            double x;
+            double x = 0;
+            double ne;
             if (tipoperfil =="i")
             {
                 double Ix = PropPerfilI.Ix;
@@ -159,15 +160,37 @@ namespace VerPerfisLaminados
                 double ky = 1.0;
                 double kz = 1.0;
                 double G = e / 2.6;
+                
+
                 //Flambagem elastica em torno de X e Y e por torção
                 double nex = (Math.Pow(Math.PI, 2.0) * e * Ix) / Math.Pow((kx * lx), 2.0);
                 double ney = (Math.Pow(Math.PI, 2.0) * e * Iy) / Math.Pow((ky * ly), 2.0);
                 double nez = (1.0 / Math.Pow(r0, 2.0)) * ((Math.Pow(Math.PI, 2.0) * e * cw) / Math.Pow((kz * lz), 2.0) + G *It);
 
+                ne = Math.Min(nex, Math.Min(ney, nez));
+           
             }
             if (tipoperfil =="u")
             {
+                double Ix = PropPerfilU.Ix;
+                double Iy = PropPerfilU.Iy;
+                double It = PropPerfilU.It;
+                double rx = PropPerfilU.rx;
+                double ry = PropPerfilU.ry;
+                double cw = PropPerfilU.Cw;
+                double r0 = Math.Sqrt(rx * rx + ry * ry);
+                double kx = 1.0;
+                double ky = 1.0;
+                double kz = 1.0;
+                double G = e / 2.6;
+                double y0 = 0.0;
 
+                //Flambagem elastica em torno de X e Y e por torção
+                double nex = (Math.Pow(Math.PI, 2.0) * e * Ix) / Math.Pow((kx * lx), 2.0);
+                double ney = (Math.Pow(Math.PI, 2.0) * e * Iy) / Math.Pow((ky * ly), 2.0);
+                double nez = (1.0 / Math.Pow(r0, 2.0)) * ((Math.Pow(Math.PI, 2.0) * e * cw) / Math.Pow((kz * lz), 2.0) + G * It);
+
+                ne = ((ney + nez) / (2 * (1 - Math.Pow((y0 / r0), 2.0)))) * (1 - Math.Sqrt(1 - (4*ney*nez*(1-Math.Pow((y0/r0), 2.0)))/Math.Pow((ney + nez),2.0)));
             }
             if (tipoperfil =="l")
             {
@@ -178,14 +201,14 @@ namespace VerPerfisLaminados
 
         }
 
-        public string Compressao(string tipoperfil, double e, double fy, double lx, double ly)
+        public string Compressao(string tipoperfil, double e, double fy, double lx, double ly, double lz)
         {
             fy = fy / 10.0; //Converte de MPa para kN/cm2
             e = e / 10.0; 
             double q = CalculaQ(tipoperfil, e, fy);
-            double x = CalculaX(tipoperfil, e, lx, ly);
+            double x = CalculaX(tipoperfil, e, lx, ly, lz);
 
-            return;
+            return "texto do resultado aqui";
 
         }
     }

@@ -99,12 +99,6 @@
             this.tabCompressao = new System.Windows.Forms.TabPage();
             this.txt_resultadoCompressao = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txt_lz = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txt_ly = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -122,6 +116,12 @@
             this.tabEstabilidade = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_ly = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txt_lz = new System.Windows.Forms.TextBox();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -999,62 +999,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Entrada de dados";
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(406, 55);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(21, 13);
-            this.label28.TabIndex = 24;
-            this.label28.Text = "cm";
-            this.toolTip2.SetToolTip(this.label28, "Comprimento destravado do perfil em torno do eixo X");
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(344, 36);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(18, 13);
-            this.label29.TabIndex = 22;
-            this.label29.Text = "Lz";
-            this.toolTip2.SetToolTip(this.label29, "Comprimento destravado do perfil em torno do eixo z");
-            // 
-            // txt_lz
-            // 
-            this.txt_lz.Location = new System.Drawing.Point(347, 52);
-            this.txt_lz.Name = "txt_lz";
-            this.txt_lz.Size = new System.Drawing.Size(53, 20);
-            this.txt_lz.TabIndex = 23;
-            this.toolTip1.SetToolTip(this.txt_lz, "Comprimento destravado do perfil em torno do eixo Y");
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(310, 55);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(21, 13);
-            this.label26.TabIndex = 21;
-            this.label26.Text = "cm";
-            this.toolTip2.SetToolTip(this.label26, "Comprimento destravado do perfil em torno do eixo X");
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(248, 36);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(18, 13);
-            this.label27.TabIndex = 19;
-            this.label27.Text = "Ly";
-            this.toolTip2.SetToolTip(this.label27, "Comprimento destravado do perfil em torno do eixo X");
-            // 
-            // txt_ly
-            // 
-            this.txt_ly.Location = new System.Drawing.Point(251, 52);
-            this.txt_ly.Name = "txt_ly";
-            this.txt_ly.Size = new System.Drawing.Size(53, 20);
-            this.txt_ly.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.txt_ly, "Comprimento destravado do perfil em torno do eixo Y");
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -1189,6 +1133,62 @@
             this.tabEstabilidade.TabIndex = 5;
             this.tabEstabilidade.Text = "Estabilidade Global";
             this.tabEstabilidade.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(310, 55);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(21, 13);
+            this.label26.TabIndex = 21;
+            this.label26.Text = "cm";
+            this.toolTip2.SetToolTip(this.label26, "Comprimento destravado do perfil em torno do eixo X");
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(248, 36);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(18, 13);
+            this.label27.TabIndex = 19;
+            this.label27.Text = "Ly";
+            this.toolTip2.SetToolTip(this.label27, "Comprimento destravado do perfil em torno do eixo X");
+            // 
+            // txt_ly
+            // 
+            this.txt_ly.Location = new System.Drawing.Point(251, 52);
+            this.txt_ly.Name = "txt_ly";
+            this.txt_ly.Size = new System.Drawing.Size(53, 20);
+            this.txt_ly.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.txt_ly, "Comprimento destravado do perfil em torno do eixo Y");
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(406, 55);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(21, 13);
+            this.label28.TabIndex = 24;
+            this.label28.Text = "cm";
+            this.toolTip2.SetToolTip(this.label28, "Comprimento destravado do perfil em torno do eixo X");
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(344, 36);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(18, 13);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Lz";
+            this.toolTip2.SetToolTip(this.label29, "Comprimento destravado do perfil em torno do eixo z");
+            // 
+            // txt_lz
+            // 
+            this.txt_lz.Location = new System.Drawing.Point(347, 52);
+            this.txt_lz.Name = "txt_lz";
+            this.txt_lz.Size = new System.Drawing.Size(53, 20);
+            this.txt_lz.TabIndex = 23;
+            this.toolTip1.SetToolTip(this.txt_lz, "Comprimento destravado do perfil em torno do eixo Y");
             // 
             // F_principal
             // 
