@@ -38,7 +38,7 @@ namespace VerPerfisLaminados
 
     internal class PropPerfilL
     {
-        public static double t, area, Ix, Wx, rx, rz, x, peso;
+        public static double t, area, Ix, Wx, rx, rz, x, peso, b;
 
         public string PlotarL(int id)
         {
@@ -58,6 +58,8 @@ namespace VerPerfisLaminados
             rx = double.Parse($"{subs[6]}");
             rz = double.Parse($"{subs[7]}");
             x = double.Parse($"{subs[8]}");
+            b = double.Parse($"{subs[9]}");
+
 
 
                 return $"Perfil: {perfil} \r\n \r\n" +

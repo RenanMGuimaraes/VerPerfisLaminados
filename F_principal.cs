@@ -31,7 +31,7 @@ namespace VerPerfisLaminados
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-            txt_resultado.Text = "";
+            txt_resultadoTracao.Text = "";
         }    
 
         private void lb_perfis_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace VerPerfisLaminados
                     double ac = double.Parse(txt_ac.Text);
                     double l = double.Parse(txt_L.Text);
                     CalculaTracao calculaTracao = new CalculaTracao();
-                    txt_resultado.Text = calculaTracao.Tracao(tipoperfil, escoamento, Ftsd, ruptura, tipoCt, lc, ac, punc, folga, diam, numfuros, l);
+                    txt_resultadoTracao.Text = calculaTracao.Tracao(tipoperfil, escoamento, Ftsd, ruptura, tipoCt, lc, ac, punc, folga, diam, numfuros, l);
                 }
                 catch (Exception ex)
                 {
@@ -170,14 +170,29 @@ namespace VerPerfisLaminados
             }
             if (solicitacao == "tabCompressao")
             {
-
+                try
+                {
+                    double lx = double.Parse(txt_lx.Text);
+                    double ly = double.Parse(txt_ly.Text);
+                    double lz = double.Parse(txt_lz.Text);
+                    CalculaCompressao calculaCompressao = new CalculaCompressao();
+                    txt_resultadoCompressao.Text = calculaCompressao.Compressao(tipoperfil, elasticidade, escoamento, lx, ly, lz);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             if (solicitacao == "tabFlexao")
             {
 
             }
         }
-        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
