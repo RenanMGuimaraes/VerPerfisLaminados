@@ -7,68 +7,15 @@ using System.Threading.Tasks;
 namespace VerPerfisLaminados
 {
     internal class CalculaTracao
-    {
-        public double CalculaEcI()
-        {
-            double bf = PropPerfilI.bf;
-            double tf = PropPerfilI.tf;
-            double d = PropPerfilI.d;
-            double tw = PropPerfilI.tw;
-            double ec;          
-                double amesa = ((bf / 2.0) - (tw / 2.0)) * tf * 2; //area das duas abas
-                double aalma = d * (tw / 2.0); //area da alma
-                double ymesa = bf / 2.0; //Y da mesa
-                double yalma = tw / 4.0; //Y da alma
-                double cg = ((amesa * ymesa * 2.0) + (aalma * yalma)) / (amesa * 2.0 + aalma); //calculo do cg em mm
-                ec = (cg - (tw / 2.0)) / 10; //retorna ec em cm          
-            return ec;
+    {  
 
-        }
-        public double CalculaCt(int tipoCt, double ec, double lc, double ac, double area)
-        {
-            double ct = 1.0;
-
-            switch (tipoCt)
-            {
-                case 1:
-                    ct = 1.0;
-                    break;
-                case 2:
-                    Ct_2();
-                    break;
-                case 3:
-                    Ct_3();
-                    break;
-            }
-
-            void Ct_2()
-            {
-                ct = 1 - ec / lc;
-                if (ct > 0.9)
-                {
-                    ct = 0.9;
-                }
-            }
-            void Ct_3()
-            {
-                ct = ac / area;
-                if (ct > 0.9)
-                {
-                    ct = 0.9;
-                }
-            }
-            return ct;
-
-        }
-
-        public string Tracao(string tipoperfil, double escoamento, double Ftsd, double ruptura, int tipoCt, double lc, 
-            double ac, double punc, double folga, double diam, double numfuros, double l)
+        public string Tracao(double ct, string tipoperfil, double escoamento, double Ftsd, double ruptura, double punc, double folga, 
+            double diam, double numfuros, double l, F_Tracao1 f_Tracao1, double areaChapa)
         {
             //Variaveis dos perfis
             double area = 0;
             double t = 0;
             double rmin = 0;
-            double x = 0;
 
             //Preenche as variáveis dos perfis em função do tipo de perfil
             if  (tipoperfil == "i")
@@ -82,45 +29,31 @@ namespace VerPerfisLaminados
                 area = PropPerfilU.area;
                 t = PropPerfilU.tw / 10.0; //converte pra cm
                 rmin = PropPerfilU.ry;
-                x = PropPerfilU.x;
             }
             if (tipoperfil =="l")
             {
                 area = PropPerfilL.area;
                 t = PropPerfilL.t /10.0; //converte pra cm
                 rmin = PropPerfilL.rz;
-                x = PropPerfilL.x;
+            }
+            if (tipoperfil == "chapa")
+            {
+                area = areaChapa;
             }
 
             //Variáveis gerais
             double esb; //raio de giracao e esbeltez
-            double ec = 0;
             string verCt;
             string resultado;
             string ver1, ver2, ver3, ver4, verfinal;
-            escoamento = escoamento / 10.0; //converte de MPa para kN/cm2
-            ruptura = ruptura / 10.0; //converte de MPa para kN/cm2
-            punc = punc / 10.0; //converte de mm para cm
-            folga = folga / 10.0; //converte de mm para cm
-            diam = diam / 10.0; //converte de mm para cm
-
-            //Calcula Ec
-            if (tipoperfil =="i")
-            {
-                ec = CalculaEcI();
-            }
-            if(tipoperfil == "u" || tipoperfil =="l")
-            {
-                ec = x;
-            }
-
-            //Calcula Ct
-            double ct = CalculaCt(tipoCt, ec, lc, ac, area);
-            
-
+            escoamento /= 10.0; //converte de MPa para kN/cm2
+            ruptura /= 10.0; //converte de MPa para kN/cm2
+            punc /= 10.0; //converte de mm para cm
+            folga /= 10.0; //converte de mm para cm
+            diam /= 10.0; //converte de mm para cm
+           
             //Calcula a tração na seção bruta
-            double Ftrd1 = (area * escoamento) / 1.10;
-            
+            double Ftrd1 = (area * escoamento) / 1.10;        
 
             if (Ftrd1 >= Ftsd)
             {

@@ -16,7 +16,7 @@ namespace VerPerfisLaminados
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_principal());
+            Application.Run(new F_Inicial());
         }
     }
 }

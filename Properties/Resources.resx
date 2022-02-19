@@ -124,8 +124,14 @@
   <data name="Duplo L" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Duplo L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Chapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\Chapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="I" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\I.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="borracha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\borracha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Prop_i" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\Prop_i.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,7 +145,7 @@
   <data name="L" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagens\L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="borracha" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagens\borracha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dimensoes chapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagens\dimChapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

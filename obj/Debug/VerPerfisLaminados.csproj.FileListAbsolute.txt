@@ -3,9 +3,10 @@ C:\Users\renan\Documents\GitHub\VerPerfisLaminados\bin\Debug\VerPerfisLaminados.
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\bin\Debug\VerPerfisLaminados.pdb
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.AssemblyReference.cache
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.SuggestedBindingRedirects.cache
-C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_principal.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.Properties.Resources.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.GenerateResource.cache
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.CoreCompileInputs.cache
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.exe
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.pdb
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Inicial.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Tracao1.resources

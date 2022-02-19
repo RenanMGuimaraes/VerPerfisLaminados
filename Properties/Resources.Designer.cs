@@ -83,6 +83,26 @@ namespace VerPerfisLaminados.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Chapa {
+            get {
+                object obj = ResourceManager.GetObject("Chapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dimensoes_chapa {
+            get {
+                object obj = ResourceManager.GetObject("dimensoes chapa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Duplo_C {
             get {
                 object obj = ResourceManager.GetObject("Duplo C", resourceCulture);

@@ -17,10 +17,15 @@ namespace VerPerfisLaminados
             InitializeComponent();
         }
 
-        private void btn_tracao_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            F_principal f_Principal = new F_principal();
-            f_Principal.ShowDialog();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            F_Tracao1 f_Tracao1 = new F_Tracao1();
+            f_Tracao1.ShowDialog();
         }
     }
 }

@@ -69,7 +69,7 @@ namespace VerPerfisLaminados
                            $"Ix=Iy: {Ix} cm4 \r\n" +
                            $"Wx=Wy: {Wx} cm3 \r\n" +
                            $"rx=ry: {rx} cm \r\n" +
-                           $"rz min': {rz} cm \r\n" +
+                           $"rz min: {rz} cm \r\n" +
                            $"x: {x} cm \r\n \r\n";
             
 
