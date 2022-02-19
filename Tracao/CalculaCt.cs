@@ -16,7 +16,7 @@ namespace VerPerfisLaminados
             return ct;
         }
         
-        public double Ct2(double ac, string tipoperfil)
+        public double Ct2(double ac, string tipoperfil, double areaChapa = 1.0)
         {
             
             double area = 1.0;
@@ -34,7 +34,7 @@ namespace VerPerfisLaminados
             }
             if (tipoperfil == "chapa")
             {
-                area = PropChapa.area;
+                area = areaChapa;
             }
 
             ct = ac / area;

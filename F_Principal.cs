@@ -74,6 +74,7 @@ namespace VerPerfisLaminados
 
             //Configura os radios de CT
             rb_ct1.Enabled = true;
+            rb_ct1.Focus();
             rb_ct2.Enabled = true;
             rb_ct3.Enabled = true;
             rb_ct4.Enabled = false;
@@ -110,6 +111,7 @@ namespace VerPerfisLaminados
 
             //Configura os radios de CT
             rb_ct1.Enabled = true;
+            rb_ct1.Focus();
             rb_ct2.Enabled = true;
             rb_ct3.Enabled = true;
             rb_ct4.Enabled = false;
@@ -146,6 +148,7 @@ namespace VerPerfisLaminados
 
             //Configura os radios de CT
             rb_ct1.Enabled = true;
+            rb_ct1.Focus();
             rb_ct2.Enabled = true;
             rb_ct3.Enabled = true;
             rb_ct4.Enabled = false;
@@ -166,6 +169,38 @@ namespace VerPerfisLaminados
         private void rb_duploU_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "2u";
+
+            //Carrega Imagem Perfil 2U
+            Assembly imagem2U = Assembly.GetExecutingAssembly();
+            Stream streamPerfil2U = imagem2U.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_2U.png");
+            pct_perfil.Image = new Bitmap(streamPerfil2U);
+
+            //Carrega lista de perfis 2U
+            Assembly Lista2U = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfil2U = new StreamReader(Lista2U.GetManifestResourceStream("VerPerfisLaminados.Txt.lista_perfis2U.txt"));
+            string[] convertePerfil2U = readerPerfil2U.ReadToEnd().Split('\u000A');
+            List<string> listaFinal2U = new List<string>(convertePerfil2U);
+            lb_perfis.DataSource = listaFinal2U;
+
+            //Configura os radios de CT
+            rb_ct1.Enabled = true;
+            rb_ct1.Focus();
+            rb_ct2.Enabled = true;
+            rb_ct3.Enabled = true;
+            rb_ct4.Enabled = false;
+
+            //Torna invisivel os parametros da chapa
+            btn_chapaOK.Visible = false;
+            lbl_dimensoes.Visible = false;
+            lbl_xChapa.Visible = false;
+            txt_xChapa.Visible = false;
+            lbl_mm1.Visible = false;
+            lbl_yChapa.Visible = false;
+            txt_yChapa.Visible = false;
+            lbl_mm2.Visible = false;
+            lbl_eChapa.Visible = false;
+            txt_eChapa.Visible = false;
+            lbl_mm3.Visible = false;
             //Configura os radios de CT
             rb_ct1.Enabled = true;
             rb_ct2.Enabled = true;
@@ -211,6 +246,7 @@ namespace VerPerfisLaminados
         {
             tipoperfil = "chapa";
             txt_prop.Text = "";
+            txt_L.Enabled = false;
 
             //Limpa a Lb_perfis
             List<string> vazio = new List<string>();
@@ -227,6 +263,7 @@ namespace VerPerfisLaminados
             rb_ct2.Enabled = false;
             rb_ct3.Enabled = false;
             rb_ct4.Enabled = true;
+            rb_ct4.Focus();
 
             btn_chapaOK.Visible = true;
             lbl_dimensoes.Visible = true;
@@ -303,14 +340,16 @@ namespace VerPerfisLaminados
                     double b = double.Parse(txt_b.Text);
                     double lw = double.Parse(txt_lw.Text);
                     double ct = 1.0;
-                    CalculaCt calculaCt = new CalculaCt();
+
+                //Cálculo de CT
+                CalculaCt calculaCt = new CalculaCt();
                 switch (tipoCt)
                 {
                     case 1:
                         ct = calculaCt.Ct1();
                         break;
                     case 2:
-                        ct = calculaCt.Ct2(ac, tipoperfil);
+                        ct = calculaCt.Ct2(ac, tipoperfil, areaChapa);
                         break;
                     case 3:
                         ct = calculaCt.Ct3(lc, tipoperfil);
@@ -327,8 +366,18 @@ namespace VerPerfisLaminados
                         break;
                 }
 
+                //Cálculo da tração
                 CalculaTracao calculaTracao = new CalculaTracao();
-                txt_resultadoTracao.Text = calculaTracao.Tracao(ct, tipoperfil, escoamento, Ftsd, ruptura, punc, folga, diam, numfuros, l, this, areaChapa);
+                if (tipoperfil == "chapa")
+                {
+                    txt_resultadoTracao.Text = calculaTracao.TracaoChapa();
+                }
+                else
+                {
+                    
+                    txt_resultadoTracao.Text = calculaTracao.TracaoPerfil(ct, tipoperfil, escoamento, Ftsd, ruptura, punc, folga, diam, numfuros, l);
+                }
+
                 }
                 catch (Exception ex)
                 {

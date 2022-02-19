@@ -116,6 +116,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_propPerfil = new System.Windows.Forms.Button();
+            this.açoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -130,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -139,9 +146,9 @@
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.lb_perfis);
             this.groupBox4.Controls.Add(this.groupBox2);
-            this.groupBox4.Location = new System.Drawing.Point(12, 8);
+            this.groupBox4.Location = new System.Drawing.Point(9, 90);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(526, 632);
+            this.groupBox4.Size = new System.Drawing.Size(472, 632);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             // 
@@ -156,7 +163,7 @@
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.txt_escoamento);
-            this.groupBox6.Location = new System.Drawing.Point(362, 16);
+            this.groupBox6.Location = new System.Drawing.Point(314, 16);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(153, 241);
             this.groupBox6.TabIndex = 7;
@@ -256,9 +263,7 @@
             this.groupBox5.Controls.Add(this.lbl_dimensoes);
             this.groupBox5.Controls.Add(this.rb_chapa);
             this.groupBox5.Controls.Add(this.pictureBox7);
-            this.groupBox5.Controls.Add(this.btn_apagar);
             this.groupBox5.Controls.Add(this.pct_perfil);
-            this.groupBox5.Controls.Add(this.btn_calcular);
             this.groupBox5.Controls.Add(this.rb_duploL);
             this.groupBox5.Controls.Add(this.pictureBox5);
             this.groupBox5.Controls.Add(this.rb_duploU);
@@ -269,16 +274,16 @@
             this.groupBox5.Controls.Add(this.pictureBox2);
             this.groupBox5.Controls.Add(this.rb_perfilU);
             this.groupBox5.Controls.Add(this.rb_perfilI);
-            this.groupBox5.Location = new System.Drawing.Point(8, 257);
+            this.groupBox5.Location = new System.Drawing.Point(6, 257);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(507, 369);
+            this.groupBox5.Size = new System.Drawing.Size(461, 369);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
             // lbl_mm3
             // 
             this.lbl_mm3.AutoSize = true;
-            this.lbl_mm3.Location = new System.Drawing.Point(461, 334);
+            this.lbl_mm3.Location = new System.Drawing.Point(397, 334);
             this.lbl_mm3.Name = "lbl_mm3";
             this.lbl_mm3.Size = new System.Drawing.Size(23, 13);
             this.lbl_mm3.TabIndex = 25;
@@ -288,7 +293,7 @@
             // lbl_eChapa
             // 
             this.lbl_eChapa.AutoSize = true;
-            this.lbl_eChapa.Location = new System.Drawing.Point(345, 334);
+            this.lbl_eChapa.Location = new System.Drawing.Point(281, 334);
             this.lbl_eChapa.Name = "lbl_eChapa";
             this.lbl_eChapa.Size = new System.Drawing.Size(71, 13);
             this.lbl_eChapa.TabIndex = 23;
@@ -297,7 +302,7 @@
             // 
             // txt_eChapa
             // 
-            this.txt_eChapa.Location = new System.Drawing.Point(422, 331);
+            this.txt_eChapa.Location = new System.Drawing.Point(358, 331);
             this.txt_eChapa.Name = "txt_eChapa";
             this.txt_eChapa.Size = new System.Drawing.Size(33, 20);
             this.txt_eChapa.TabIndex = 24;
@@ -307,7 +312,7 @@
             // lbl_mm2
             // 
             this.lbl_mm2.AutoSize = true;
-            this.lbl_mm2.Location = new System.Drawing.Point(310, 334);
+            this.lbl_mm2.Location = new System.Drawing.Point(252, 334);
             this.lbl_mm2.Name = "lbl_mm2";
             this.lbl_mm2.Size = new System.Drawing.Size(23, 13);
             this.lbl_mm2.TabIndex = 22;
@@ -317,7 +322,7 @@
             // lbl_yChapa
             // 
             this.lbl_yChapa.AutoSize = true;
-            this.lbl_yChapa.Location = new System.Drawing.Point(217, 334);
+            this.lbl_yChapa.Location = new System.Drawing.Point(159, 334);
             this.lbl_yChapa.Name = "lbl_yChapa";
             this.lbl_yChapa.Size = new System.Drawing.Size(48, 13);
             this.lbl_yChapa.TabIndex = 20;
@@ -326,7 +331,7 @@
             // 
             // txt_yChapa
             // 
-            this.txt_yChapa.Location = new System.Drawing.Point(271, 331);
+            this.txt_yChapa.Location = new System.Drawing.Point(213, 331);
             this.txt_yChapa.Name = "txt_yChapa";
             this.txt_yChapa.Size = new System.Drawing.Size(33, 20);
             this.txt_yChapa.TabIndex = 21;
@@ -336,7 +341,7 @@
             // lbl_mm1
             // 
             this.lbl_mm1.AutoSize = true;
-            this.lbl_mm1.Location = new System.Drawing.Point(159, 334);
+            this.lbl_mm1.Location = new System.Drawing.Point(129, 334);
             this.lbl_mm1.Name = "lbl_mm1";
             this.lbl_mm1.Size = new System.Drawing.Size(23, 13);
             this.lbl_mm1.TabIndex = 19;
@@ -346,7 +351,7 @@
             // lbl_xChapa
             // 
             this.lbl_xChapa.AutoSize = true;
-            this.lbl_xChapa.Location = new System.Drawing.Point(34, 334);
+            this.lbl_xChapa.Location = new System.Drawing.Point(4, 334);
             this.lbl_xChapa.Name = "lbl_xChapa";
             this.lbl_xChapa.Size = new System.Drawing.Size(82, 13);
             this.lbl_xChapa.TabIndex = 13;
@@ -355,7 +360,7 @@
             // 
             // txt_xChapa
             // 
-            this.txt_xChapa.Location = new System.Drawing.Point(120, 331);
+            this.txt_xChapa.Location = new System.Drawing.Point(90, 331);
             this.txt_xChapa.Name = "txt_xChapa";
             this.txt_xChapa.Size = new System.Drawing.Size(33, 20);
             this.txt_xChapa.TabIndex = 13;
@@ -365,7 +370,7 @@
             // lbl_dimensoes
             // 
             this.lbl_dimensoes.AutoSize = true;
-            this.lbl_dimensoes.Location = new System.Drawing.Point(212, 299);
+            this.lbl_dimensoes.Location = new System.Drawing.Point(189, 294);
             this.lbl_dimensoes.Name = "lbl_dimensoes";
             this.lbl_dimensoes.Size = new System.Drawing.Size(107, 13);
             this.lbl_dimensoes.TabIndex = 13;
@@ -398,7 +403,6 @@
             // rb_duploU
             // 
             this.rb_duploU.AutoSize = true;
-            this.rb_duploU.Enabled = false;
             this.rb_duploU.Location = new System.Drawing.Point(46, 170);
             this.rb_duploU.Name = "rb_duploU";
             this.rb_duploU.Size = new System.Drawing.Size(64, 17);
@@ -445,7 +449,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 16);
+            this.label1.Location = new System.Drawing.Point(33, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 0;
@@ -548,19 +552,19 @@
             "W 610 x 217,0"});
             this.lb_perfis.Location = new System.Drawing.Point(8, 32);
             this.lb_perfis.Name = "lb_perfis";
-            this.lb_perfis.Size = new System.Drawing.Size(133, 225);
+            this.lb_perfis.Size = new System.Drawing.Size(122, 225);
             this.lb_perfis.TabIndex = 1;
             this.lb_perfis.SelectedIndexChanged += new System.EventHandler(this.lb_perfis_SelectedIndexChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txt_prop);
-            this.groupBox2.Location = new System.Drawing.Point(155, 16);
+            this.groupBox2.Location = new System.Drawing.Point(136, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(201, 241);
+            this.groupBox2.Size = new System.Drawing.Size(172, 241);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Propriedades geométricas da seção";
+            this.groupBox2.Text = "Propriedades geométricas";
             // 
             // txt_prop
             // 
@@ -568,7 +572,7 @@
             this.txt_prop.Multiline = true;
             this.txt_prop.Name = "txt_prop";
             this.txt_prop.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_prop.Size = new System.Drawing.Size(189, 219);
+            this.txt_prop.Size = new System.Drawing.Size(160, 219);
             this.txt_prop.TabIndex = 0;
             // 
             // groupBox7
@@ -577,7 +581,7 @@
             this.groupBox7.Controls.Add(this.rb_ct3);
             this.groupBox7.Controls.Add(this.rb_ct2);
             this.groupBox7.Controls.Add(this.rb_ct1);
-            this.groupBox7.Location = new System.Drawing.Point(544, 97);
+            this.groupBox7.Location = new System.Drawing.Point(487, 179);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(283, 168);
             this.groupBox7.TabIndex = 6;
@@ -661,7 +665,7 @@
             this.btn_lc.Controls.Add(this.cb_diamparafusos);
             this.btn_lc.Controls.Add(this.label17);
             this.btn_lc.Controls.Add(this.txt_puncionamento);
-            this.btn_lc.Location = new System.Drawing.Point(833, 8);
+            this.btn_lc.Location = new System.Drawing.Point(776, 90);
             this.btn_lc.Name = "btn_lc";
             this.btn_lc.Size = new System.Drawing.Size(345, 257);
             this.btn_lc.TabIndex = 11;
@@ -946,7 +950,7 @@
             // txt_resultadoTracao
             // 
             this.txt_resultadoTracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_resultadoTracao.Location = new System.Drawing.Point(544, 271);
+            this.txt_resultadoTracao.Location = new System.Drawing.Point(487, 353);
             this.txt_resultadoTracao.Multiline = true;
             this.txt_resultadoTracao.Name = "txt_resultadoTracao";
             this.txt_resultadoTracao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -961,7 +965,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_tracao);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(544, 8);
+            this.groupBox1.Location = new System.Drawing.Point(487, 90);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(283, 88);
             this.groupBox1.TabIndex = 0;
@@ -1022,7 +1026,7 @@
             // 
             // btn_chapaOK
             // 
-            this.btn_chapaOK.Location = new System.Drawing.Point(325, 294);
+            this.btn_chapaOK.Location = new System.Drawing.Point(302, 289);
             this.btn_chapaOK.Name = "btn_chapaOK";
             this.btn_chapaOK.Size = new System.Drawing.Size(33, 23);
             this.btn_chapaOK.TabIndex = 36;
@@ -1046,9 +1050,9 @@
             // 
             this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
             this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_apagar.Location = new System.Drawing.Point(404, 152);
+            this.btn_apagar.Location = new System.Drawing.Point(117, 34);
             this.btn_apagar.Name = "btn_apagar";
-            this.btn_apagar.Size = new System.Drawing.Size(84, 80);
+            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
             this.btn_apagar.TabIndex = 8;
             this.btn_apagar.UseVisualStyleBackColor = true;
             this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
@@ -1057,7 +1061,7 @@
             // 
             this.pct_perfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pct_perfil.Image = global::VerPerfisLaminados.Properties.Resources.Prop_i;
-            this.pct_perfil.Location = new System.Drawing.Point(173, 34);
+            this.pct_perfil.Location = new System.Drawing.Point(162, 34);
             this.pct_perfil.Name = "pct_perfil";
             this.pct_perfil.Size = new System.Drawing.Size(184, 242);
             this.pct_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1069,9 +1073,9 @@
             // 
             this.btn_calcular.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
             this.btn_calcular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_calcular.Location = new System.Drawing.Point(404, 53);
+            this.btn_calcular.Location = new System.Drawing.Point(63, 34);
             this.btn_calcular.Name = "btn_calcular";
-            this.btn_calcular.Size = new System.Drawing.Size(84, 80);
+            this.btn_calcular.Size = new System.Drawing.Size(48, 50);
             this.btn_calcular.TabIndex = 5;
             this.btn_calcular.UseVisualStyleBackColor = true;
             this.btn_calcular.Click += new System.EventHandler(this.btn_calcularTracao_Click);
@@ -1131,16 +1135,67 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.dadosToolStripMenuItem,
+            this.sobreToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1133, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // arquivoToolStripMenuItem
+            // 
+            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // dadosToolStripMenuItem
+            // 
+            this.dadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.açoToolStripMenuItem});
+            this.dadosToolStripMenuItem.Name = "dadosToolStripMenuItem";
+            this.dadosToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.dadosToolStripMenuItem.Text = "Dados";
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // btn_propPerfil
+            // 
+            this.btn_propPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_propPerfil.Location = new System.Drawing.Point(9, 34);
+            this.btn_propPerfil.Name = "btn_propPerfil";
+            this.btn_propPerfil.Size = new System.Drawing.Size(48, 50);
+            this.btn_propPerfil.TabIndex = 13;
+            this.btn_propPerfil.UseVisualStyleBackColor = true;
+            // 
+            // açoToolStripMenuItem
+            // 
+            this.açoToolStripMenuItem.Name = "açoToolStripMenuItem";
+            this.açoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.açoToolStripMenuItem.Text = "Aço";
+            // 
             // F_Tracao1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 652);
+            this.ClientSize = new System.Drawing.Size(1133, 734);
+            this.Controls.Add(this.btn_propPerfil);
             this.Controls.Add(this.txt_resultadoTracao);
             this.Controls.Add(this.btn_lc);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.btn_calcular);
+            this.Controls.Add(this.btn_apagar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -1167,6 +1222,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1260,6 +1317,12 @@
         private System.Windows.Forms.TextBox txt_xChapa;
         private System.Windows.Forms.Label lbl_dimensoes;
         private System.Windows.Forms.Button btn_chapaOK;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.Button btn_propPerfil;
+        private System.Windows.Forms.ToolStripMenuItem açoToolStripMenuItem;
     }
 }
 

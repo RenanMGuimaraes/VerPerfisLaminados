@@ -9,8 +9,8 @@ namespace VerPerfisLaminados
     internal class CalculaTracao
     {  
 
-        public string Tracao(double ct, string tipoperfil, double escoamento, double Ftsd, double ruptura, double punc, double folga, 
-            double diam, double numfuros, double l, F_Tracao1 f_Tracao1, double areaChapa)
+        public string TracaoPerfil(double ct, string tipoperfil, double escoamento, double Ftsd, double ruptura, double punc, double folga, 
+            double diam, double numfuros, double l)
         {
             //Variaveis dos perfis
             double area = 0;
@@ -36,15 +36,10 @@ namespace VerPerfisLaminados
                 t = PropPerfilL.t /10.0; //converte pra cm
                 rmin = PropPerfilL.rz;
             }
-            if (tipoperfil == "chapa")
-            {
-                area = areaChapa;
-            }
 
             //Variáveis gerais
             double esb; //raio de giracao e esbeltez
             string verCt;
-            string resultado;
             string ver1, ver2, ver3, ver4, verfinal;
             escoamento /= 10.0; //converte de MPa para kN/cm2
             ruptura /= 10.0; //converte de MPa para kN/cm2
@@ -115,7 +110,7 @@ namespace VerPerfisLaminados
                 verfinal = "NÃO PASSOU!";
             }
 
-            resultado = $"RESULTADO: {verfinal}\r\n \r\n" +
+            return  $"RESULTADO: {verfinal}\r\n \r\n" +
                             $"1 - ESCOAMENTO DA SEÇÃO BRUTA:{ver1} \r\n" +
                             $"Força resistente: Ft,rd = ({area:F2} x {escoamento:F2}) / 1,10 = {Ftrd1:F2} kN\r\n" +
                             $"Força solicitante: {Ftsd:F2} kN \r\n \r\n" +
@@ -136,6 +131,13 @@ namespace VerPerfisLaminados
                             "df: Diâmetro do furo (cm) \r\n" +
                             "t: Espessura da chapa que está sendo ligada " +
                             "(Obs: Em perfis I e U a ligação está sendo considerada pela alma)";
+
+
+        }
+
+        public string TracaoChapa()
+        {
+            string resultado = "";
 
             return resultado;
 
