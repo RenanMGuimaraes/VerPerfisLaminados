@@ -83,19 +83,9 @@ namespace VerPerfisLaminados.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Chapa {
+        internal static System.Drawing.Bitmap diagrama2 {
             get {
-                object obj = ResourceManager.GetObject("Chapa", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dimensoes_chapa {
-            get {
-                object obj = ResourceManager.GetObject("dimensoes chapa", resourceCulture);
+                object obj = ResourceManager.GetObject("diagrama2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +113,16 @@ namespace VerPerfisLaminados.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap esforcos {
+            get {
+                object obj = ResourceManager.GetObject("esforcos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap I {
             get {
                 object obj = ResourceManager.GetObject("I", resourceCulture);
@@ -136,6 +136,16 @@ namespace VerPerfisLaminados.Properties {
         internal static System.Drawing.Bitmap L {
             get {
                 object obj = ResourceManager.GetObject("L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pilar {
+            get {
+                object obj = ResourceManager.GetObject("pilar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

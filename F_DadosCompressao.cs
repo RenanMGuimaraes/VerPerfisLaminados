@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VerPerfisLaminados
 {
-    public partial class F_PropPerfis : Form
+    public partial class F_DadosCompressao : Form
     {
-        public F_PropPerfis()
+        public F_DadosCompressao()
         {
             InitializeComponent();
         }

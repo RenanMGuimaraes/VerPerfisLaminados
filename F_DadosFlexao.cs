@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VerPerfisLaminados
 {
-    public partial class Aco : Form
+    public partial class F_DadosFlexao : Form
     {
-        public Aco()
+        public F_DadosFlexao()
         {
             InitializeComponent();
         }

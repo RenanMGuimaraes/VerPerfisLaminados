@@ -12,23 +12,44 @@ using System.Reflection;
 
 namespace VerPerfisLaminados
 {
-    public partial class F_Tracao1 : Form
+    public partial class F_Principal : Form
     {
 
-        public F_Tracao1()
+        public F_Principal()
         {
             InitializeComponent();
-        }
+    }
 
         //Variáveis gerais
         string tipoperfil = "i"; //Usado para checar o tipo de perfil a ser plotado na listbox
-        //Variaveis gerais - tração
-        int tipoCt = 1;
-        double areaChapa = 0; //usado para passar o valor da area da chapa por parametro no calculo
 
         //Propriedades gerais do aço
-        double escoamento;
-        double ruptura;
+        public double fy = 34.5;
+        public double fu = 45.0;
+        public double e = 20.000;
+        public double g = 77.000;
+
+        //Esforços solicitantes
+        public double ftsd = 0;
+        public double fnsd = 0;
+        public double fvsd = 0;
+        public double mxsd = 0;
+        public double mysd = 0;
+
+
+        //Variaveis gerais - tração
+        public int tipoCt = 1;
+        double ct = 1.0;
+        double Ftsd = 0;
+        double punc = 2.0;
+        double folga = 1.5;
+        double diam = 12.5;
+        double numfuros = 0;
+        double lw = 0;
+
+        //Variaveis gerais - compressão
+
+        //Variaveis gerais - flexão
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
@@ -71,26 +92,6 @@ namespace VerPerfisLaminados
             string[] convertePerfilI = readerPerfilI.ReadToEnd().Split('\u000A');
             List<string> listaFinalI = new List<string>(convertePerfilI);
             lb_perfis.DataSource = listaFinalI;
-
-            //Configura os radios de CT
-            rb_ct1.Enabled = true;
-            rb_ct1.Focus();
-            rb_ct2.Enabled = true;
-            rb_ct3.Enabled = true;
-            rb_ct4.Enabled = false;
-
-            //Torna invisivel os parametros da chapa
-            btn_chapaOK.Visible = false;
-            lbl_dimensoes.Visible = false;
-            lbl_xChapa.Visible = false;
-            txt_xChapa.Visible = false;
-            lbl_mm1.Visible = false;
-            lbl_yChapa.Visible = false;
-            txt_yChapa.Visible = false;
-            lbl_mm2.Visible = false;
-            lbl_eChapa.Visible = false;
-            txt_eChapa.Visible = false;
-            lbl_mm3.Visible = false;
         }
 
         private void rb_cantoneira_CheckedChanged(object sender, EventArgs e)
@@ -108,26 +109,6 @@ namespace VerPerfisLaminados
             string[] convertePerfilL = readerPerfilL.ReadToEnd().Split('\u000A');
             List<string> listaFinalL = new List<string>(convertePerfilL);
             lb_perfis.DataSource = listaFinalL;
-
-            //Configura os radios de CT
-            rb_ct1.Enabled = true;
-            rb_ct1.Focus();
-            rb_ct2.Enabled = true;
-            rb_ct3.Enabled = true;
-            rb_ct4.Enabled = false;
-
-            //Torna invisivel os parametros da chapa
-            btn_chapaOK.Visible = false;
-            lbl_dimensoes.Visible = false;
-            lbl_xChapa.Visible = false;
-            txt_xChapa.Visible = false;
-            lbl_mm1.Visible = false;
-            lbl_yChapa.Visible = false;
-            txt_yChapa.Visible = false;
-            lbl_mm2.Visible = false;
-            lbl_eChapa.Visible = false;
-            txt_eChapa.Visible = false;
-            lbl_mm3.Visible = false;
         }
 
         private void rb_perfilU_CheckedChanged(object sender, EventArgs e)
@@ -146,107 +127,32 @@ namespace VerPerfisLaminados
             List<string> listaFinalU = new List<string>(convertePerfilU);
             lb_perfis.DataSource = listaFinalU;
 
-            //Configura os radios de CT
-            rb_ct1.Enabled = true;
-            rb_ct1.Focus();
-            rb_ct2.Enabled = true;
-            rb_ct3.Enabled = true;
-            rb_ct4.Enabled = false;
-
-            //Torna invisivel os parametros da chapa
-            btn_chapaOK.Visible = false;
-            lbl_dimensoes.Visible = false;
-            lbl_xChapa.Visible = false;
-            txt_xChapa.Visible = false;
-            lbl_mm1.Visible = false;
-            lbl_yChapa.Visible = false;
-            txt_yChapa.Visible = false;
-            lbl_mm2.Visible = false;
-            lbl_eChapa.Visible = false;
-            txt_eChapa.Visible = false;
-            lbl_mm3.Visible = false;
         }
         private void rb_duploU_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "2u";
 
             //Carrega Imagem Perfil 2U
-            Assembly imagem2U = Assembly.GetExecutingAssembly();
-            Stream streamPerfil2U = imagem2U.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_2U.png");
-            pct_perfil.Image = new Bitmap(streamPerfil2U);
+            Assembly imagemU = Assembly.GetExecutingAssembly();
+            Stream streamPerfilU = imagemU.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_2U.png");
+            pct_perfil.Image = new Bitmap(streamPerfilU);
 
-            //Carrega lista de perfis 2U
-            Assembly Lista2U = Assembly.GetExecutingAssembly();
-            StreamReader readerPerfil2U = new StreamReader(Lista2U.GetManifestResourceStream("VerPerfisLaminados.Txt.lista_perfis2U.txt"));
-            string[] convertePerfil2U = readerPerfil2U.ReadToEnd().Split('\u000A');
-            List<string> listaFinal2U = new List<string>(convertePerfil2U);
-            lb_perfis.DataSource = listaFinal2U;
-
-            //Configura os radios de CT
-            rb_ct1.Enabled = true;
-            rb_ct1.Focus();
-            rb_ct2.Enabled = true;
-            rb_ct3.Enabled = true;
-            rb_ct4.Enabled = false;
-
-            //Torna invisivel os parametros da chapa
-            btn_chapaOK.Visible = false;
-            lbl_dimensoes.Visible = false;
-            lbl_xChapa.Visible = false;
-            txt_xChapa.Visible = false;
-            lbl_mm1.Visible = false;
-            lbl_yChapa.Visible = false;
-            txt_yChapa.Visible = false;
-            lbl_mm2.Visible = false;
-            lbl_eChapa.Visible = false;
-            txt_eChapa.Visible = false;
-            lbl_mm3.Visible = false;
-            //Configura os radios de CT
-            rb_ct1.Enabled = true;
-            rb_ct2.Enabled = true;
-            rb_ct3.Enabled = true;
-            rb_ct4.Enabled = false;
-
-            //Torna invisivel os parametros da chapa
-            btn_chapaOK.Visible = false;
-            lbl_dimensoes.Visible = false;
-            lbl_xChapa.Visible = false;
-            txt_xChapa.Visible = false;
-            lbl_mm1.Visible = false;
-            lbl_yChapa.Visible = false;
-            txt_yChapa.Visible = false;
-            lbl_mm2.Visible = false;
-            lbl_eChapa.Visible = false;
-            txt_eChapa.Visible = false;
-            lbl_mm3.Visible = false;
+            //Carrega lista de perfis U
+            Assembly ListaU = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfilU = new StreamReader(ListaU.GetManifestResourceStream("VerPerfisLaminados.Txt.lista_perfis2U.txt"));
+            string[] convertePerfilU = readerPerfilU.ReadToEnd().Split('\u000A');
+            List<string> listaFinalU = new List<string>(convertePerfilU);
+            lb_perfis.DataSource = listaFinalU;
         }
         private void rb_duploL_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "2l";
-            //Configura os radios de CT
-            rb_ct1.Enabled = true;
-            rb_ct2.Enabled = true;
-            rb_ct3.Enabled = true;
-            rb_ct4.Enabled = false;
-
-            //Torna invisivel os parametros da chapa
-            btn_chapaOK.Visible = false;
-            lbl_dimensoes.Visible = false;
-            lbl_xChapa.Visible = false;
-            txt_xChapa.Visible = false;
-            lbl_mm1.Visible = false;
-            lbl_yChapa.Visible = false;
-            txt_yChapa.Visible = false;
-            lbl_mm2.Visible = false;
-            lbl_eChapa.Visible = false;
-            txt_eChapa.Visible = false;
-            lbl_mm3.Visible = false;
         }
         private void rb_chapa_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "chapa";
             txt_prop.Text = "";
-            txt_L.Enabled = false;
+           
 
             //Limpa a Lb_perfis
             List<string> vazio = new List<string>();
@@ -257,157 +163,81 @@ namespace VerPerfisLaminados
             Assembly imagemChapa = Assembly.GetExecutingAssembly();
             Stream streamChapa = imagemChapa.GetManifestResourceStream("VerPerfisLaminados.Imagens.dimChapa.png");
             pct_perfil.Image = new Bitmap(streamChapa);
+        }
 
-            //Configura os radios de CT
-            rb_ct1.Enabled = false;
-            rb_ct2.Enabled = false;
-            rb_ct3.Enabled = false;
-            rb_ct4.Enabled = true;
-            rb_ct4.Focus();
 
-            btn_chapaOK.Visible = true;
-            lbl_dimensoes.Visible = true;
-            lbl_xChapa.Visible = true;
-            txt_xChapa.Visible = true;
-            lbl_mm1.Visible = true;
-            lbl_yChapa.Visible = true;
-            txt_yChapa.Visible = true;
-            lbl_mm2.Visible = true;
-            lbl_eChapa.Visible = true;
-            txt_eChapa.Visible = true;
-            lbl_mm3.Visible = true;
-        }
-        private void rb_ct1_CheckedChanged(object sender, EventArgs e)
-        {
-            tipoCt = 1;
-            txt_ac.Enabled = false;
-            cb_numfuros.Enabled = true;
-            cb_diamparafusos.Enabled = true;
-            txt_puncionamento.Enabled = true;
-            txt_folgaFuro.Enabled = true;
-            txt_b.Enabled = false;
-            txt_lw.Enabled = false;
-            txt_lc.Enabled = false;
-        }
-        private void rb_ct2_CheckedChanged(object sender, EventArgs e)
-        {
-            tipoCt = 2;
-            if (rb_ct2.Checked)
-            {
-                txt_ac.Enabled = true;
-                cb_numfuros.Enabled = false;
-                cb_diamparafusos.Enabled = false;
-                txt_puncionamento.Enabled = false;
-                txt_folgaFuro.Enabled = false;
-                txt_b.Enabled = false;
-                txt_lw.Enabled = false;
-                txt_lc.Enabled = false;
-            }
-            else
-            {
-                txt_lc.Enabled = false;
-            }          
-        }
-        private void rb_ct3_CheckedChanged(object sender, EventArgs e)
-        {
-            tipoCt = 3;
-            txt_lc.Enabled = true;
-            cb_diamparafusos.Enabled = true;
-            cb_numfuros.Enabled=true;
-            txt_folgaFuro.Enabled = true;
-            txt_puncionamento.Enabled=true;
- 
-        }
-        private void rb_ct4_CheckedChanged(object sender, EventArgs e)
-        {
-            tipoCt = 4;
-        }
-        private void btn_calcularTracao_Click(object sender, EventArgs e)
-        {
-                try
-                {
-                    escoamento = double.Parse(txt_escoamento.Text);
-                    double Ftsd = double.Parse(txt_tracao.Text);
-                    double punc = double.Parse(txt_puncionamento.Text);
-                    double folga = double.Parse(txt_folgaFuro.Text);
-                    double diam = double.Parse(cb_diamparafusos.Text);
-                    ruptura = double.Parse(txt_ruptura.Text);
-                    double Lt = double.Parse(txt_L.Text);
-                    int numfuros = int.Parse(cb_numfuros.Text);
-                    double lc = double.Parse(txt_lc.Text);
-                    double ac = double.Parse(txt_ac.Text);
-                    double l = double.Parse(txt_L.Text);
-                    double b = double.Parse(txt_b.Text);
-                    double lw = double.Parse(txt_lw.Text);
-                    double ct = 1.0;
-
-                //Cálculo de CT
-                CalculaCt calculaCt = new CalculaCt();
-                switch (tipoCt)
-                {
-                    case 1:
-                        ct = calculaCt.Ct1();
-                        break;
-                    case 2:
-                        ct = calculaCt.Ct2(ac, tipoperfil, areaChapa);
-                        break;
-                    case 3:
-                        ct = calculaCt.Ct3(lc, tipoperfil);
-                        break;
-                    case 4:
-                        if(b > lw)
-                        {
-                            MessageBox.Show(" O valor de b não pode ser maior do que lw.", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            ct = calculaCt.Ct4(b, lw);        
-                        }
-                        break;
-                }
-
-                //Cálculo da tração
-                CalculaTracao calculaTracao = new CalculaTracao();
-                if (tipoperfil == "chapa")
-                {
-                    txt_resultadoTracao.Text = calculaTracao.TracaoChapa();
-                }
-                else
-                {
-                    
-                    txt_resultadoTracao.Text = calculaTracao.TracaoPerfil(ct, tipoperfil, escoamento, Ftsd, ruptura, punc, folga, diam, numfuros, l);
-                }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-        }
-        private void pct_perfil_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label10_Click(object sender, EventArgs e)
+        private void dadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btn_chapaOK_Click(object sender, EventArgs e)
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            double x, y, esp;
 
-            x = double.Parse(txt_xChapa.Text);
-            y = double.Parse(txt_yChapa.Text);
-            esp = double.Parse(txt_eChapa.Text);
+        }
 
+        private void traçãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_DadosTracao f_DadosTracao = new F_DadosTracao();
+            f_DadosTracao.ShowDialog();
+        }
 
-            areaChapa = (y / 10.0) * (esp / 10.0);
+        private void açoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_DadosAco f_DadosAco = new F_DadosAco(this);
+            f_DadosAco.ShowDialog();
+        }
 
-            txt_prop.Text = "DADOS DA CHAPA: \r\n \r\n" +
-                            $"Comprimento: {x:F2} mm\r\n" +
-                            $"Altura: {y:F2} mm\r\n" +
-                            $"Área seção transversal: {areaChapa:F2} cm2";
+        private void compressãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_DadosCompressao f_DadosCompressao = new F_DadosCompressao();
+            f_DadosCompressao.ShowDialog();
+        }
+
+        private void flexãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_DadosFlexao f_DadosFlexao = new F_DadosFlexao();
+            f_DadosFlexao.ShowDialog();
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Sobre f_Sobre = new F_Sobre();
+            f_Sobre.ShowDialog();
+        }
+
+        private void btn_calcular_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void F_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportarPDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_calc_Click(object sender, EventArgs e)
+        {
+            CalculaTracao tracao = new CalculaTracao();
+            CalculaCompressao compressao = new CalculaCompressao();
+            CalculaFlexao flexao = new CalculaFlexao();
+        }
+
+        private void btn_propPerfil_Click(object sender, EventArgs e)
+        {
+            F_DadosAco f_DadosAco = new F_DadosAco(this);
+            f_DadosAco.ShowDialog();
+        }
+
+        private void btn_esforcos_Click(object sender, EventArgs e)
+        {
+            F_Esforcos f_Esforcos = new F_Esforcos();
+            f_Esforcos.ShowDialog();
         }
     }
 
