@@ -14,3 +14,5 @@ C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.AssemblyReference.cache
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Esforcos.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Sobre.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Geometria.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_TracaoHelp.resources

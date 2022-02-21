@@ -24,9 +24,9 @@ namespace VerPerfisLaminados
         string tipoperfil = "i"; //Usado para checar o tipo de perfil a ser plotado na listbox
 
         //Propriedades gerais do aço
-        public double fy = 34.5;
-        public double fu = 45.0;
-        public double e = 20.000;
+        public double fy = 345;
+        public double fu = 450;
+        public double e = 200.000;
         public double g = 77.000;
 
         //Esforços solicitantes
@@ -36,16 +36,20 @@ namespace VerPerfisLaminados
         public double mxsd = 0;
         public double mysd = 0;
 
+        //Geomtria do perfil
+        public double lx = 0;
+        public double ly = 0;
+        public double lz = 0;
 
         //Variaveis gerais - tração
         public int tipoCt = 1;
-        double ct = 1.0;
-        double Ftsd = 0;
-        double punc = 2.0;
-        double folga = 1.5;
-        double diam = 12.5;
-        double numfuros = 0;
-        double lw = 0;
+        public string lig = "alma"; // define se a ligação é feita na alma ou na mesa
+        public double punc = 2.0;
+        public double folga = 1.5;
+        public double diam = 12.5;
+        public int numfuros = 0;
+        public double lc = 0;
+        public double ac = 0;
 
         //Variaveis gerais - compressão
 
@@ -53,7 +57,8 @@ namespace VerPerfisLaminados
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-            txt_resultadoTracao.Text = "";
+            txt_resultado.Text = "";
+            lbl_verif.Text = "";
         }    
 
         //PLOTA OS PERFIS DO LB_LIST NO TXT_PROP
@@ -178,7 +183,7 @@ namespace VerPerfisLaminados
 
         private void traçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_DadosTracao f_DadosTracao = new F_DadosTracao();
+            F_DadosTracao f_DadosTracao = new F_DadosTracao(this);
             f_DadosTracao.ShowDialog();
         }
 
@@ -223,9 +228,23 @@ namespace VerPerfisLaminados
 
         private void btn_calc_Click(object sender, EventArgs e)
         {
+            txt_resultado.Text = "RESULTADO: \r\n \r\n";
+
             CalculaTracao tracao = new CalculaTracao();
+            txt_resultado.Text += tracao.Tracao(tipoCt, lig, tipoperfil, ac, lc, fy, ftsd, fu, punc, folga,
+            diam, numfuros, lx, ly, lz, this);
             CalculaCompressao compressao = new CalculaCompressao();
             CalculaFlexao flexao = new CalculaFlexao();
+
+            txt_resultado.Text += "\r\n \r\n =============================================================================== \r\n" +
+                            "LEGENDA: \r\n" +
+                            "A: Área da seção transversal do perfil (cm2) \r\n" +
+                            "nf: Número de furos na seção transversal \r\n" +
+                            "df: Diâmetro do furo (cm) \r\n" +
+                            "t: Espessura da chapa que está sendo ligada " +
+                            "(Obs: Em perfis I e U a ligação está sendo considerada pela alma)";
+
+            
         }
 
         private void btn_propPerfil_Click(object sender, EventArgs e)
@@ -236,8 +255,19 @@ namespace VerPerfisLaminados
 
         private void btn_esforcos_Click(object sender, EventArgs e)
         {
-            F_Esforcos f_Esforcos = new F_Esforcos();
+            F_Esforcos f_Esforcos = new F_Esforcos(this);
             f_Esforcos.ShowDialog();
+        }
+
+        private void btn_geo_Click(object sender, EventArgs e)
+        {
+            F_Geometria f_Geometria = new F_Geometria(this);
+            f_Geometria.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 

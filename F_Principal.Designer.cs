@@ -49,8 +49,8 @@
             this.lb_perfis = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_prop = new System.Windows.Forms.TextBox();
-            this.txt_resultadoTracao = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_geo = new System.Windows.Forms.Button();
             this.btn_calc = new System.Windows.Forms.Button();
             this.btn_esforcos = new System.Windows.Forms.Button();
             this.btn_apagar = new System.Windows.Forms.Button();
@@ -58,9 +58,10 @@
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportarPDFToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.açoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flexãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,10 +69,12 @@
             this.exportarPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otimizarCompressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otimizarFlexãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarPDFToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_resultado = new System.Windows.Forms.RichTextBox();
             this.lbl_verif = new System.Windows.Forms.Label();
-            this.btn_geo = new System.Windows.Forms.Button();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -84,6 +87,8 @@
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -403,15 +408,17 @@
             this.txt_prop.Size = new System.Drawing.Size(184, 219);
             this.txt_prop.TabIndex = 0;
             // 
-            // txt_resultadoTracao
+            // btn_geo
             // 
-            this.txt_resultadoTracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_resultadoTracao.Location = new System.Drawing.Point(6, 23);
-            this.txt_resultadoTracao.Multiline = true;
-            this.txt_resultadoTracao.Name = "txt_resultadoTracao";
-            this.txt_resultadoTracao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_resultadoTracao.Size = new System.Drawing.Size(531, 533);
-            this.txt_resultadoTracao.TabIndex = 5;
+            this.btn_geo.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
+            this.btn_geo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_geo.Location = new System.Drawing.Point(115, 34);
+            this.btn_geo.Name = "btn_geo";
+            this.btn_geo.Size = new System.Drawing.Size(48, 50);
+            this.btn_geo.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.btn_geo, "Geometria do perfil");
+            this.btn_geo.UseVisualStyleBackColor = true;
+            this.btn_geo.Click += new System.EventHandler(this.btn_geo_Click);
             // 
             // btn_calc
             // 
@@ -421,7 +428,7 @@
             this.btn_calc.Name = "btn_calc";
             this.btn_calc.Size = new System.Drawing.Size(48, 50);
             this.btn_calc.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btn_calc, "Calcular !");
+            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
             this.btn_calc.UseVisualStyleBackColor = true;
             this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
             // 
@@ -464,35 +471,50 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
             this.dadosToolStripMenuItem,
             this.resultadoToolStripMenuItem,
             this.sobreToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(10, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(959, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(361, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // arquivoToolStripMenuItem
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportarPDFToolStripMenuItem1});
+            this.salvarToolStripMenuItem,
+            this.salvarComoToolStripMenuItem,
+            this.abrirToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
-            // exportarPDFToolStripMenuItem1
+            // salvarToolStripMenuItem
             // 
-            this.exportarPDFToolStripMenuItem1.Name = "exportarPDFToolStripMenuItem1";
-            this.exportarPDFToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
-            this.exportarPDFToolStripMenuItem1.Text = "Exportar PDF";
+            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
+            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarToolStripMenuItem.Text = "Salvar";
+            // 
+            // salvarComoToolStripMenuItem
+            // 
+            this.salvarComoToolStripMenuItem.Name = "salvarComoToolStripMenuItem";
+            this.salvarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salvarComoToolStripMenuItem.Text = "Salvar como";
+            // 
+            // abrirToolStripMenuItem
+            // 
+            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
+            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.abrirToolStripMenuItem.Text = "Abrir";
             // 
             // dadosToolStripMenuItem
             // 
             this.dadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.açoToolStripMenuItem,
             this.traçãoToolStripMenuItem,
             this.compressãoToolStripMenuItem,
             this.flexãoToolStripMenuItem});
@@ -501,31 +523,24 @@
             this.dadosToolStripMenuItem.Text = "Dados";
             this.dadosToolStripMenuItem.Click += new System.EventHandler(this.dadosToolStripMenuItem_Click);
             // 
-            // açoToolStripMenuItem
-            // 
-            this.açoToolStripMenuItem.Name = "açoToolStripMenuItem";
-            this.açoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-            this.açoToolStripMenuItem.Text = "Aço";
-            this.açoToolStripMenuItem.Click += new System.EventHandler(this.açoToolStripMenuItem_Click);
-            // 
             // traçãoToolStripMenuItem
             // 
             this.traçãoToolStripMenuItem.Name = "traçãoToolStripMenuItem";
-            this.traçãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.traçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.traçãoToolStripMenuItem.Text = "Tração";
             this.traçãoToolStripMenuItem.Click += new System.EventHandler(this.traçãoToolStripMenuItem_Click);
             // 
             // compressãoToolStripMenuItem
             // 
             this.compressãoToolStripMenuItem.Name = "compressãoToolStripMenuItem";
-            this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.compressãoToolStripMenuItem.Text = "Compressão";
             this.compressãoToolStripMenuItem.Click += new System.EventHandler(this.compressãoToolStripMenuItem_Click);
             // 
             // flexãoToolStripMenuItem
             // 
             this.flexãoToolStripMenuItem.Name = "flexãoToolStripMenuItem";
-            this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.flexãoToolStripMenuItem.Text = "Flexão";
             this.flexãoToolStripMenuItem.Click += new System.EventHandler(this.flexãoToolStripMenuItem_Click);
             // 
@@ -534,13 +549,15 @@
             this.resultadoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportarPDFToolStripMenuItem,
             this.otimizarCompressãoToolStripMenuItem,
-            this.otimizarFlexãoToolStripMenuItem});
+            this.otimizarFlexãoToolStripMenuItem,
+            this.exportarPDFToolStripMenuItem2});
             this.resultadoToolStripMenuItem.Name = "resultadoToolStripMenuItem";
             this.resultadoToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.resultadoToolStripMenuItem.Text = "Resultado";
             // 
             // exportarPDFToolStripMenuItem
             // 
+            this.exportarPDFToolStripMenuItem.Enabled = false;
             this.exportarPDFToolStripMenuItem.Name = "exportarPDFToolStripMenuItem";
             this.exportarPDFToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.exportarPDFToolStripMenuItem.Text = "Otimizar Tração";
@@ -548,15 +565,24 @@
             // 
             // otimizarCompressãoToolStripMenuItem
             // 
+            this.otimizarCompressãoToolStripMenuItem.Enabled = false;
             this.otimizarCompressãoToolStripMenuItem.Name = "otimizarCompressãoToolStripMenuItem";
             this.otimizarCompressãoToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.otimizarCompressãoToolStripMenuItem.Text = "Otimizar Compressão";
             // 
             // otimizarFlexãoToolStripMenuItem
             // 
+            this.otimizarFlexãoToolStripMenuItem.Enabled = false;
             this.otimizarFlexãoToolStripMenuItem.Name = "otimizarFlexãoToolStripMenuItem";
             this.otimizarFlexãoToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.otimizarFlexãoToolStripMenuItem.Text = "Otimizar Flexão";
+            // 
+            // exportarPDFToolStripMenuItem2
+            // 
+            this.exportarPDFToolStripMenuItem2.Enabled = false;
+            this.exportarPDFToolStripMenuItem2.Name = "exportarPDFToolStripMenuItem2";
+            this.exportarPDFToolStripMenuItem2.Size = new System.Drawing.Size(188, 22);
+            this.exportarPDFToolStripMenuItem2.Text = "Exportar PDF";
             // 
             // sobreToolStripMenuItem
             // 
@@ -567,13 +593,23 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_resultadoTracao);
+            this.groupBox1.Controls.Add(this.txt_resultado);
             this.groupBox1.Location = new System.Drawing.Point(408, 90);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(543, 562);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resultado";
+            // 
+            // txt_resultado
+            // 
+            this.txt_resultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_resultado.Location = new System.Drawing.Point(6, 16);
+            this.txt_resultado.Name = "txt_resultado";
+            this.txt_resultado.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txt_resultado.Size = new System.Drawing.Size(531, 479);
+            this.txt_resultado.TabIndex = 0;
+            this.txt_resultado.Text = "";
             // 
             // lbl_verif
             // 
@@ -582,20 +618,39 @@
             this.lbl_verif.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.lbl_verif.Location = new System.Drawing.Point(622, 45);
             this.lbl_verif.Name = "lbl_verif";
-            this.lbl_verif.Size = new System.Drawing.Size(60, 24);
+            this.lbl_verif.Size = new System.Drawing.Size(0, 24);
             this.lbl_verif.TabIndex = 18;
-            this.lbl_verif.Text = "label2";
             // 
-            // btn_geo
+            // toolStripContainer1
             // 
-            this.btn_geo.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
-            this.btn_geo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_geo.Location = new System.Drawing.Point(115, 34);
-            this.btn_geo.Name = "btn_geo";
-            this.btn_geo.Size = new System.Drawing.Size(48, 50);
-            this.btn_geo.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.btn_geo, "Esforços solicitantes");
-            this.btn_geo.UseVisualStyleBackColor = true;
+            // 
+            // toolStripContainer1.BottomToolStripPanel
+            // 
+            this.toolStripContainer1.BottomToolStripPanel.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStripContainer1.BottomToolStripPanelVisible = false;
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.menuStrip1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_geo);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_calc);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.lbl_verif);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_esforcos);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_apagar);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_propPerfil);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox1);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox4);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(959, 656);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.LeftToolStripPanelVisible = false;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.RightToolStripPanelVisible = false;
+            this.toolStripContainer1.Size = new System.Drawing.Size(959, 656);
+            this.toolStripContainer1.TabIndex = 21;
+            this.toolStripContainer1.Text = "toolStripContainer1";
+            this.toolStripContainer1.TopToolStripPanelVisible = false;
             // 
             // F_Principal
             // 
@@ -603,15 +658,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(959, 656);
-            this.Controls.Add(this.btn_geo);
-            this.Controls.Add(this.btn_calc);
-            this.Controls.Add(this.lbl_verif);
-            this.Controls.Add(this.btn_esforcos);
-            this.Controls.Add(this.btn_apagar);
-            this.Controls.Add(this.btn_propPerfil);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -635,9 +682,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -660,7 +709,6 @@
         private System.Windows.Forms.PictureBox pct_perfil;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;
-        public System.Windows.Forms.TextBox txt_resultadoTracao;
         private System.Windows.Forms.Button btn_apagar;
         public System.Windows.Forms.TextBox txt_prop;
         public System.Windows.Forms.ListBox lb_perfis;
@@ -669,7 +717,6 @@
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.Button btn_propPerfil;
-        private System.Windows.Forms.ToolStripMenuItem açoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem traçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compressãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flexãoToolStripMenuItem;
@@ -679,12 +726,17 @@
         private System.Windows.Forms.Button btn_esforcos;
         private System.Windows.Forms.ToolStripMenuItem resultadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem;
-        private System.Windows.Forms.Label lbl_verif;
         private System.Windows.Forms.Button btn_calc;
-        private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem otimizarCompressãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otimizarFlexãoToolStripMenuItem;
         private System.Windows.Forms.Button btn_geo;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salvarComoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem2;
+        public System.Windows.Forms.Label lbl_verif;
+        public System.Windows.Forms.RichTextBox txt_resultado;
     }
 }
 

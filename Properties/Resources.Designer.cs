@@ -63,6 +63,36 @@ namespace VerPerfisLaminados.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ac {
+            get {
+                object obj = ResourceManager.GetObject("ac", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ac1 {
+            get {
+                object obj = ResourceManager.GetObject("ac1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ac2 {
+            get {
+                object obj = ResourceManager.GetObject("ac2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap borracha {
             get {
                 object obj = ResourceManager.GetObject("borracha", resourceCulture);
@@ -136,6 +166,16 @@ namespace VerPerfisLaminados.Properties {
         internal static System.Drawing.Bitmap L {
             get {
                 object obj = ResourceManager.GetObject("L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lc {
+            get {
+                object obj = ResourceManager.GetObject("lc", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

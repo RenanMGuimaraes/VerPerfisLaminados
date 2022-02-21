@@ -34,12 +34,6 @@
             this.rb_ct2 = new System.Windows.Forms.RadioButton();
             this.rb_ct1 = new System.Windows.Forms.RadioButton();
             this.btn_lc = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txt_lw = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txt_b = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -60,8 +54,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btn_ac = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rb_mesa = new System.Windows.Forms.RadioButton();
+            this.rb_alma = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox7.SuspendLayout();
             this.btn_lc.SuspendLayout();
@@ -87,7 +81,9 @@
             this.rb_ct3.Name = "rb_ct3";
             this.rb_ct3.Size = new System.Drawing.Size(333, 30);
             this.rb_ct3.TabIndex = 2;
-            this.rb_ct3.Text = "Forças transmitidas parcialmente por soldas longitudinais ou parafusos";
+            this.rb_ct3.Text = "Forças transmitidas por soldas longitudinais ou parafusos em perfis de seção aber" +
+    "ta";
+            this.toolTip1.SetToolTip(this.rb_ct3, "Ct = 1 - ec / lc");
             this.rb_ct3.UseVisualStyleBackColor = true;
             // 
             // rb_ct2
@@ -97,7 +93,8 @@
             this.rb_ct2.Name = "rb_ct2";
             this.rb_ct2.Size = new System.Drawing.Size(314, 30);
             this.rb_ct2.TabIndex = 1;
-            this.rb_ct2.Text = "Forças transmitadas por solda transversal à solicitação";
+            this.rb_ct2.Text = "Forças transmitadas somente por soldas transversais à solicitação";
+            this.toolTip1.SetToolTip(this.rb_ct2, "Ct = Ac / Ag");
             this.rb_ct2.UseVisualStyleBackColor = true;
             // 
             // rb_ct1
@@ -110,16 +107,12 @@
             this.rb_ct1.TabIndex = 0;
             this.rb_ct1.TabStop = true;
             this.rb_ct1.Text = "Todos os elementos da seção estão conectados por parafusos ou soldas. Ct = 1 ";
+            this.toolTip1.SetToolTip(this.rb_ct1, "Ct = 1.0");
             this.rb_ct1.UseVisualStyleBackColor = true;
+            this.rb_ct1.CheckedChanged += new System.EventHandler(this.rb_ct1_CheckedChanged);
             // 
             // btn_lc
             // 
-            this.btn_lc.Controls.Add(this.label22);
-            this.btn_lc.Controls.Add(this.label23);
-            this.btn_lc.Controls.Add(this.label24);
-            this.btn_lc.Controls.Add(this.txt_lw);
-            this.btn_lc.Controls.Add(this.label25);
-            this.btn_lc.Controls.Add(this.txt_b);
             this.btn_lc.Controls.Add(this.label20);
             this.btn_lc.Controls.Add(this.label11);
             this.btn_lc.Controls.Add(this.label19);
@@ -138,69 +131,15 @@
             this.btn_lc.Controls.Add(this.txt_puncionamento);
             this.btn_lc.Location = new System.Drawing.Point(12, 250);
             this.btn_lc.Name = "btn_lc";
-            this.btn_lc.Size = new System.Drawing.Size(345, 257);
+            this.btn_lc.Size = new System.Drawing.Size(345, 197);
             this.btn_lc.TabIndex = 12;
             this.btn_lc.TabStop = false;
             this.btn_lc.Text = "Furos na seção transversal";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(190, 207);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(21, 13);
-            this.label22.TabIndex = 29;
-            this.label22.Text = "Lw";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(252, 225);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(21, 13);
-            this.label23.TabIndex = 33;
-            this.label23.Text = "cm";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(32, 207);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(13, 13);
-            this.label24.TabIndex = 34;
-            this.label24.Text = "b";
-            // 
-            // txt_lw
-            // 
-            this.txt_lw.Enabled = false;
-            this.txt_lw.Location = new System.Drawing.Point(193, 222);
-            this.txt_lw.Name = "txt_lw";
-            this.txt_lw.Size = new System.Drawing.Size(53, 20);
-            this.txt_lw.TabIndex = 32;
-            this.txt_lw.Text = "1";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(92, 225);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(21, 13);
-            this.label25.TabIndex = 31;
-            this.label25.Text = "cm";
-            // 
-            // txt_b
-            // 
-            this.txt_b.Enabled = false;
-            this.txt_b.Location = new System.Drawing.Point(35, 222);
-            this.txt_b.Name = "txt_b";
-            this.txt_b.Size = new System.Drawing.Size(53, 20);
-            this.txt_b.TabIndex = 30;
-            this.txt_b.Text = "1";
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(190, 146);
+            this.label20.Location = new System.Drawing.Point(177, 144);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(23, 13);
             this.label20.TabIndex = 19;
@@ -209,7 +148,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(32, 26);
+            this.label11.Location = new System.Drawing.Point(19, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 13);
             this.label11.TabIndex = 4;
@@ -218,7 +157,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(252, 166);
+            this.label19.Location = new System.Drawing.Point(239, 164);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(21, 13);
             this.label19.TabIndex = 23;
@@ -227,7 +166,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(252, 105);
+            this.label14.Location = new System.Drawing.Point(239, 103);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(23, 13);
             this.label14.TabIndex = 15;
@@ -236,20 +175,22 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(32, 146);
+            this.label21.Location = new System.Drawing.Point(19, 144);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(19, 13);
             this.label21.TabIndex = 24;
             this.label21.Text = "Lc";
+            this.toolTip1.SetToolTip(this.label21, "Comprimento efetivo da ligação. Clique no botão \"?\" para mais detalhes.");
             // 
             // txt_ac
             // 
             this.txt_ac.Enabled = false;
-            this.txt_ac.Location = new System.Drawing.Point(193, 162);
+            this.txt_ac.Location = new System.Drawing.Point(180, 160);
             this.txt_ac.Name = "txt_ac";
             this.txt_ac.Size = new System.Drawing.Size(53, 20);
             this.txt_ac.TabIndex = 22;
             this.txt_ac.Text = "1";
+            this.txt_ac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ac_KeyPress);
             // 
             // cb_numfuros
             // 
@@ -266,7 +207,7 @@
             "8",
             "9",
             "10"});
-            this.cb_numfuros.Location = new System.Drawing.Point(35, 41);
+            this.cb_numfuros.Location = new System.Drawing.Point(22, 39);
             this.cb_numfuros.Name = "cb_numfuros";
             this.cb_numfuros.Size = new System.Drawing.Size(30, 21);
             this.cb_numfuros.TabIndex = 7;
@@ -275,16 +216,17 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(190, 82);
+            this.label15.Location = new System.Drawing.Point(177, 84);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(69, 13);
             this.label15.TabIndex = 13;
             this.label15.Text = "Folga do furo";
+            this.toolTip1.SetToolTip(this.label15, "Folga de montagem do furo");
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(94, 165);
+            this.label18.Location = new System.Drawing.Point(81, 163);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(21, 13);
             this.label18.TabIndex = 21;
@@ -292,16 +234,17 @@
             // 
             // txt_folgaFuro
             // 
-            this.txt_folgaFuro.Location = new System.Drawing.Point(193, 102);
+            this.txt_folgaFuro.Location = new System.Drawing.Point(180, 100);
             this.txt_folgaFuro.Name = "txt_folgaFuro";
             this.txt_folgaFuro.Size = new System.Drawing.Size(53, 20);
             this.txt_folgaFuro.TabIndex = 14;
             this.txt_folgaFuro.Text = "1,5";
+            this.txt_folgaFuro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_folgaFuro_KeyPress);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(94, 105);
+            this.label16.Location = new System.Drawing.Point(81, 103);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(23, 13);
             this.label16.TabIndex = 18;
@@ -310,16 +253,17 @@
             // txt_lc
             // 
             this.txt_lc.Enabled = false;
-            this.txt_lc.Location = new System.Drawing.Point(35, 162);
+            this.txt_lc.Location = new System.Drawing.Point(22, 160);
             this.txt_lc.Name = "txt_lc";
             this.txt_lc.Size = new System.Drawing.Size(53, 20);
             this.txt_lc.TabIndex = 20;
             this.txt_lc.Text = "1";
+            this.txt_lc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_lc_KeyPress);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(190, 27);
+            this.label13.Location = new System.Drawing.Point(177, 25);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(118, 13);
             this.label13.TabIndex = 11;
@@ -333,7 +277,7 @@
             "12,5",
             "16,0",
             "19,0"});
-            this.cb_diamparafusos.Location = new System.Drawing.Point(193, 41);
+            this.cb_diamparafusos.Location = new System.Drawing.Point(180, 39);
             this.cb_diamparafusos.Name = "cb_diamparafusos";
             this.cb_diamparafusos.Size = new System.Drawing.Size(53, 21);
             this.cb_diamparafusos.TabIndex = 12;
@@ -342,23 +286,25 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(32, 82);
+            this.label17.Location = new System.Drawing.Point(19, 84);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(81, 13);
             this.label17.TabIndex = 16;
             this.label17.Text = "Puncionamento";
+            this.toolTip1.SetToolTip(this.label17, "Perda de área no furo devido ao processo de puncionamento");
             // 
             // txt_puncionamento
             // 
-            this.txt_puncionamento.Location = new System.Drawing.Point(35, 102);
+            this.txt_puncionamento.Location = new System.Drawing.Point(22, 100);
             this.txt_puncionamento.Name = "txt_puncionamento";
             this.txt_puncionamento.Size = new System.Drawing.Size(53, 20);
             this.txt_puncionamento.TabIndex = 17;
             this.txt_puncionamento.Text = "2,0";
+            this.txt_puncionamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_puncionamento_KeyPress);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(70, 513);
+            this.button6.Location = new System.Drawing.Point(69, 453);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 14;
@@ -368,26 +314,28 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(15, 513);
+            this.button7.Location = new System.Drawing.Point(14, 453);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(49, 23);
             this.button7.TabIndex = 13;
             this.button7.Text = "OK";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // btn_ac
             // 
-            this.btn_ac.Location = new System.Drawing.Point(329, 513);
+            this.btn_ac.Location = new System.Drawing.Point(328, 453);
             this.btn_ac.Name = "btn_ac";
             this.btn_ac.Size = new System.Drawing.Size(28, 23);
             this.btn_ac.TabIndex = 25;
             this.btn_ac.Text = "?";
             this.btn_ac.UseVisualStyleBackColor = true;
+            this.btn_ac.Click += new System.EventHandler(this.btn_ac_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.rb_mesa);
+            this.groupBox1.Controls.Add(this.rb_alma);
             this.groupBox1.Location = new System.Drawing.Point(12, 155);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(345, 89);
@@ -396,33 +344,33 @@
             this.groupBox1.Text = "Ligações";
             this.toolTip1.SetToolTip(this.groupBox1, "Aplica-se no caso de perfis I ou U");
             // 
-            // radioButton2
+            // rb_mesa
             // 
-            this.radioButton2.Location = new System.Drawing.Point(6, 53);
-            this.radioButton2.MaximumSize = new System.Drawing.Size(400, 200);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(295, 30);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "A ligação é feita pelas mesas (ou abas) do perfil";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rb_mesa.Location = new System.Drawing.Point(6, 53);
+            this.rb_mesa.MaximumSize = new System.Drawing.Size(400, 200);
+            this.rb_mesa.Name = "rb_mesa";
+            this.rb_mesa.Size = new System.Drawing.Size(295, 30);
+            this.rb_mesa.TabIndex = 1;
+            this.rb_mesa.Text = "A ligação é feita pelas mesas (ou abas) do perfil";
+            this.rb_mesa.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rb_alma
             // 
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 19);
-            this.radioButton3.MaximumSize = new System.Drawing.Size(400, 200);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(314, 30);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "A ligação é feita pela alma do perfil";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rb_alma.Checked = true;
+            this.rb_alma.Location = new System.Drawing.Point(6, 19);
+            this.rb_alma.MaximumSize = new System.Drawing.Size(400, 200);
+            this.rb_alma.Name = "rb_alma";
+            this.rb_alma.Size = new System.Drawing.Size(314, 30);
+            this.rb_alma.TabIndex = 0;
+            this.rb_alma.TabStop = true;
+            this.rb_alma.Text = "A ligação é feita pela alma do perfil";
+            this.rb_alma.UseVisualStyleBackColor = true;
             // 
             // F_DadosTracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 548);
+            this.ClientSize = new System.Drawing.Size(373, 486);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
@@ -434,6 +382,7 @@
             this.Name = "F_DadosTracao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Propriedades para tração";
+            this.Load += new System.EventHandler(this.F_DadosTracao_Load);
             this.groupBox7.ResumeLayout(false);
             this.btn_lc.ResumeLayout(false);
             this.btn_lc.PerformLayout();
@@ -449,12 +398,6 @@
         private System.Windows.Forms.RadioButton rb_ct2;
         private System.Windows.Forms.RadioButton rb_ct1;
         private System.Windows.Forms.GroupBox btn_lc;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox txt_lw;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox txt_b;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label19;
@@ -475,8 +418,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btn_ac;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rb_mesa;
+        private System.Windows.Forms.RadioButton rb_alma;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

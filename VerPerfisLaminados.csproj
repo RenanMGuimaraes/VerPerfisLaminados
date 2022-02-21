@@ -84,6 +84,12 @@
     <Compile Include="F_Esforcos.Designer.cs">
       <DependentUpon>F_Esforcos.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Geometria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Geometria.Designer.cs">
+      <DependentUpon>F_Geometria.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Sobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,7 +102,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="PropriedadesPerfis\PropPerfil2U.cs" />
-    <Compile Include="Tracao\CalculaCt.cs" />
     <Compile Include="Tracao\CalculaTracao.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilI.cs" />
     <Compile Include="F_Principal.cs">
@@ -109,6 +114,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilL.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilU.cs" />
+    <Compile Include="F_TracaoHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_TracaoHelp.Designer.cs">
+      <DependentUpon>F_TracaoHelp.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="F_DadosAco.resx">
       <DependentUpon>F_DadosAco.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Esforcos.resx">
       <DependentUpon>F_Esforcos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Geometria.resx">
+      <DependentUpon>F_Geometria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>
@@ -170,6 +184,9 @@
     <EmbeddedResource Include="Imagens\borracha.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="F_TracaoHelp.resx">
+      <DependentUpon>F_TracaoHelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Txt\lista_perfisI.txt" />
     <EmbeddedResource Include="Txt\lista_perfisL.txt" />
     <EmbeddedResource Include="Txt\lista_perfisU.txt" />
@@ -198,6 +215,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Imagens\pilar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\lc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Imagens\ac.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

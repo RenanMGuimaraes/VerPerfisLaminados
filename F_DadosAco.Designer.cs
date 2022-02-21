@@ -92,6 +92,7 @@
             this.txt_g.Size = new System.Drawing.Size(51, 20);
             this.txt_g.TabIndex = 14;
             this.txt_g.Text = "77.000";
+            this.txt_g.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_g_KeyPress);
             // 
             // label8
             // 
@@ -118,6 +119,7 @@
             this.txt_ruptura.Size = new System.Drawing.Size(51, 20);
             this.txt_ruptura.TabIndex = 11;
             this.txt_ruptura.Text = "450";
+            this.txt_ruptura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ruptura_KeyPress);
             // 
             // label6
             // 
@@ -144,6 +146,7 @@
             this.txt_elasticidade.Size = new System.Drawing.Size(51, 20);
             this.txt_elasticidade.TabIndex = 8;
             this.txt_elasticidade.Text = "200.000";
+            this.txt_elasticidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_elasticidade_KeyPress);
             // 
             // label5
             // 
@@ -170,6 +173,7 @@
             this.txt_escoamento.Size = new System.Drawing.Size(51, 20);
             this.txt_escoamento.TabIndex = 5;
             this.txt_escoamento.Text = "345";
+            this.txt_escoamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_escoamento_KeyPress);
             // 
             // btn_ok
             // 
