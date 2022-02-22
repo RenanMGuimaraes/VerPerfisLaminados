@@ -183,7 +183,7 @@ namespace VerPerfisLaminados
 
         private void traçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_DadosTracao f_DadosTracao = new F_DadosTracao(this);
+            F_DadosTracaoI f_DadosTracao = new F_DadosTracao(this);
             f_DadosTracao.ShowDialog();
         }
 
@@ -268,6 +268,12 @@ namespace VerPerfisLaminados
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void btn_tracaoHelp_Click(object sender, EventArgs e)
+        {
+            F_TracaoIHelp f_TracaoIHelp = new F_TracaoIHelp();
+            f_TracaoIHelp.ShowDialog();
         }
     }
 

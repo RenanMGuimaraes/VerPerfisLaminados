@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VerPerfisLaminados
 {
-    public partial class F_TracaoHelp : Form
+    public partial class F_TracaoIHelp : Form
     {
-        public F_TracaoHelp()
+        public F_TracaoIHelp()
         {
             InitializeComponent();
         }

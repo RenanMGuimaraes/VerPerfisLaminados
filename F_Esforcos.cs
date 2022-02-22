@@ -12,8 +12,8 @@ namespace VerPerfisLaminados
 {
     public partial class F_Esforcos : Form
     {
-        F_Principal pai;
-        public F_Esforcos(F_Principal f_Principal)
+        F_TracaoI pai;
+        public F_Esforcos(F_TracaoI f_Principal)
         {
             InitializeComponent();
             pai = f_Principal;

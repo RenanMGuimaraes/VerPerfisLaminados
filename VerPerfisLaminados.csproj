@@ -72,11 +72,11 @@
     <Compile Include="F_DadosFlexao.Designer.cs">
       <DependentUpon>F_DadosFlexao.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_DadosTracao.cs">
+    <Compile Include="F_DadosTracaoI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_DadosTracao.Designer.cs">
-      <DependentUpon>F_DadosTracao.cs</DependentUpon>
+    <Compile Include="F_DadosTracaoI.Designer.cs">
+      <DependentUpon>F_DadosTracaoI.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Esforcos.cs">
       <SubType>Form</SubType>
@@ -89,6 +89,12 @@
     </Compile>
     <Compile Include="F_Geometria.Designer.cs">
       <DependentUpon>F_Geometria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Main.Designer.cs">
+      <DependentUpon>F_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Sobre.cs">
       <SubType>Form</SubType>
@@ -104,21 +110,21 @@
     <Compile Include="PropriedadesPerfis\PropPerfil2U.cs" />
     <Compile Include="Tracao\CalculaTracao.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilI.cs" />
-    <Compile Include="F_Principal.cs">
+    <Compile Include="F_TracaoI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Principal.Designer.cs">
-      <DependentUpon>F_Principal.cs</DependentUpon>
+    <Compile Include="F_TracaoI.Designer.cs">
+      <DependentUpon>F_TracaoI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilL.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilU.cs" />
-    <Compile Include="F_TracaoHelp.cs">
+    <Compile Include="F_TracaoIHelp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_TracaoHelp.Designer.cs">
-      <DependentUpon>F_TracaoHelp.cs</DependentUpon>
+    <Compile Include="F_TracaoIHelp.Designer.cs">
+      <DependentUpon>F_TracaoIHelp.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="F_DadosAco.resx">
       <DependentUpon>F_DadosAco.cs</DependentUpon>
@@ -126,8 +132,8 @@
     <EmbeddedResource Include="F_DadosFlexao.resx">
       <DependentUpon>F_DadosFlexao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_DadosTracao.resx">
-      <DependentUpon>F_DadosTracao.cs</DependentUpon>
+    <EmbeddedResource Include="F_DadosTracaoI.resx">
+      <DependentUpon>F_DadosTracaoI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Esforcos.resx">
       <DependentUpon>F_Esforcos.cs</DependentUpon>
@@ -135,8 +141,11 @@
     <EmbeddedResource Include="F_Geometria.resx">
       <DependentUpon>F_Geometria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Principal.resx">
-      <DependentUpon>F_Principal.cs</DependentUpon>
+    <EmbeddedResource Include="F_Main.resx">
+      <DependentUpon>F_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_TracaoI.resx">
+      <DependentUpon>F_TracaoI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Sobre.resx">
       <DependentUpon>F_Sobre.cs</DependentUpon>
@@ -184,8 +193,8 @@
     <EmbeddedResource Include="Imagens\borracha.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="F_TracaoHelp.resx">
-      <DependentUpon>F_TracaoHelp.cs</DependentUpon>
+    <EmbeddedResource Include="F_TracaoIHelp.resx">
+      <DependentUpon>F_TracaoIHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Txt\lista_perfisI.txt" />
     <EmbeddedResource Include="Txt\lista_perfisL.txt" />

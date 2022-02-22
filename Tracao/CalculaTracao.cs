@@ -8,10 +8,10 @@ namespace VerPerfisLaminados
 {
     internal class CalculaTracao
     {
-        F_Principal pai;
+        F_TracaoI pai;
 
         public string Tracao(int tipoCt, string lig, string tipoperfil, double ac, double lc, double fy, double ftsd, double fu, double punc, double folga,
-            double diam, double numfuros, double lx, double ly, double lz, F_Principal f_Principal)
+            double diam, double numfuros, double lx, double ly, double lz, F_TracaoI f_Principal)
         {
             double ct = CalculoCt(tipoCt, tipoperfil, ac, lc);
             pai = f_Principal;

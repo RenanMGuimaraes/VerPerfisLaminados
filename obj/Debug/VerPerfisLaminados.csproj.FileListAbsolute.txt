@@ -16,3 +16,5 @@ C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Sobre.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Geometria.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_TracaoHelp.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Main.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_TracaoIHelp.resources

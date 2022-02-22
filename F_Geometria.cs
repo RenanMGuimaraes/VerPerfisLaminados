@@ -12,8 +12,8 @@ namespace VerPerfisLaminados
 {
     public partial class F_Geometria : Form
     {
-        F_Principal pai;
-        public F_Geometria(F_Principal f_Principal)
+        F_TracaoI pai;
+        public F_Geometria(F_TracaoI f_Principal)
         {
             InitializeComponent();
             pai = f_Principal;

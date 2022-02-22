@@ -12,8 +12,8 @@ namespace VerPerfisLaminados
 {
     public partial class F_DadosTracao : Form
     {
-        F_Principal pai;
-        public F_DadosTracao(F_Principal f_Principal)
+        F_TracaoI pai;
+        public F_DadosTracao(F_TracaoI f_Principal)
         {
             InitializeComponent();
             pai = f_Principal;
@@ -66,7 +66,7 @@ namespace VerPerfisLaminados
 
         private void btn_ac_Click(object sender, EventArgs e)
         {
-           F_TracaoHelp f_TracaoHelp = new F_TracaoHelp();
+           F_TracaoIHelp f_TracaoHelp = new F_TracaoIHelp();
             f_TracaoHelp.ShowDialog();
         }
 

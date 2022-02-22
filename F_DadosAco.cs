@@ -12,8 +12,8 @@ namespace VerPerfisLaminados
 {
     public partial class F_DadosAco : Form
     {
-        F_Principal pai;
-        public F_DadosAco(F_Principal f_Principal)
+        F_TracaoI pai;
+        public F_DadosAco(F_TracaoI f_Principal)
         {
             InitializeComponent();
             pai = f_Principal;

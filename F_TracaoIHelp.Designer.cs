@@ -1,6 +1,6 @@
 ﻿namespace VerPerfisLaminados
 {
-    partial class F_TracaoHelp
+    partial class F_TracaoIHelp
     {
         /// <summary>
         /// Required designer variable.
