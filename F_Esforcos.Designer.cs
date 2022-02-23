@@ -37,7 +37,7 @@
             this.txt_momy = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.txt_v = new System.Windows.Forms.TextBox();
+            this.txt_cortante = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_momx = new System.Windows.Forms.TextBox();
@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.txt_momy);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.txt_v);
+            this.groupBox1.Controls.Add(this.txt_cortante);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_momx);
@@ -140,14 +140,14 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "kN";
             // 
-            // txt_v
+            // txt_cortante
             // 
-            this.txt_v.Location = new System.Drawing.Point(16, 215);
-            this.txt_v.Name = "txt_v";
-            this.txt_v.Size = new System.Drawing.Size(53, 20);
-            this.txt_v.TabIndex = 15;
-            this.txt_v.Text = "0";
-            this.txt_v.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_v_KeyPress);
+            this.txt_cortante.Location = new System.Drawing.Point(16, 215);
+            this.txt_cortante.Name = "txt_cortante";
+            this.txt_cortante.Size = new System.Drawing.Size(53, 20);
+            this.txt_cortante.TabIndex = 15;
+            this.txt_cortante.Text = "0";
+            this.txt_cortante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_v_KeyPress);
             // 
             // label14
             // 
@@ -257,7 +257,6 @@
             this.Name = "F_Esforcos";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.F_Esforcos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -273,7 +272,7 @@
         private System.Windows.Forms.TextBox txt_momy;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txt_v;
+        private System.Windows.Forms.TextBox txt_cortante;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_momx;

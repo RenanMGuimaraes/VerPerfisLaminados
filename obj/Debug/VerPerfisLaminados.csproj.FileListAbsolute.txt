@@ -9,10 +9,11 @@ C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.pdb
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Principal.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_DadosAco.resources
-C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_DadosTracao.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_DadosFlexao.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.AssemblyReference.cache
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Esforcos.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Sobre.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Geometria.resources
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_TracaoHelp.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_DadosTracaoI.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_DadosTracaoL.resources

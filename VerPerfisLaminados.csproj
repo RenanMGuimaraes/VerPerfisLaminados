@@ -72,11 +72,17 @@
     <Compile Include="F_DadosFlexao.Designer.cs">
       <DependentUpon>F_DadosFlexao.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_DadosTracao.cs">
+    <Compile Include="F_DadosTracaoI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_DadosTracao.Designer.cs">
-      <DependentUpon>F_DadosTracao.cs</DependentUpon>
+    <Compile Include="F_DadosTracaoI.Designer.cs">
+      <DependentUpon>F_DadosTracaoI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_DadosTracaoL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_DadosTracaoL.Designer.cs">
+      <DependentUpon>F_DadosTracaoL.cs</DependentUpon>
     </Compile>
     <Compile Include="F_Esforcos.cs">
       <SubType>Form</SubType>
@@ -126,8 +132,11 @@
     <EmbeddedResource Include="F_DadosFlexao.resx">
       <DependentUpon>F_DadosFlexao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_DadosTracao.resx">
-      <DependentUpon>F_DadosTracao.cs</DependentUpon>
+    <EmbeddedResource Include="F_DadosTracaoI.resx">
+      <DependentUpon>F_DadosTracaoI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_DadosTracaoL.resx">
+      <DependentUpon>F_DadosTracaoL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Esforcos.resx">
       <DependentUpon>F_Esforcos.cs</DependentUpon>

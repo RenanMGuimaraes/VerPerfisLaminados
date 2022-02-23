@@ -26,7 +26,7 @@ namespace VerPerfisLaminados
         //Propriedades gerais do aço
         public double fy = 345;
         public double fu = 450;
-        public double e = 200.000;
+        public double elast = 200.000;
         public double g = 77.000;
 
         //Esforços solicitantes
@@ -48,6 +48,8 @@ namespace VerPerfisLaminados
         public double folga = 1.5;
         public double diam = 12.5;
         public int numfuros = 0;
+        public int numfurosAlma = 0;
+        public int numfurosMesa = 0;
         public double lc = 0;
         public double ac = 0;
 
@@ -57,8 +59,8 @@ namespace VerPerfisLaminados
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-            txt_resultado.Text = "";
-            lbl_verif.Text = "";
+            txt_resultadoTracao.Text = "";
+            lbl_verifTracao.Text = "";
         }    
 
         //PLOTA OS PERFIS DO LB_LIST NO TXT_PROP
@@ -183,14 +185,17 @@ namespace VerPerfisLaminados
 
         private void traçãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_DadosTracao f_DadosTracao = new F_DadosTracao(this);
-            f_DadosTracao.ShowDialog();
-        }
-
-        private void açoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_DadosAco f_DadosAco = new F_DadosAco(this);
-            f_DadosAco.ShowDialog();
+            if (tipoperfil =="i" || tipoperfil == "u")
+            {
+                F_DadosTracaoI f_DadosTracao = new F_DadosTracaoI(this, tipoCt, numfurosAlma, numfurosMesa, diam, punc, folga, lc, ac);
+                f_DadosTracao.ShowDialog();
+            }
+            if (tipoperfil == "l")
+            {
+                F_DadosTracaoL f_DadosTracaoL = new F_DadosTracaoL(this,tipoCt, numfuros, diam, punc, folga, lc, ac);
+                f_DadosTracaoL.ShowDialog();
+            }
+            
         }
 
         private void compressãoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,40 +233,31 @@ namespace VerPerfisLaminados
 
         private void btn_calc_Click(object sender, EventArgs e)
         {
-            txt_resultado.Text = "RESULTADO: \r\n \r\n";
+            txt_resultadoTracao.Text = "RESULTADO: \r\n \r\n";
 
             CalculaTracao tracao = new CalculaTracao();
-            txt_resultado.Text += tracao.Tracao(tipoCt, lig, tipoperfil, ac, lc, fy, ftsd, fu, punc, folga,
-            diam, numfuros, lx, ly, lz, this);
+            txt_resultadoTracao.Text += tracao.Tracao(tipoCt, lig, tipoperfil, ac, lc, fy, ftsd, fu, punc, folga,
+            diam, numfuros, numfurosAlma, numfurosMesa, lx, ly, lz, this);
             CalculaCompressao compressao = new CalculaCompressao();
             CalculaFlexao flexao = new CalculaFlexao();
-
-            txt_resultado.Text += "\r\n \r\n =============================================================================== \r\n" +
-                            "LEGENDA: \r\n" +
-                            "A: Área da seção transversal do perfil (cm2) \r\n" +
-                            "nf: Número de furos na seção transversal \r\n" +
-                            "df: Diâmetro do furo (cm) \r\n" +
-                            "t: Espessura da chapa que está sendo ligada " +
-                            "(Obs: Em perfis I e U a ligação está sendo considerada pela alma)";
-
             
         }
 
         private void btn_propPerfil_Click(object sender, EventArgs e)
         {
-            F_DadosAco f_DadosAco = new F_DadosAco(this);
+            F_DadosAco f_DadosAco = new F_DadosAco(this, fy, fu, elast, g);
             f_DadosAco.ShowDialog();
         }
 
         private void btn_esforcos_Click(object sender, EventArgs e)
         {
-            F_Esforcos f_Esforcos = new F_Esforcos(this);
+            F_Esforcos f_Esforcos = new F_Esforcos(this, ftsd, fnsd, fvsd, mxsd,mysd );
             f_Esforcos.ShowDialog();
         }
 
         private void btn_geo_Click(object sender, EventArgs e)
         {
-            F_Geometria f_Geometria = new F_Geometria(this);
+            F_Geometria f_Geometria = new F_Geometria(this, lx, ly, lz);
             f_Geometria.ShowDialog();
         }
 

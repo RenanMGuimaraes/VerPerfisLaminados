@@ -13,10 +13,14 @@ namespace VerPerfisLaminados
     public partial class F_DadosAco : Form
     {
         F_Principal pai;
-        public F_DadosAco(F_Principal f_Principal)
+        public F_DadosAco(F_Principal f_Principal, double fy, double fu, double e, double g)
         {
             InitializeComponent();
             pai = f_Principal;
+            txt_elasticidade.Text = e.ToString("F3");
+            txt_g.Text = g.ToString("F3");
+            txt_escoamento.Text = fy.ToString("F2");
+            txt_ruptura.Text = fu.ToString("F2");
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -43,10 +47,10 @@ namespace VerPerfisLaminados
         {
             pai.fy = double.Parse(txt_escoamento.Text);
             pai.fu = double.Parse(txt_ruptura.Text);
-            pai.e = double.Parse(txt_escoamento.Text);
+            pai.elast = double.Parse(txt_escoamento.Text);
             pai.g = double.Parse(txt_g.Text);
-            pai.txt_resultado.Text = "";
-            pai.lbl_verif.Text = "";
+            pai.txt_resultadoTracao.Text = "";
+            pai.lbl_verifTracao.Text = "";
             this.Close();
         }
 

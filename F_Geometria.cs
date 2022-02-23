@@ -13,10 +13,13 @@ namespace VerPerfisLaminados
     public partial class F_Geometria : Form
     {
         F_Principal pai;
-        public F_Geometria(F_Principal f_Principal)
+        public F_Geometria(F_Principal f_Principal, double lx, double ly, double lz)
         {
             InitializeComponent();
             pai = f_Principal;
+            txt_x.Text = lx.ToString("F2");
+            txt_y.Text = ly.ToString("F2");
+            txt_z.Text = lz.ToString("F2");
 
         }
 
@@ -30,8 +33,8 @@ namespace VerPerfisLaminados
             pai.lx = double.Parse(txt_x.Text);
             pai.ly = double.Parse(txt_y.Text);
             pai.lz = double.Parse(txt_z.Text);
-            pai.txt_resultado.Text = "";
-            pai.lbl_verif.Text = "";
+            pai.txt_resultadoTracao.Text = "";
+            pai.lbl_verifTracao.Text = "";
             this.Close();
         }
 

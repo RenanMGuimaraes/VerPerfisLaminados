@@ -33,6 +33,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +52,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(232, 244);
+            this.button2.Location = new System.Drawing.Point(229, 372);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -82,14 +85,46 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(284, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(276, 38);
+            this.label3.Size = new System.Drawing.Size(247, 53);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ac é a área da seção transversal dos elementos conectados em ligação soldada.";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(284, 223);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(247, 67);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "ec é a excentricidade da ligação, igual à distância do CG do perfil ao plano de a" +
+    "tuação das forças na ligação (calculado automaticamente)";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 237);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(247, 53);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Ag é a área bruta do perfil (calculado automaticamente)";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 316);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(541, 53);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Obs: Este aplicativo considera todos os furos na mesma seção, não considerando ai" +
+    "nda as ligações enviesadas.";
             // 
             // F_TracaoHelp
             // 
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(565, 279);
+            this.ClientSize = new System.Drawing.Size(565, 414);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox3);
@@ -116,5 +151,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

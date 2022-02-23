@@ -13,15 +13,15 @@ namespace VerPerfisLaminados
     public partial class F_Esforcos : Form
     {
         F_Principal pai;
-        public F_Esforcos(F_Principal f_Principal)
+        public F_Esforcos(F_Principal f_Principal, double ftsd, double fnsd, double fvsd, double mxsd, double mysd)
         {
             InitializeComponent();
             pai = f_Principal;
-        }
-
-        private void F_Esforcos_Load(object sender, EventArgs e)
-        {
-
+            txt_tracao.Text = ftsd.ToString("F2");
+            txt_compressao.Text = fnsd.ToString("F2");
+            txt_cortante.Text = fvsd.ToString("F2");
+            txt_momx.Text = mxsd.ToString("F2");
+            txt_momy.Text = mysd.ToString("F2");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,13 +47,13 @@ namespace VerPerfisLaminados
             {
                 pai.fnsd = double.Parse(txt_compressao.Text);
             }
-            if (txt_v.Text =="")
+            if (txt_cortante.Text =="")
             {
 
             }
             else
             {
-                pai.fvsd = double.Parse(txt_v.Text);
+                pai.fvsd = double.Parse(txt_cortante.Text);
             }
             if (txt_momx.Text == "")
             {
@@ -71,8 +71,8 @@ namespace VerPerfisLaminados
             {
                 pai.mysd = double.Parse(txt_momy.Text);
             }
-            pai.txt_resultado.Text = "";
-            pai.lbl_verif.Text = "";
+            pai.txt_resultadoTracao.Text = "";
+            pai.lbl_verifTracao.Text = "";
             this.Close();
         }
 

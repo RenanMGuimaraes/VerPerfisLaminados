@@ -11,8 +11,10 @@ namespace VerPerfisLaminados
         F_Principal pai;
 
         public string Tracao(int tipoCt, string lig, string tipoperfil, double ac, double lc, double fy, double ftsd, double fu, double punc, double folga,
-            double diam, double numfuros, double lx, double ly, double lz, F_Principal f_Principal)
+            double diam, double numfuros, double numfurosAlma, double numfurosMesa, double lx, double ly, double lz, F_Principal f_Principal)
         {
+
+
             double ct = CalculoCt(tipoCt, tipoperfil, ac, lc);
             pai = f_Principal;
 
@@ -20,34 +22,23 @@ namespace VerPerfisLaminados
             double area = 0;
             double t = 0;
             double rmin = 0;
+            double tw = 0;
+            double tf = 0;
 
+            
             //Preenche as variáveis dos perfis em função do tipo de perfil
             if (tipoperfil == "i")
             {
                 area = PropPerfilI.area;
-                if (lig == "alma")
-                {
-                    t = PropPerfilI.tw;
-                }
-                else if (lig == "mesa")
-                {
-                    t = PropPerfilI.bf;
-                }
-                t /= 10.0; //converte pra cm
+                tw = PropPerfilI.tw / 10.0;
+                tf = PropPerfilI.tf / 10.0;
                 rmin = PropPerfilI.ry;
             }
             if (tipoperfil == "u")
             {
                 area = PropPerfilU.area;
-                if (lig == "alma")
-                {
-                    t = PropPerfilI.tw;
-                }
-                else if (lig == "mesa")
-                {
-                    t = PropPerfilI.bf;
-                }
-                t = PropPerfilU.tw / 10.0; //converte pra cm
+                tw = PropPerfilI.tw / 10.0;
+                tf = PropPerfilI.tf / 10.0;
                 rmin = PropPerfilU.ry;
             }
             if (tipoperfil == "l")
@@ -56,6 +47,7 @@ namespace VerPerfisLaminados
                 t = PropPerfilL.t / 10.0; //converte pra cm
                 rmin = PropPerfilL.rz;
             }
+            
 
             //Variáveis gerais
             double esb; //raio de giracao e esbeltez
@@ -81,9 +73,17 @@ namespace VerPerfisLaminados
 
             //Calcula a tração na seção líquida         
             double diamfuro = diam + folga + punc;
-            double An = area - numfuros * diamfuro * t;
-            double Ae = ct * An;
-            double ftrd2 = (Ae * fu) / 1.35;
+            double an = 0;
+            if(tipoperfil == "i" || tipoperfil == "u")
+            {
+               an = area - numfurosAlma * diamfuro * tw - numfurosMesa * diamfuro - tf;
+            }
+            else if (tipoperfil == "l")
+            {
+                an = area - numfuros * diamfuro * t;
+            }
+            double ae = ct * an;
+            double ftrd2 = (ae * fu) / 1.35;
 
             if (ct < 0.6)
             {
@@ -124,33 +124,54 @@ namespace VerPerfisLaminados
 
             if (ver1 == "PASSOU!" && ver2 == "PASSOU!" && ver3 == "PASSOU!" && ver4 == "PASSOU!")
             {
-                pai.lbl_verif.Text = "PASSOU !";
-                pai.lbl_verif.ForeColor = System.Drawing.Color.Green;
+                pai.lbl_verifTracao.Text = "PASSOU !";
+                pai.lbl_verifTracao.ForeColor = System.Drawing.Color.Green;
             }
             else
             { 
-                pai.lbl_verif.Text = "NÃO PASSOU !";
-                pai.lbl_verif.ForeColor = System.Drawing.Color.Red;
+                pai.lbl_verifTracao.Text = "NÃO PASSOU !";
+                pai.lbl_verifTracao.ForeColor = System.Drawing.Color.Red;
             }
 
-            return "TRAÇÃO: \r\n" +
-                            $"1 - ESCOAMENTO DA SEÇÃO BRUTA:{ver1} \r\n" +
-                            $"Força resistente: Ft,rd = ({area:F2} x {fy:F2}) / 1,10 = {ftrd1:F2} kN\r\n" +
-                            $"Força solicitante: {ftsd:F2} kN \r\n \r\n" +
-                            $"2 - RUPTURA DA SEÇÃO EFETIVA: {ver2}\r\n" +
-                            $"Diâmetro do furo: {diamfuro:F2} cm \r\n" +
-                            $"Ct: {ct:F2} - {verCt} \r\n" +
-                            $"Área líquida: An = A - nf x df x t = {area:F2} - {numfuros:F2} x {diamfuro:F2} x {t:F2} = {An:F2}  cm2\r\n" +
-                            $"Área líquida efetiva: Ae = Ct x An = {ct:F2} x {An:F2} = {Ae:F2} cm2\r\n" +
-                            $"Força resistente: Ftrd = {Ae:F2} x {fu:F2} / 1.35  = {ftrd2:F2} kN\r\n" +
-                            $"Força solicitante: {ftsd:F2} kN\r\n \r\n" +
+            string resultado = $"1 - ESCOAMENTO DA SEÇÃO BRUTA:{ver1} \r\n" +
+                             $"Ft,rd = ({area:F2} x {fy:F2}) / 1,10 = {ftrd1:F2} kN\r\n" +
+                             $"Ft,sd: {ftsd:F2} kN \r\n \r\n" +
+                             $"2 - RUPTURA DA SEÇÃO EFETIVA: {ver2}\r\n" +
+                             $"df: {diam:F2} + {folga:F2} + {punc:F2} = {diamfuro:F2} cm \r\n" +
+                             $"Ct: {ct:F2} - {verCt} \r\n";
+                            
+                             if (tipoperfil =="i" || tipoperfil == "u")
+            {
+                resultado += $"An = A - nf x df x tw - nf x df x tf= {area:F2} - {numfurosAlma:F2} x {diamfuro:F2} x {tw:F2} - {numfurosMesa:F2} x {diamfuro:F2} x {tf:F2}= {an:F2}  cm2\r\n";
+            }
+                            else if (tipoperfil == "l")
+            {
+                             resultado += $"An = A - nf x df x t = {area:F2} - {numfuros:F2} x {diamfuro:F2} x {t:F2} = {an:F2}  cm2\r\n";
+            }
+
+                         resultado +=   $"Ae = Ct x An = {ct:F2} x {an:F2} = {ae:F2} cm2\r\n" +
+                            $"Ft,rd = {ae:F2} x {fu:F2} / 1.35  = {ftrd2:F2} kN\r\n" +
+                            $"Ft,sd = {ftsd:F2} kN\r\n \r\n" +
                             $"3 - ESTADO LIMITE DE SERVIÇO: {ver3} \r\n" +
                             $"Esbeltez: L / r,min = {l:F2} / {rmin:F2} = {esb:F2}\r\n \r\n" +
-                            $"A taxa de aproveitamento do perfil é de {taxa:F2} % \r\n \r\n";
-                           
+                            $"A taxa de aproveitamento do perfil é de {taxa:F2} % \r\n \r\n" +
+                             " ======================================================== \r\n" +
+                            "LEGENDA: \r\n" +
+                            "Ft,rd = Força resistente de cálculo (kN) \r\n" +
+                            "Ft,sd = Força solicitante de cálculo (kN) \r\n" +
+                            "A: Área da seção transversal do perfil (cm2) \r\n" +
+                            "An: Área líquida efetiva (cm2) \r\n" +
+                            "nf: Número de furos na seção transversal \r\n" +
+                            "df: Diâmetro do furo (cm) \r\n" +
+                            "Ct: Coeficiente de redução da área líquida \r\n "+
+                            "t, tw ou tf: Espessura da chapa que está sendo ligada "; 
+
+           return resultado;
 
 
         }
+
+       
 
         public double CalculoCt(int tipoCt, string tipoperfil, double ac, double lc)
         {

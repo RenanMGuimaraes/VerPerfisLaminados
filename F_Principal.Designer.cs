@@ -57,10 +57,6 @@
             this.btn_propPerfil = new System.Windows.Forms.Button();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salvarComoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.traçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compressãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,10 +67,16 @@
             this.otimizarFlexãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarPDFToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_resultado = new System.Windows.Forms.RichTextBox();
-            this.lbl_verif = new System.Windows.Forms.Label();
+            this.txt_resultadoTracao = new System.Windows.Forms.RichTextBox();
+            this.lbl_verifTracao = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab_tracao = new System.Windows.Forms.TabPage();
+            this.tab_compressao = new System.Windows.Forms.TabPage();
+            this.txt_resultadoCompressao = new System.Windows.Forms.RichTextBox();
+            this.tab_flexao = new System.Windows.Forms.TabPage();
+            this.txt_resultadoFlexao = new System.Windows.Forms.RichTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -86,9 +88,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tab_tracao.SuspendLayout();
+            this.tab_compressao.SuspendLayout();
+            this.tab_flexao.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -383,9 +388,9 @@
             "W 610 x 155,0",
             "W 610 x 174,0",
             "W 610 x 217,0"});
-            this.lb_perfis.Location = new System.Drawing.Point(15, 32);
+            this.lb_perfis.Location = new System.Drawing.Point(6, 32);
             this.lb_perfis.Name = "lb_perfis";
-            this.lb_perfis.Size = new System.Drawing.Size(146, 225);
+            this.lb_perfis.Size = new System.Drawing.Size(155, 225);
             this.lb_perfis.TabIndex = 1;
             this.lb_perfis.SelectedIndexChanged += new System.EventHandler(this.lb_perfis_SelectedIndexChanged);
             // 
@@ -448,7 +453,7 @@
             // 
             this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
             this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_apagar.Location = new System.Drawing.Point(893, 34);
+            this.btn_apagar.Location = new System.Drawing.Point(848, 34);
             this.btn_apagar.Name = "btn_apagar";
             this.btn_apagar.Size = new System.Drawing.Size(52, 50);
             this.btn_apagar.TabIndex = 8;
@@ -473,44 +478,15 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
             this.dadosToolStripMenuItem,
             this.resultadoToolStripMenuItem,
             this.sobreToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(10, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(361, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(180, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // arquivoToolStripMenuItem
-            // 
-            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salvarToolStripMenuItem,
-            this.salvarComoToolStripMenuItem,
-            this.abrirToolStripMenuItem});
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.arquivoToolStripMenuItem.Text = "Arquivo";
-            // 
-            // salvarToolStripMenuItem
-            // 
-            this.salvarToolStripMenuItem.Name = "salvarToolStripMenuItem";
-            this.salvarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salvarToolStripMenuItem.Text = "Salvar";
-            // 
-            // salvarComoToolStripMenuItem
-            // 
-            this.salvarComoToolStripMenuItem.Name = "salvarComoToolStripMenuItem";
-            this.salvarComoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.salvarComoToolStripMenuItem.Text = "Salvar como";
-            // 
-            // abrirToolStripMenuItem
-            // 
-            this.abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            this.abrirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.abrirToolStripMenuItem.Text = "Abrir";
             // 
             // dadosToolStripMenuItem
             // 
@@ -526,21 +502,23 @@
             // traçãoToolStripMenuItem
             // 
             this.traçãoToolStripMenuItem.Name = "traçãoToolStripMenuItem";
-            this.traçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.traçãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.traçãoToolStripMenuItem.Text = "Tração";
             this.traçãoToolStripMenuItem.Click += new System.EventHandler(this.traçãoToolStripMenuItem_Click);
             // 
             // compressãoToolStripMenuItem
             // 
+            this.compressãoToolStripMenuItem.Enabled = false;
             this.compressãoToolStripMenuItem.Name = "compressãoToolStripMenuItem";
-            this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.compressãoToolStripMenuItem.Text = "Compressão";
             this.compressãoToolStripMenuItem.Click += new System.EventHandler(this.compressãoToolStripMenuItem_Click);
             // 
             // flexãoToolStripMenuItem
             // 
+            this.flexãoToolStripMenuItem.Enabled = false;
             this.flexãoToolStripMenuItem.Name = "flexãoToolStripMenuItem";
-            this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.flexãoToolStripMenuItem.Text = "Flexão";
             this.flexãoToolStripMenuItem.Click += new System.EventHandler(this.flexãoToolStripMenuItem_Click);
             // 
@@ -591,35 +569,26 @@
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // txt_resultadoTracao
             // 
-            this.groupBox1.Controls.Add(this.txt_resultado);
-            this.groupBox1.Location = new System.Drawing.Point(408, 90);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 562);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Resultado";
+            this.txt_resultadoTracao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_resultadoTracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_resultadoTracao.Location = new System.Drawing.Point(6, 3);
+            this.txt_resultadoTracao.Name = "txt_resultadoTracao";
+            this.txt_resultadoTracao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txt_resultadoTracao.Size = new System.Drawing.Size(472, 525);
+            this.txt_resultadoTracao.TabIndex = 0;
+            this.txt_resultadoTracao.Text = "";
             // 
-            // txt_resultado
+            // lbl_verifTracao
             // 
-            this.txt_resultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_resultado.Location = new System.Drawing.Point(6, 16);
-            this.txt_resultado.Name = "txt_resultado";
-            this.txt_resultado.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txt_resultado.Size = new System.Drawing.Size(531, 479);
-            this.txt_resultado.TabIndex = 0;
-            this.txt_resultado.Text = "";
-            // 
-            // lbl_verif
-            // 
-            this.lbl_verif.AutoSize = true;
-            this.lbl_verif.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_verif.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lbl_verif.Location = new System.Drawing.Point(622, 45);
-            this.lbl_verif.Name = "lbl_verif";
-            this.lbl_verif.Size = new System.Drawing.Size(0, 24);
-            this.lbl_verif.TabIndex = 18;
+            this.lbl_verifTracao.AutoSize = true;
+            this.lbl_verifTracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_verifTracao.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lbl_verifTracao.Location = new System.Drawing.Point(569, 45);
+            this.lbl_verifTracao.Name = "lbl_verifTracao";
+            this.lbl_verifTracao.Size = new System.Drawing.Size(0, 24);
+            this.lbl_verifTracao.TabIndex = 18;
             // 
             // toolStripContainer1
             // 
@@ -632,32 +601,106 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.label2);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menuStrip1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_geo);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_calc);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.lbl_verif);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.lbl_verifTracao);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_esforcos);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_apagar);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_propPerfil);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(959, 656);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(911, 676);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(959, 656);
+            this.toolStripContainer1.Size = new System.Drawing.Size(911, 676);
             this.toolStripContainer1.TabIndex = 21;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tab_tracao);
+            this.tabControl1.Controls.Add(this.tab_compressao);
+            this.tabControl1.Controls.Add(this.tab_flexao);
+            this.tabControl1.Location = new System.Drawing.Point(408, 94);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(492, 556);
+            this.tabControl1.TabIndex = 22;
+            // 
+            // tab_tracao
+            // 
+            this.tab_tracao.Controls.Add(this.txt_resultadoTracao);
+            this.tab_tracao.Location = new System.Drawing.Point(4, 22);
+            this.tab_tracao.Name = "tab_tracao";
+            this.tab_tracao.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_tracao.Size = new System.Drawing.Size(484, 530);
+            this.tab_tracao.TabIndex = 0;
+            this.tab_tracao.Text = "Tração";
+            this.tab_tracao.UseVisualStyleBackColor = true;
+            // 
+            // tab_compressao
+            // 
+            this.tab_compressao.Controls.Add(this.txt_resultadoCompressao);
+            this.tab_compressao.Location = new System.Drawing.Point(4, 22);
+            this.tab_compressao.Name = "tab_compressao";
+            this.tab_compressao.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_compressao.Size = new System.Drawing.Size(484, 530);
+            this.tab_compressao.TabIndex = 1;
+            this.tab_compressao.Text = "Compressão";
+            this.tab_compressao.UseVisualStyleBackColor = true;
+            // 
+            // txt_resultadoCompressao
+            // 
+            this.txt_resultadoCompressao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_resultadoCompressao.Location = new System.Drawing.Point(6, 3);
+            this.txt_resultadoCompressao.Name = "txt_resultadoCompressao";
+            this.txt_resultadoCompressao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txt_resultadoCompressao.Size = new System.Drawing.Size(472, 525);
+            this.txt_resultadoCompressao.TabIndex = 1;
+            this.txt_resultadoCompressao.Text = "";
+            // 
+            // tab_flexao
+            // 
+            this.tab_flexao.Controls.Add(this.txt_resultadoFlexao);
+            this.tab_flexao.Location = new System.Drawing.Point(4, 22);
+            this.tab_flexao.Name = "tab_flexao";
+            this.tab_flexao.Size = new System.Drawing.Size(484, 530);
+            this.tab_flexao.TabIndex = 2;
+            this.tab_flexao.Text = "Flexão";
+            this.tab_flexao.UseVisualStyleBackColor = true;
+            // 
+            // txt_resultadoFlexao
+            // 
+            this.txt_resultadoFlexao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_resultadoFlexao.Location = new System.Drawing.Point(6, 3);
+            this.txt_resultadoFlexao.Name = "txt_resultadoFlexao";
+            this.txt_resultadoFlexao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txt_resultadoFlexao.Size = new System.Drawing.Size(472, 525);
+            this.txt_resultadoFlexao.TabIndex = 1;
+            this.txt_resultadoFlexao.Text = "";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(193, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Versão de testes";
             // 
             // F_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(959, 656);
+            this.ClientSize = new System.Drawing.Size(911, 676);
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -681,11 +724,14 @@
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tab_tracao.ResumeLayout(false);
+            this.tab_compressao.ResumeLayout(false);
+            this.tab_flexao.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -713,7 +759,6 @@
         public System.Windows.Forms.TextBox txt_prop;
         public System.Windows.Forms.ListBox lb_perfis;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
         private System.Windows.Forms.Button btn_propPerfil;
@@ -722,7 +767,6 @@
         private System.Windows.Forms.ToolStripMenuItem flexãoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_esforcos;
         private System.Windows.Forms.ToolStripMenuItem resultadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem;
@@ -731,12 +775,16 @@
         private System.Windows.Forms.ToolStripMenuItem otimizarFlexãoToolStripMenuItem;
         private System.Windows.Forms.Button btn_geo;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStripMenuItem salvarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salvarComoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem2;
-        public System.Windows.Forms.Label lbl_verif;
-        public System.Windows.Forms.RichTextBox txt_resultado;
+        public System.Windows.Forms.Label lbl_verifTracao;
+        public System.Windows.Forms.RichTextBox txt_resultadoTracao;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tab_tracao;
+        private System.Windows.Forms.TabPage tab_compressao;
+        private System.Windows.Forms.TabPage tab_flexao;
+        public System.Windows.Forms.RichTextBox txt_resultadoCompressao;
+        public System.Windows.Forms.RichTextBox txt_resultadoFlexao;
+        private System.Windows.Forms.Label label2;
     }
 }
 
