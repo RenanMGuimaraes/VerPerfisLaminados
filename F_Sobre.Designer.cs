@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Sobre));
             this.btn_ok = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_ok
             // 
             this.btn_ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ok.Location = new System.Drawing.Point(145, 322);
+            this.btn_ok.Location = new System.Drawing.Point(265, 303);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(50, 23);
+            this.btn_ok.Size = new System.Drawing.Size(78, 23);
             this.btn_ok.TabIndex = 0;
             this.btn_ok.Text = "OK";
             this.btn_ok.UseVisualStyleBackColor = true;
@@ -51,7 +53,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(339, 71);
+            this.label1.Size = new System.Drawing.Size(614, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Este aplicativo foi  desenvolvido pelo Eng. Renan Moura Guimarães com a finalidad" +
     "e de auxílio na elaboração de projetos em aço e também para o uso didático. O se" +
@@ -61,9 +63,9 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 117);
+            this.label2.Location = new System.Drawing.Point(12, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(339, 33);
+            this.label2.Size = new System.Drawing.Size(567, 33);
             this.label2.TabIndex = 2;
             this.label2.Text = "O autor não se responsabiliza pela uso dos resultados emitidos. Confira sempre os" +
     " cálculos realizados !";
@@ -72,9 +74,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 187);
+            this.label3.Location = new System.Drawing.Point(12, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(339, 33);
+            this.label3.Size = new System.Drawing.Size(567, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "Em caso de bugs, sugestões ou contato, favor enviar email para: renanguimaraes@li" +
     "ve.com";
@@ -83,19 +85,29 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 257);
+            this.label4.Location = new System.Drawing.Point(12, 161);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(325, 48);
+            this.label4.Size = new System.Drawing.Size(572, 34);
             this.label4.TabIndex = 4;
             this.label4.Text = "Visite meu site e conheça meu trabalho e outros aplicativos desenvolvidos: www.re" +
     "nanguimaraes.eng.br";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 217);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(572, 48);
+            this.label5.TabIndex = 5;
+            this.label5.Text = resources.GetString("label5.Text");
             // 
             // F_Sobre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(363, 357);
+            this.ClientSize = new System.Drawing.Size(635, 338);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -116,5 +128,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

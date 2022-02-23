@@ -13,7 +13,8 @@ namespace VerPerfisLaminados
     public partial class F_DadosTracaoI : Form
     {
         F_Principal pai;
-        public F_DadosTracaoI(F_Principal f_Principal, int tipoCt, int numfurosAlma, int numfurosMesa, double diam, double punc, double folga, double lc, double ac)
+        
+        public F_DadosTracaoI(F_Principal f_Principal, int tipoCt, string lig, int numfurosAlma, int numfurosMesa, double diam, double punc, double folga, double lc, double ac)
         {
             InitializeComponent();
             pai = f_Principal;
@@ -24,6 +25,19 @@ namespace VerPerfisLaminados
             txt_folgaFuro.Text = folga.ToString();
             txt_lc.Text = lc.ToString();
             txt_ac.Text = ac.ToString();
+
+            if (lig == "alma")
+            {
+                rb_alma.Checked = true;
+            }
+            if (lig == "mesa")
+            {
+                rb_mesa.Checked = true;
+            }
+            if(lig == "ambos")
+            {
+                rb_ambos.Checked = true;
+            }
 
             if (tipoCt == 1)
             {
@@ -64,9 +78,13 @@ namespace VerPerfisLaminados
             {
                 pai.lig = "alma";
             }
-            else if(rb_mesa.Checked)
+            if(rb_mesa.Checked)
             {
                 pai.lig = "mesa";
+            }
+            if (rb_ambos.Checked)
+            {
+                pai.lig = "ambos";
             }
             pai.numfurosAlma = int.Parse(cb_numfurosAlma.Text);
             pai.numfurosMesa = int.Parse(cb_numfurosMesa.Text);
@@ -160,6 +178,10 @@ namespace VerPerfisLaminados
             txt_puncionamento.Enabled = true;
             txt_folgaFuro.Enabled = true;
             txt_lc.Enabled = false;
+            rb_alma.Enabled = false;
+            rb_mesa.Enabled = false;
+            rb_ambos.Enabled = true;
+            rb_ambos.Checked = true;
         }
 
         private void rb_ct2_CheckedChanged(object sender, EventArgs e)
@@ -173,6 +195,9 @@ namespace VerPerfisLaminados
             txt_lc.Enabled = false;
             cb_numfurosAlma.Text = "0";
             cb_numfurosMesa.Text = "0";
+            rb_alma.Enabled = false;
+            rb_mesa.Enabled = false;
+            rb_ambos.Enabled = false;
         }
 
         private void rb_ct3_CheckedChanged(object sender, EventArgs e)
@@ -184,6 +209,9 @@ namespace VerPerfisLaminados
             txt_puncionamento.Enabled = true;
             txt_folgaFuro.Enabled = true;
             txt_lc.Enabled = true;
+            rb_alma.Enabled = true;
+            rb_mesa.Enabled = true;
+            rb_ambos.Enabled = true;
         }
 
         private void rb_alma_CheckedChanged(object sender, EventArgs e)

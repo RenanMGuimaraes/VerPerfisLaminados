@@ -43,24 +43,24 @@ namespace VerPerfisLaminados
             //Calcula Cw
             Cw = ((tf*Math.Pow((bf - 0.5*tw), 3.0)*Math.Pow((d - tf),2.0) / 12.0))*((3*(bf-0.5*tw)*tf + 2*(d - tf)*tw)/(6*(bf -0.5*tw)*tf + (d - tf)*tw));
 
-                return $"Perfil: {perfil} \r\n \r\n" +
-                           $"Peso: {peso} kg/m \r\n" +
-                           $"d: {d}  mm \r\n" +
-                           $"tw: {tw} mm \r\n" +
-                           $"bf: {bf} mm \r\n" +
-                           $"tf: {tf} mm \r\n" +
-                           $"Área: {area} cm2 \r\n \r\n" +
-                           "EIXO X-X \r\n" +
-                           $"Ix: {Ix} cm4 \r\n" +
-                           $"Wx: {Wx} cm3 \r\n" +
-                           $"rx: {rx} cm \r\n \r\n " +
-                           "EIXO Y-Y \r\n" +
-                           $"Iy: {Iy} cm4 \r\n" +
-                           $"Wy: {Wy} cm3 \r\n" +
-                           $"ry: {ry} cm \r\n \r\n" +
-                           $"x: {x} cm \r\n" +
-                           $"It: {It} cm4 " +
-                           $"Cw: {Cw} cm6";
+            return $"Perfil: {perfil} \r\n \r\n" +
+                       $"Peso: {peso} kg/m \r\n" +
+                       $"d: {d}  mm \r\n" +
+                       $"tw: {tw} mm \r\n" +
+                       $"bf: {bf} mm \r\n" +
+                       $"tf: {tf} mm \r\n" +
+                       $"Área: {area} cm2 \r\n \r\n" +
+                       "EIXO X-X \r\n" +
+                       $"Ix: {Ix} cm4 \r\n" +
+                       $"Wx: {Wx} cm3 \r\n" +
+                       $"rx: {rx} cm \r\n \r\n " +
+                       "EIXO Y-Y \r\n" +
+                       $"Iy: {Iy} cm4 \r\n" +
+                       $"Wy: {Wy} cm3 \r\n" +
+                       $"ry: {ry} cm \r\n \r\n" +
+                       $"x: {x} cm \r\n" +
+                       $"It: {It:F2} cm4 ";
+                          // $"Cw: {Cw} cm6";
             
         }
     }

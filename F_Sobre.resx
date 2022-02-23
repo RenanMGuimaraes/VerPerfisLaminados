@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Gostou do aplicativo? Ele foi útil para você no seu dia-a-dia? Apoie o desenvolvimento deste e outros aplicativos semelhantes! Faça uma contribuição de qualquer valor via PIX para o email: renanguimaraes@live.com! Muito obrigado !!</value>
+  </data>
 </root>

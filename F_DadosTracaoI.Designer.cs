@@ -34,6 +34,8 @@
             this.rb_ct2 = new System.Windows.Forms.RadioButton();
             this.rb_ct1 = new System.Windows.Forms.RadioButton();
             this.btn_lc = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_numfurosMesa = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -54,12 +56,10 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btn_ac = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_ambos = new System.Windows.Forms.RadioButton();
             this.rb_mesa = new System.Windows.Forms.RadioButton();
             this.rb_alma = new System.Windows.Forms.RadioButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.rb_ambos = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cb_numfurosMesa = new System.Windows.Forms.ComboBox();
             this.groupBox7.SuspendLayout();
             this.btn_lc.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -142,6 +142,37 @@
             this.btn_lc.TabIndex = 12;
             this.btn_lc.TabStop = false;
             this.btn_lc.Text = "Furos na seção transversal";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Número de furos na mesa";
+            // 
+            // cb_numfurosMesa
+            // 
+            this.cb_numfurosMesa.Enabled = false;
+            this.cb_numfurosMesa.FormattingEnabled = true;
+            this.cb_numfurosMesa.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cb_numfurosMesa.Location = new System.Drawing.Point(22, 100);
+            this.cb_numfurosMesa.Name = "cb_numfurosMesa";
+            this.cb_numfurosMesa.Size = new System.Drawing.Size(30, 21);
+            this.cb_numfurosMesa.TabIndex = 26;
+            this.cb_numfurosMesa.Text = "0";
             // 
             // label20
             // 
@@ -352,6 +383,17 @@
             this.groupBox1.Text = "Ligações";
             this.toolTip1.SetToolTip(this.groupBox1, "Aplica-se no caso de perfis I ou U");
             // 
+            // rb_ambos
+            // 
+            this.rb_ambos.Location = new System.Drawing.Point(6, 89);
+            this.rb_ambos.MaximumSize = new System.Drawing.Size(400, 200);
+            this.rb_ambos.Name = "rb_ambos";
+            this.rb_ambos.Size = new System.Drawing.Size(314, 30);
+            this.rb_ambos.TabIndex = 2;
+            this.rb_ambos.Text = "A ligação é feita pelas mesas (ou abas) do perfil e pela alma";
+            this.rb_ambos.UseVisualStyleBackColor = true;
+            this.rb_ambos.CheckedChanged += new System.EventHandler(this.rb_ambos_CheckedChanged);
+            // 
             // rb_mesa
             // 
             this.rb_mesa.Location = new System.Drawing.Point(6, 53);
@@ -375,48 +417,6 @@
             this.rb_alma.Text = "A ligação é feita pela alma do perfil";
             this.rb_alma.UseVisualStyleBackColor = true;
             this.rb_alma.CheckedChanged += new System.EventHandler(this.rb_alma_CheckedChanged);
-            // 
-            // rb_ambos
-            // 
-            this.rb_ambos.Location = new System.Drawing.Point(6, 89);
-            this.rb_ambos.MaximumSize = new System.Drawing.Size(400, 200);
-            this.rb_ambos.Name = "rb_ambos";
-            this.rb_ambos.Size = new System.Drawing.Size(295, 30);
-            this.rb_ambos.TabIndex = 2;
-            this.rb_ambos.Text = "A ligação é feita pelas mesas (ou abas) do perfil";
-            this.rb_ambos.UseVisualStyleBackColor = true;
-            this.rb_ambos.CheckedChanged += new System.EventHandler(this.rb_ambos_CheckedChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Número de furos na mesa";
-            // 
-            // cb_numfurosMesa
-            // 
-            this.cb_numfurosMesa.Enabled = false;
-            this.cb_numfurosMesa.FormattingEnabled = true;
-            this.cb_numfurosMesa.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"});
-            this.cb_numfurosMesa.Location = new System.Drawing.Point(22, 100);
-            this.cb_numfurosMesa.Name = "cb_numfurosMesa";
-            this.cb_numfurosMesa.Size = new System.Drawing.Size(30, 21);
-            this.cb_numfurosMesa.TabIndex = 26;
-            this.cb_numfurosMesa.Text = "0";
             // 
             // F_DadosTracaoI
             // 

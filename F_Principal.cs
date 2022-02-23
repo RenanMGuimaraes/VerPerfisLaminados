@@ -43,7 +43,7 @@ namespace VerPerfisLaminados
 
         //Variaveis gerais - tração
         public int tipoCt = 1;
-        public string lig = "alma"; // define se a ligação é feita na alma ou na mesa
+        public string lig = "alma"; // define se a ligação é feita na alma, na mesa ou ambos.
         public double punc = 2.0;
         public double folga = 1.5;
         public double diam = 12.5;
@@ -187,7 +187,7 @@ namespace VerPerfisLaminados
         {
             if (tipoperfil =="i" || tipoperfil == "u")
             {
-                F_DadosTracaoI f_DadosTracao = new F_DadosTracaoI(this, tipoCt, numfurosAlma, numfurosMesa, diam, punc, folga, lc, ac);
+                F_DadosTracaoI f_DadosTracao = new F_DadosTracaoI(this, tipoCt, lig, numfurosAlma, numfurosMesa, diam, punc, folga, lc, ac);
                 f_DadosTracao.ShowDialog();
             }
             if (tipoperfil == "l")

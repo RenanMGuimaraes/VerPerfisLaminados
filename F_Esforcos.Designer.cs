@@ -88,6 +88,7 @@
             // 
             // txt_compressao
             // 
+            this.txt_compressao.Enabled = false;
             this.txt_compressao.Location = new System.Drawing.Point(16, 83);
             this.txt_compressao.Name = "txt_compressao";
             this.txt_compressao.Size = new System.Drawing.Size(53, 20);
@@ -115,6 +116,7 @@
             // 
             // txt_momy
             // 
+            this.txt_momy.Enabled = false;
             this.txt_momy.Location = new System.Drawing.Point(16, 171);
             this.txt_momy.Name = "txt_momy";
             this.txt_momy.Size = new System.Drawing.Size(53, 20);
@@ -142,6 +144,7 @@
             // 
             // txt_cortante
             // 
+            this.txt_cortante.Enabled = false;
             this.txt_cortante.Location = new System.Drawing.Point(16, 215);
             this.txt_cortante.Name = "txt_cortante";
             this.txt_cortante.Size = new System.Drawing.Size(53, 20);
@@ -169,6 +172,7 @@
             // 
             // txt_momx
             // 
+            this.txt_momx.Enabled = false;
             this.txt_momx.Location = new System.Drawing.Point(16, 127);
             this.txt_momx.Name = "txt_momx";
             this.txt_momx.Size = new System.Drawing.Size(53, 20);

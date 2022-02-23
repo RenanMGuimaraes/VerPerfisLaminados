@@ -142,7 +142,19 @@ namespace VerPerfisLaminados
                             
                              if (tipoperfil =="i" || tipoperfil == "u")
             {
-                resultado += $"An = A - nf x df x tw - nf x df x tf= {area:F2} - {numfurosAlma:F2} x {diamfuro:F2} x {tw:F2} - {numfurosMesa:F2} x {diamfuro:F2} x {tf:F2}= {an:F2}  cm2\r\n";
+                if (lig == "alma")
+                {
+                    resultado += $"An = A - nf x df x tw = {area:F2} - {numfurosAlma:F2} x {diamfuro:F2} x {tw:F2} = {an:F2}  cm2\r\n";
+                }
+                if (lig == "mesa")
+                {
+                    resultado += $"An = A - nf x df x tf= {area:F2} - {numfurosMesa:F2} x {diamfuro:F2} x {tf:F2}= {an:F2}  cm2\r\n";
+                }
+                if (lig == "ambos")
+                {
+                    resultado += $"An = A - nf x df x tw - nf x df x tf= {area:F2} - {numfurosAlma:F2} x {diamfuro:F2} x {tw:F2} - {numfurosMesa:F2} x {diamfuro:F2} x {tf:F2}= {an:F2}  cm2\r\n";
+                }
+                
             }
                             else if (tipoperfil == "l")
             {
@@ -163,7 +175,7 @@ namespace VerPerfisLaminados
                             "An: Área líquida efetiva (cm2) \r\n" +
                             "nf: Número de furos na seção transversal \r\n" +
                             "df: Diâmetro do furo (cm) \r\n" +
-                            "Ct: Coeficiente de redução da área líquida \r\n "+
+                            "Ct: Coeficiente de redução da área líquida \r\n"+
                             "t, tw ou tf: Espessura da chapa que está sendo ligada "; 
 
            return resultado;
