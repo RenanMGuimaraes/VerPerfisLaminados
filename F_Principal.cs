@@ -18,7 +18,7 @@ namespace VerPerfisLaminados
         public F_Principal()
         {
             InitializeComponent();
-    }
+        }
 
         //Variáveis gerais
         string tipoperfil = "i"; //Usado para checar o tipo de perfil a ser plotado na listbox
@@ -36,14 +36,14 @@ namespace VerPerfisLaminados
         public double mxsd = 0;
         public double mysd = 0;
 
-        //Geomtria do perfil
+        //Geometria do perfil
         public double lx = 0;
         public double ly = 0;
         public double lz = 0;
 
         //Variaveis gerais - tração
         public int tipoCt = 1;
-        public string lig = "alma"; // define se a ligação é feita na alma, na mesa ou ambos.
+        public string lig = "ambos"; // define se a ligação é feita na alma, na mesa ou ambos.
         public double punc = 2.0;
         public double folga = 1.5;
         public double diam = 12.5;
@@ -216,11 +216,6 @@ namespace VerPerfisLaminados
             f_Sobre.ShowDialog();
         }
 
-        private void btn_calcular_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void F_Principal_Load(object sender, EventArgs e)
         {
 
@@ -233,14 +228,22 @@ namespace VerPerfisLaminados
 
         private void btn_calc_Click(object sender, EventArgs e)
         {
-            txt_resultadoTracao.Text = "RESULTADO: \r\n \r\n";
+            
 
+            //tracao
             CalculaTracao tracao = new CalculaTracao();
+            txt_resultadoTracao.Text = "RESULTADO: \r\n \r\n";
             txt_resultadoTracao.Text += tracao.Tracao(tipoCt, lig, tipoperfil, ac, lc, fy, ftsd, fu, punc, folga,
             diam, numfuros, numfurosAlma, numfurosMesa, lx, ly, lz, this);
+
+            //compressão
             CalculaCompressao compressao = new CalculaCompressao();
+            txt_resultadoCompressao.Text = "RESULTADO: \r\n \r\n";
+            txt_resultadoCompressao.Text += compressao.Compressao(tipoperfil, elast, fy, lx, ly, lz);
+
+            //flexao
             CalculaFlexao flexao = new CalculaFlexao();
-            
+
         }
 
         private void btn_propPerfil_Click(object sender, EventArgs e)

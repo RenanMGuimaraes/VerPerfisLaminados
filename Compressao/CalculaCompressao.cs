@@ -8,7 +8,7 @@ namespace VerPerfisLaminados
 {
     internal class CalculaCompressao
     {
-        public double CalculaQ(string tipoperfil, double e, double fy)
+        public double CalculaQ(string tipoperfil, double elast, double fy)
         {
             double q = 0;
             double qa;
@@ -21,7 +21,7 @@ namespace VerPerfisLaminados
                 //Alma
                 t = PropPerfilI.tw;
                 b = PropPerfilI.dlinha;
-                btlim = 1.49 * Math.Sqrt(e / fy);
+                btlim = 1.49 * Math.Sqrt(elast / fy);
                 double btalma = b / t;
 
                 if (btalma <= btlim)
@@ -32,7 +32,7 @@ namespace VerPerfisLaminados
                 {
                     //Área efetiva
                     double ag = PropPerfilI.area;
-                    double bef = 1.92 * t * Math.Sqrt(e / fy) * (1.0 - (0.34 / btalma) * Math.Sqrt(e / fy));
+                    double bef = 1.92 * t * Math.Sqrt(elast / fy) * (1.0 - (0.34 / btalma) * Math.Sqrt(elast / fy));
                     if (bef > b)
                     {
                         bef = b;
@@ -44,7 +44,7 @@ namespace VerPerfisLaminados
                 //Mesa               
                 b = PropPerfilI.bf / 2.0;
                 t = PropPerfilI.tf;
-                btlim = 0.56 * Math.Sqrt(e / fy);
+                btlim = 0.56 * Math.Sqrt(elast / fy);
                 double btmesa = b / t;
                 if (btmesa <= 1.0)
                 {
@@ -52,13 +52,13 @@ namespace VerPerfisLaminados
                 }
                 else
                 {
-                    if (btmesa > (0.56 * Math.Sqrt(e / fy)) && btmesa <= (1.03 * Math.Sqrt(e / fy)))
+                    if (btmesa > (0.56 * Math.Sqrt(elast / fy)) && btmesa <= (1.03 * Math.Sqrt(elast / fy)))
                     {
-                        qs = 1.415 - 0.74 * btmesa * Math.Sqrt(e / fy);
+                        qs = 1.415 - 0.74 * btmesa * Math.Sqrt(elast / fy);
                     }
-                    if (btmesa > 1.03 * Math.Sqrt(e / fy))
+                    if (btmesa > 1.03 * Math.Sqrt(elast / fy))
                     {
-                        qs = (0.69 * e) / (fy * Math.Pow(btmesa, 2.0));
+                        qs = (0.69 * elast) / (fy * Math.Pow(btmesa, 2.0));
                     }
                 }
 
@@ -70,7 +70,7 @@ namespace VerPerfisLaminados
                 //Alma
                 t = PropPerfilU.tw;
                 b = PropPerfilU.d - 2*PropPerfilU.tf;
-                btlim = 1.49 * Math.Sqrt(e / fy);
+                btlim = 1.49 * Math.Sqrt(elast / fy);
                 double btalma = b / t;
 
                 if (btalma <= btlim)
@@ -81,7 +81,7 @@ namespace VerPerfisLaminados
                 {
                     //Área efetiva
                     double ag = PropPerfilU.area;
-                    double bef = 1.92 * t * Math.Sqrt(e / fy) * (1.0 - (0.34 / btalma) * Math.Sqrt(e / fy));
+                    double bef = 1.92 * t * Math.Sqrt(elast / fy) * (1.0 - (0.34 / btalma) * Math.Sqrt(elast / fy));
                     if (bef > b)
                     {
                         bef = b;
@@ -93,7 +93,7 @@ namespace VerPerfisLaminados
                 //Mesa               
                 b = PropPerfilU.bf / 2.0;
                 t = PropPerfilU.tf;
-                btlim = 0.45 * Math.Sqrt(e / fy);
+                btlim = 0.45 * Math.Sqrt(elast / fy);
                 double btmesa = b / t;
                 if (btmesa <= 1.0)
                 {
@@ -101,13 +101,13 @@ namespace VerPerfisLaminados
                 }
                 else
                 {
-                    if (btmesa > (0.56 * Math.Sqrt(e / fy)) && btmesa <= (1.03 * Math.Sqrt(e / fy)))
+                    if (btmesa > (0.56 * Math.Sqrt(elast / fy)) && btmesa <= (1.03 * Math.Sqrt(elast / fy)))
                     {
-                        qs = 1.415 - 0.74 * btmesa * Math.Sqrt(e / fy);
+                        qs = 1.415 - 0.74 * btmesa * Math.Sqrt(elast / fy);
                     }
-                    if (btmesa > 1.03 * Math.Sqrt(e / fy))
+                    if (btmesa > 1.03 * Math.Sqrt(elast / fy))
                     {
-                        qs = (0.69 * e) / (fy * Math.Pow(btmesa, 2.0));
+                        qs = (0.69 * elast) / (fy * Math.Pow(btmesa, 2.0));
                     }
                 }
 
@@ -117,7 +117,7 @@ namespace VerPerfisLaminados
             if (tipoperfil == "l")
             {
                 //Aba
-                btlim = 0.45 * Math.Sqrt(e / fy);
+                btlim = 0.45 * Math.Sqrt(elast / fy);
                 b = PropPerfilL.b;
                 t = PropPerfilL.t;
                 double btaba = b / t;
@@ -127,13 +127,13 @@ namespace VerPerfisLaminados
                 }
                 else
                 {
-                    if (btaba > (0.45 * Math.Sqrt(e / fy)) && btaba <= (0.91 * Math.Sqrt(e / fy)))
+                    if (btaba > (0.45 * Math.Sqrt(elast / fy)) && btaba <= (0.91 * Math.Sqrt(elast / fy)))
                     {
-                        qs = 1.340 - 0.76 * btaba * Math.Sqrt(e / fy);
+                        qs = 1.340 - 0.76 * btaba * Math.Sqrt(elast / fy);
                     }
-                    if (btaba > 0.91 * Math.Sqrt(e / fy))
+                    if (btaba > 0.91 * Math.Sqrt(elast / fy))
                     {
-                        qs = (0.53 * e) / (fy * Math.Pow(btaba, 2.0));
+                        qs = (0.53 * elast) / (fy * Math.Pow(btaba, 2.0));
                     }
                     q = qs;
 
@@ -201,12 +201,12 @@ namespace VerPerfisLaminados
 
         }
 
-        public string Compressao(string tipoperfil, double e, double fy, double lx, double ly, double lz)
+        public string Compressao(string tipoperfil, double elast, double fy, double lx, double ly, double lz)
         {
             fy = fy / 10.0; //Converte de MPa para kN/cm2
-            e = e / 10.0; 
-            double q = CalculaQ(tipoperfil, e, fy);
-            double x = CalculaX(tipoperfil, e, lx, ly, lz);
+            elast = elast / 10.0; 
+            double q = CalculaQ(tipoperfil, elast, fy);
+            double x = CalculaX(tipoperfil, elast, lx, ly, lz);
 
             return "texto do resultado aqui";
 

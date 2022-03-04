@@ -15,7 +15,7 @@ namespace VerPerfisLaminados
         {
 
 
-            double ct = CalculoCt(tipoCt, tipoperfil, ac, lc);
+            double ct = CalculoCt(tipoCt, tipoperfil, ac, lc, lig);
             pai = f_Principal;
 
             //Variaveis dos perfis
@@ -185,7 +185,7 @@ namespace VerPerfisLaminados
 
        
 
-        public double CalculoCt(int tipoCt, string tipoperfil, double ac, double lc)
+        public double CalculoCt(int tipoCt, string tipoperfil, double ac, double lc, string lig)
         {
             double ct = 1.0;
             double ec = 1.0;
@@ -193,18 +193,34 @@ namespace VerPerfisLaminados
             //Calculo de ec para perfil I
             if (tipoperfil == "i")
             {
-                double bf = PropPerfilI.bf;
-                double tf = PropPerfilI.tf;
-                double d = PropPerfilI.d;
-                double tw = PropPerfilI.tw;
+                double bf = PropPerfilI.bf / 10.0;
+                double tf = PropPerfilI.tf / 10.0;
+                double d = PropPerfilI.d / 10.0;
+                double tw = PropPerfilI.tw / 10.0;
 
-                //Cálculo de Ec                
-                double amesa = ((bf / 2.0) - (tw / 2.0)) * tf * 2; //area das duas abas
-                double aalma = d * (tw / 2.0); //area da alma
-                double ymesa = bf / 2.0; //Y da mesa
-                double yalma = tw / 4.0; //Y da alma
-                double cg = ((amesa * ymesa * 2.0) + (aalma * yalma)) / (amesa * 2.0 + aalma); //calculo do cg em mm
-                ec = (cg - (tw / 2.0)) / 10; //retorna ec em cm    
+                //Cálculo de Ec  
+                if ( lig == "alma")
+                {
+                    double amesa = ((bf / 2.0) - (tw / 2.0)) * tf * 2; //area das duas mesas
+                    double aalma = d * (tw / 2.0); //area da alma
+                    double ymesa = (((bf / 2.0) - tw / 2.0) / 2.0); //Y da mesa
+                    double yalma = tw / 4.0; //Y da alma
+                    double cg = ((amesa * ymesa * 2.0) + (aalma * yalma)) / (amesa * 2.0 + aalma); //calculo do cg 
+                    ec = (cg - (tw / 2.0)); //retorna ec em cm    
+                }
+
+                if (lig =="mesa")
+                {
+                    double amesa = bf * tf; //area da mesa
+                    double ymesa = d - tf / 2.0;
+                    double aalma = (d - tf) / 2.0;
+                    double yalma = d / 4.0;
+                    double cg = (amesa * ymesa) + (aalma * yalma) / (amesa + aalma); //calcula cg
+                    ec = d / 2.0 - cg;
+
+                }
+                              
+               
             }
 
             if (tipoperfil == "u")

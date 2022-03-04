@@ -385,11 +385,13 @@
             // 
             // rb_ambos
             // 
+            this.rb_ambos.Checked = true;
             this.rb_ambos.Location = new System.Drawing.Point(6, 89);
             this.rb_ambos.MaximumSize = new System.Drawing.Size(400, 200);
             this.rb_ambos.Name = "rb_ambos";
             this.rb_ambos.Size = new System.Drawing.Size(314, 30);
             this.rb_ambos.TabIndex = 2;
+            this.rb_ambos.TabStop = true;
             this.rb_ambos.Text = "A ligação é feita pelas mesas (ou abas) do perfil e pela alma";
             this.rb_ambos.UseVisualStyleBackColor = true;
             this.rb_ambos.CheckedChanged += new System.EventHandler(this.rb_ambos_CheckedChanged);
@@ -407,13 +409,11 @@
             // 
             // rb_alma
             // 
-            this.rb_alma.Checked = true;
             this.rb_alma.Location = new System.Drawing.Point(6, 19);
             this.rb_alma.MaximumSize = new System.Drawing.Size(400, 200);
             this.rb_alma.Name = "rb_alma";
             this.rb_alma.Size = new System.Drawing.Size(314, 30);
             this.rb_alma.TabIndex = 0;
-            this.rb_alma.TabStop = true;
             this.rb_alma.Text = "A ligação é feita pela alma do perfil";
             this.rb_alma.UseVisualStyleBackColor = true;
             this.rb_alma.CheckedChanged += new System.EventHandler(this.rb_alma_CheckedChanged);

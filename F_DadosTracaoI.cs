@@ -25,6 +25,9 @@ namespace VerPerfisLaminados
             txt_folgaFuro.Text = folga.ToString();
             txt_lc.Text = lc.ToString();
             txt_ac.Text = ac.ToString();
+            rb_ambos.Checked = true;
+            rb_alma.Enabled = false;
+            rb_mesa.Enabled = false;
 
             if (lig == "alma")
             {
@@ -42,14 +45,46 @@ namespace VerPerfisLaminados
             if (tipoCt == 1)
             {
                 rb_ct1.Checked = true;
+                lig = "ambos";
+                rb_alma.Enabled = false;
+                rb_mesa.Enabled= false;
+                rb_ambos.Enabled = true;
+                txt_puncionamento.Enabled = true;
+                cb_diamparafusos.Enabled = true;
+                cb_numfurosAlma.Enabled = true;
+                cb_numfurosMesa.Enabled = true;
+                txt_folgaFuro.Enabled = true;
+                txt_ac.Enabled = false;
+                txt_lc.Enabled = false;
+
             }
             if (tipoCt == 2)
             {
                 rb_ct2.Checked = true;
+                rb_alma.Enabled = false;
+                rb_mesa.Enabled = false;
+                rb_ambos.Enabled = false;
+                txt_puncionamento.Enabled = false;
+                cb_diamparafusos.Enabled = false;
+                cb_numfurosAlma.Enabled = false;
+                cb_numfurosMesa.Enabled = false;
+                txt_folgaFuro.Enabled = false;
+                txt_ac.Enabled = true;
+                txt_lc.Enabled = false;
             }
             if (tipoCt == 3)
             {
                 rb_ct3.Checked = true;
+                rb_alma.Enabled = true;
+                rb_mesa.Enabled = true;
+                rb_ambos.Enabled = true;
+                txt_puncionamento.Enabled = true;
+                cb_diamparafusos.Enabled = true;
+                cb_numfurosAlma.Enabled = true;
+                cb_numfurosMesa.Enabled = true;
+                txt_folgaFuro.Enabled = true;
+                txt_ac.Enabled = false;
+                txt_lc.Enabled = true;
             }
         }
 

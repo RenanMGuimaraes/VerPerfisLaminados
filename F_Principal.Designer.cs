@@ -32,10 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Principal));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.pct_perfil = new System.Windows.Forms.PictureBox();
             this.rb_duploL = new System.Windows.Forms.RadioButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.rb_duploU = new System.Windows.Forms.RadioButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.rb_cantoneira = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rb_perfilU = new System.Windows.Forms.RadioButton();
             this.rb_perfilI = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +50,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_prop = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_geo = new System.Windows.Forms.Button();
+            this.btn_calc = new System.Windows.Forms.Button();
+            this.btn_esforcos = new System.Windows.Forms.Button();
+            this.btn_apagar = new System.Windows.Forms.Button();
+            this.btn_propPerfil = new System.Windows.Forms.Button();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,20 +77,15 @@
             this.txt_resultadoCompressao = new System.Windows.Forms.RichTextBox();
             this.tab_flexao = new System.Windows.Forms.TabPage();
             this.txt_resultadoFlexao = new System.Windows.Forms.RichTextBox();
-            this.btn_geo = new System.Windows.Forms.Button();
-            this.btn_calc = new System.Windows.Forms.Button();
-            this.btn_esforcos = new System.Windows.Forms.Button();
-            this.btn_apagar = new System.Windows.Forms.Button();
-            this.btn_propPerfil = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pct_perfil = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -87,13 +94,6 @@
             this.tab_tracao.SuspendLayout();
             this.tab_compressao.SuspendLayout();
             this.tab_flexao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -129,6 +129,18 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(7, 76);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -140,6 +152,18 @@
             this.radioButton1.Text = "Perfil I - Soldado";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // pct_perfil
+            // 
+            this.pct_perfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Prop_i;
+            this.pct_perfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pct_perfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pct_perfil.Location = new System.Drawing.Point(174, 28);
+            this.pct_perfil.Name = "pct_perfil";
+            this.pct_perfil.Size = new System.Drawing.Size(184, 242);
+            this.pct_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pct_perfil.TabIndex = 14;
+            this.pct_perfil.TabStop = false;
             // 
             // rb_duploL
             // 
@@ -153,6 +177,18 @@
             this.rb_duploL.UseVisualStyleBackColor = true;
             this.rb_duploL.CheckedChanged += new System.EventHandler(this.rb_duploL_CheckedChanged);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_L;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(7, 244);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
             // rb_duploU
             // 
             this.rb_duploU.AutoSize = true;
@@ -165,6 +201,18 @@
             this.rb_duploU.UseVisualStyleBackColor = true;
             this.rb_duploU.CheckedChanged += new System.EventHandler(this.rb_duploU_CheckedChanged);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_C;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(7, 202);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
             // rb_cantoneira
             // 
             this.rb_cantoneira.AutoSize = true;
@@ -175,6 +223,42 @@
             this.rb_cantoneira.Text = "Cantoneira";
             this.rb_cantoneira.UseVisualStyleBackColor = true;
             this.rb_cantoneira.CheckedChanged += new System.EventHandler(this.rb_cantoneira_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.L;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(7, 160);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.C;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 118);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // rb_perfilU
             // 
@@ -330,6 +414,66 @@
             this.txt_prop.Size = new System.Drawing.Size(184, 219);
             this.txt_prop.TabIndex = 0;
             // 
+            // btn_geo
+            // 
+            this.btn_geo.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
+            this.btn_geo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_geo.Location = new System.Drawing.Point(115, 34);
+            this.btn_geo.Name = "btn_geo";
+            this.btn_geo.Size = new System.Drawing.Size(48, 50);
+            this.btn_geo.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.btn_geo, "Geometria do perfil");
+            this.btn_geo.UseVisualStyleBackColor = true;
+            this.btn_geo.Click += new System.EventHandler(this.btn_geo_Click);
+            // 
+            // btn_calc
+            // 
+            this.btn_calc.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
+            this.btn_calc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_calc.Location = new System.Drawing.Point(169, 34);
+            this.btn_calc.Name = "btn_calc";
+            this.btn_calc.Size = new System.Drawing.Size(48, 50);
+            this.btn_calc.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
+            this.btn_calc.UseVisualStyleBackColor = true;
+            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
+            // 
+            // btn_esforcos
+            // 
+            this.btn_esforcos.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.esforcos;
+            this.btn_esforcos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_esforcos.Location = new System.Drawing.Point(63, 34);
+            this.btn_esforcos.Name = "btn_esforcos";
+            this.btn_esforcos.Size = new System.Drawing.Size(48, 50);
+            this.btn_esforcos.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.btn_esforcos, "Esforços solicitantes");
+            this.btn_esforcos.UseVisualStyleBackColor = true;
+            this.btn_esforcos.Click += new System.EventHandler(this.btn_esforcos_Click);
+            // 
+            // btn_apagar
+            // 
+            this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
+            this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_apagar.Location = new System.Drawing.Point(848, 34);
+            this.btn_apagar.Name = "btn_apagar";
+            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
+            this.btn_apagar.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.btn_apagar, "Apagar resultados");
+            this.btn_apagar.UseVisualStyleBackColor = true;
+            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
+            // 
+            // btn_propPerfil
+            // 
+            this.btn_propPerfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.diagrama2;
+            this.btn_propPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_propPerfil.Location = new System.Drawing.Point(9, 34);
+            this.btn_propPerfil.Name = "btn_propPerfil";
+            this.btn_propPerfil.Size = new System.Drawing.Size(48, 50);
+            this.btn_propPerfil.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btn_propPerfil, "Propriedades do aço");
+            this.btn_propPerfil.UseVisualStyleBackColor = true;
+            this.btn_propPerfil.Click += new System.EventHandler(this.btn_propPerfil_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -433,7 +577,7 @@
             this.txt_resultadoTracao.Location = new System.Drawing.Point(6, 3);
             this.txt_resultadoTracao.Name = "txt_resultadoTracao";
             this.txt_resultadoTracao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txt_resultadoTracao.Size = new System.Drawing.Size(472, 525);
+            this.txt_resultadoTracao.Size = new System.Drawing.Size(472, 527);
             this.txt_resultadoTracao.TabIndex = 0;
             this.txt_resultadoTracao.Text = "";
             // 
@@ -494,10 +638,10 @@
             this.tabControl1.Controls.Add(this.tab_tracao);
             this.tabControl1.Controls.Add(this.tab_compressao);
             this.tabControl1.Controls.Add(this.tab_flexao);
-            this.tabControl1.Location = new System.Drawing.Point(408, 94);
+            this.tabControl1.Location = new System.Drawing.Point(408, 90);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(492, 556);
+            this.tabControl1.Size = new System.Drawing.Size(492, 562);
             this.tabControl1.TabIndex = 22;
             // 
             // tab_tracao
@@ -506,7 +650,7 @@
             this.tab_tracao.Location = new System.Drawing.Point(4, 22);
             this.tab_tracao.Name = "tab_tracao";
             this.tab_tracao.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_tracao.Size = new System.Drawing.Size(484, 530);
+            this.tab_tracao.Size = new System.Drawing.Size(484, 536);
             this.tab_tracao.TabIndex = 0;
             this.tab_tracao.Text = "Tração";
             this.tab_tracao.UseVisualStyleBackColor = true;
@@ -537,7 +681,7 @@
             this.tab_flexao.Controls.Add(this.txt_resultadoFlexao);
             this.tab_flexao.Location = new System.Drawing.Point(4, 22);
             this.tab_flexao.Name = "tab_flexao";
-            this.tab_flexao.Size = new System.Drawing.Size(484, 530);
+            this.tab_flexao.Size = new System.Drawing.Size(484, 536);
             this.tab_flexao.TabIndex = 2;
             this.tab_flexao.Text = "Flexão";
             this.tab_flexao.UseVisualStyleBackColor = true;
@@ -551,150 +695,6 @@
             this.txt_resultadoFlexao.Size = new System.Drawing.Size(472, 525);
             this.txt_resultadoFlexao.TabIndex = 1;
             this.txt_resultadoFlexao.Text = "";
-            // 
-            // btn_geo
-            // 
-            this.btn_geo.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
-            this.btn_geo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_geo.Location = new System.Drawing.Point(115, 34);
-            this.btn_geo.Name = "btn_geo";
-            this.btn_geo.Size = new System.Drawing.Size(48, 50);
-            this.btn_geo.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.btn_geo, "Geometria do perfil");
-            this.btn_geo.UseVisualStyleBackColor = true;
-            this.btn_geo.Click += new System.EventHandler(this.btn_geo_Click);
-            // 
-            // btn_calc
-            // 
-            this.btn_calc.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
-            this.btn_calc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_calc.Location = new System.Drawing.Point(169, 34);
-            this.btn_calc.Name = "btn_calc";
-            this.btn_calc.Size = new System.Drawing.Size(48, 50);
-            this.btn_calc.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
-            this.btn_calc.UseVisualStyleBackColor = true;
-            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
-            // 
-            // btn_esforcos
-            // 
-            this.btn_esforcos.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.esforcos;
-            this.btn_esforcos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_esforcos.Location = new System.Drawing.Point(63, 34);
-            this.btn_esforcos.Name = "btn_esforcos";
-            this.btn_esforcos.Size = new System.Drawing.Size(48, 50);
-            this.btn_esforcos.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btn_esforcos, "Esforços solicitantes");
-            this.btn_esforcos.UseVisualStyleBackColor = true;
-            this.btn_esforcos.Click += new System.EventHandler(this.btn_esforcos_Click);
-            // 
-            // btn_apagar
-            // 
-            this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
-            this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_apagar.Location = new System.Drawing.Point(848, 34);
-            this.btn_apagar.Name = "btn_apagar";
-            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
-            this.btn_apagar.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.btn_apagar, "Apagar resultados");
-            this.btn_apagar.UseVisualStyleBackColor = true;
-            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
-            // 
-            // btn_propPerfil
-            // 
-            this.btn_propPerfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.diagrama2;
-            this.btn_propPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_propPerfil.Location = new System.Drawing.Point(9, 34);
-            this.btn_propPerfil.Name = "btn_propPerfil";
-            this.btn_propPerfil.Size = new System.Drawing.Size(48, 50);
-            this.btn_propPerfil.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btn_propPerfil, "Propriedades do aço");
-            this.btn_propPerfil.UseVisualStyleBackColor = true;
-            this.btn_propPerfil.Click += new System.EventHandler(this.btn_propPerfil_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(7, 76);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 15;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pct_perfil
-            // 
-            this.pct_perfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Prop_i;
-            this.pct_perfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pct_perfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pct_perfil.Location = new System.Drawing.Point(174, 28);
-            this.pct_perfil.Name = "pct_perfil";
-            this.pct_perfil.Size = new System.Drawing.Size(184, 242);
-            this.pct_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pct_perfil.TabIndex = 14;
-            this.pct_perfil.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_L;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(7, 244);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_C;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(7, 202);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.L;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 160);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.C;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 118);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // F_Principal
             // 
@@ -714,6 +714,13 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -726,13 +733,6 @@
             this.tab_tracao.ResumeLayout(false);
             this.tab_compressao.ResumeLayout(false);
             this.tab_flexao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
