@@ -55,7 +55,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,12 @@
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_verifTracao = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btn_cb = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_cb = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txt_ntrd_esb = new System.Windows.Forms.Label();
             this.lb_sdrd_my = new System.Windows.Forms.Label();
             this.lb_sdrd_vy = new System.Windows.Forms.Label();
             this.lb_sdrd_vx = new System.Windows.Forms.Label();
@@ -78,11 +84,11 @@
             this.lb_sdrd_nt = new System.Windows.Forms.Label();
             this.lb_sdrd_nc = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_myrd = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txt_mxrd = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_vyrd = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.txt_vxrd = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
@@ -100,7 +106,6 @@
             this.txt_e = new System.Windows.Forms.TextBox();
             this.txt_fu = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt_lb = new System.Windows.Forms.TextBox();
             this.txt_lz = new System.Windows.Forms.TextBox();
             this.txt_ly = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -120,7 +125,9 @@
             this.txt_ncsd = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_ntrd_esb = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txt_ncrd_esb = new System.Windows.Forms.Label();
+            this.lbl_perfil = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -134,6 +141,7 @@
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -488,7 +496,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(175, 11);
+            this.label12.Location = new System.Drawing.Point(122, 11);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 11;
@@ -498,7 +506,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(175, 61);
+            this.label19.Location = new System.Drawing.Point(122, 61);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 13);
             this.label19.TabIndex = 14;
@@ -508,22 +516,32 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(339, 11);
+            this.label17.Location = new System.Drawing.Point(210, 11);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 13);
             this.label17.TabIndex = 17;
             this.label17.Text = "KzLz (cm)";
             this.toolTip1.SetToolTip(this.label17, "Comprimento livre em torno de Z");
             // 
-            // label21
+            // label9
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(339, 64);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(42, 13);
-            this.label21.TabIndex = 20;
-            this.label21.Text = "Lb (cm)";
-            this.toolTip1.SetToolTip(this.label21, "Comprimento destravado entre contenções laterais");
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Cb(x)";
+            this.toolTip1.SetToolTip(this.label9, "Parâmetro de uniformização dos momentos fletores");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(111, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Cb(x)";
+            this.toolTip1.SetToolTip(this.label10, "Parâmetro de uniformização dos momentos fletores");
             // 
             // menuStrip1
             // 
@@ -564,7 +582,6 @@
             this.compressãoToolStripMenuItem.Name = "compressãoToolStripMenuItem";
             this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.compressãoToolStripMenuItem.Text = "Compressão";
-            this.compressãoToolStripMenuItem.Click += new System.EventHandler(this.compressãoToolStripMenuItem_Click);
             // 
             // flexãoToolStripMenuItem
             // 
@@ -572,7 +589,6 @@
             this.flexãoToolStripMenuItem.Name = "flexãoToolStripMenuItem";
             this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.flexãoToolStripMenuItem.Text = "Flexão";
-            this.flexãoToolStripMenuItem.Click += new System.EventHandler(this.flexãoToolStripMenuItem_Click);
             // 
             // resultadoToolStripMenuItem
             // 
@@ -642,6 +658,8 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.lbl_perfil);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox8);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox7);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox6);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox3);
@@ -663,8 +681,48 @@
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btn_cb);
+            this.groupBox8.Controls.Add(this.label10);
+            this.groupBox8.Controls.Add(this.textBox1);
+            this.groupBox8.Controls.Add(this.label9);
+            this.groupBox8.Controls.Add(this.txt_cb);
+            this.groupBox8.Location = new System.Drawing.Point(703, 90);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(192, 117);
+            this.groupBox8.TabIndex = 21;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Coef. Cb";
+            // 
+            // btn_cb
+            // 
+            this.btn_cb.Location = new System.Drawing.Point(58, 80);
+            this.btn_cb.Name = "btn_cb";
+            this.btn_cb.Size = new System.Drawing.Size(75, 23);
+            this.btn_cb.TabIndex = 25;
+            this.btn_cb.Text = "Calcular Cb";
+            this.btn_cb.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(114, 43);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(53, 20);
+            this.textBox1.TabIndex = 22;
+            this.textBox1.Text = "1";
+            // 
+            // txt_cb
+            // 
+            this.txt_cb.Location = new System.Drawing.Point(22, 43);
+            this.txt_cb.Name = "txt_cb";
+            this.txt_cb.Size = new System.Drawing.Size(53, 20);
+            this.txt_cb.TabIndex = 20;
+            this.txt_cb.Text = "1";
+            // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.txt_ncrd_esb);
             this.groupBox7.Controls.Add(this.txt_ntrd_esb);
             this.groupBox7.Controls.Add(this.lb_sdrd_my);
             this.groupBox7.Controls.Add(this.lb_sdrd_vy);
@@ -673,11 +731,11 @@
             this.groupBox7.Controls.Add(this.lb_sdrd_nt);
             this.groupBox7.Controls.Add(this.lb_sdrd_nc);
             this.groupBox7.Controls.Add(this.label29);
-            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.txt_myrd);
             this.groupBox7.Controls.Add(this.label30);
             this.groupBox7.Controls.Add(this.txt_mxrd);
             this.groupBox7.Controls.Add(this.label39);
-            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.Controls.Add(this.txt_vyrd);
             this.groupBox7.Controls.Add(this.label40);
             this.groupBox7.Controls.Add(this.txt_vxrd);
             this.groupBox7.Controls.Add(this.label41);
@@ -690,6 +748,14 @@
             this.groupBox7.TabIndex = 23;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Esforços Resistentes";
+            // 
+            // txt_ntrd_esb
+            // 
+            this.txt_ntrd_esb.AutoSize = true;
+            this.txt_ntrd_esb.Location = new System.Drawing.Point(88, 110);
+            this.txt_ntrd_esb.Name = "txt_ntrd_esb";
+            this.txt_ntrd_esb.Size = new System.Drawing.Size(0, 13);
+            this.txt_ntrd_esb.TabIndex = 19;
             // 
             // lb_sdrd_my
             // 
@@ -754,13 +820,13 @@
             this.label29.TabIndex = 12;
             this.label29.Text = "My,Rd (kN*m)";
             // 
-            // textBox1
+            // txt_myrd
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(66, 20);
-            this.textBox1.TabIndex = 11;
+            this.txt_myrd.Location = new System.Drawing.Point(178, 146);
+            this.txt_myrd.Name = "txt_myrd";
+            this.txt_myrd.ReadOnly = true;
+            this.txt_myrd.Size = new System.Drawing.Size(66, 20);
+            this.txt_myrd.TabIndex = 11;
             // 
             // label30
             // 
@@ -788,13 +854,13 @@
             this.label39.TabIndex = 8;
             this.label39.Text = "Vy,Rd (kN)";
             // 
-            // textBox3
+            // txt_vyrd
             // 
-            this.textBox3.Location = new System.Drawing.Point(178, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(66, 20);
-            this.textBox3.TabIndex = 7;
+            this.txt_vyrd.Location = new System.Drawing.Point(178, 91);
+            this.txt_vyrd.Name = "txt_vyrd";
+            this.txt_vyrd.ReadOnly = true;
+            this.txt_vyrd.Size = new System.Drawing.Size(66, 20);
+            this.txt_vyrd.TabIndex = 7;
             // 
             // label40
             // 
@@ -949,8 +1015,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.txt_lb);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.txt_lz);
             this.groupBox3.Controls.Add(this.label19);
@@ -960,22 +1024,14 @@
             this.groupBox3.Controls.Add(this.txt_lx);
             this.groupBox3.Location = new System.Drawing.Point(408, 90);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(487, 117);
+            this.groupBox3.Size = new System.Drawing.Size(289, 117);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Geometria da barra";
             // 
-            // txt_lb
-            // 
-            this.txt_lb.Location = new System.Drawing.Point(342, 80);
-            this.txt_lb.Name = "txt_lb";
-            this.txt_lb.Size = new System.Drawing.Size(53, 20);
-            this.txt_lb.TabIndex = 21;
-            this.txt_lb.Text = "0";
-            // 
             // txt_lz
             // 
-            this.txt_lz.Location = new System.Drawing.Point(342, 27);
+            this.txt_lz.Location = new System.Drawing.Point(213, 27);
             this.txt_lz.Name = "txt_lz";
             this.txt_lz.Size = new System.Drawing.Size(53, 20);
             this.txt_lz.TabIndex = 18;
@@ -983,7 +1039,7 @@
             // 
             // txt_ly
             // 
-            this.txt_ly.Location = new System.Drawing.Point(178, 80);
+            this.txt_ly.Location = new System.Drawing.Point(125, 80);
             this.txt_ly.Name = "txt_ly";
             this.txt_ly.Size = new System.Drawing.Size(53, 20);
             this.txt_ly.TabIndex = 15;
@@ -1001,7 +1057,7 @@
             // 
             // txt_lx
             // 
-            this.txt_lx.Location = new System.Drawing.Point(178, 27);
+            this.txt_lx.Location = new System.Drawing.Point(125, 27);
             this.txt_lx.Name = "txt_lx";
             this.txt_lx.Size = new System.Drawing.Size(53, 20);
             this.txt_lx.TabIndex = 12;
@@ -1009,6 +1065,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txt_mysd);
             this.groupBox1.Controls.Add(this.label7);
@@ -1157,13 +1214,32 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Versão de testes";
             // 
-            // txt_ntrd_esb
+            // button1
             // 
-            this.txt_ntrd_esb.AutoSize = true;
-            this.txt_ntrd_esb.Location = new System.Drawing.Point(88, 110);
-            this.txt_ntrd_esb.Name = "txt_ntrd_esb";
-            this.txt_ntrd_esb.Size = new System.Drawing.Size(0, 13);
-            this.txt_ntrd_esb.TabIndex = 19;
+            this.button1.Location = new System.Drawing.Point(108, 87);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 20);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Ct";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txt_ncrd_esb
+            // 
+            this.txt_ncrd_esb.AutoSize = true;
+            this.txt_ncrd_esb.Location = new System.Drawing.Point(88, 59);
+            this.txt_ncrd_esb.Name = "txt_ncrd_esb";
+            this.txt_ncrd_esb.Size = new System.Drawing.Size(0, 13);
+            this.txt_ncrd_esb.TabIndex = 20;
+            // 
+            // lbl_perfil
+            // 
+            this.lbl_perfil.AutoSize = true;
+            this.lbl_perfil.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_perfil.Location = new System.Drawing.Point(410, 66);
+            this.lbl_perfil.Name = "lbl_perfil";
+            this.lbl_perfil.Size = new System.Drawing.Size(71, 18);
+            this.lbl_perfil.TabIndex = 25;
+            this.lbl_perfil.Text = "PERFIL: ";
             // 
             // F_Principal
             // 
@@ -1198,6 +1274,8 @@
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -1272,8 +1350,6 @@
         public System.Windows.Forms.TextBox txt_lx;
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.TextBox txt_ly;
-        private System.Windows.Forms.Label label21;
-        public System.Windows.Forms.TextBox txt_lb;
         private System.Windows.Forms.Label label17;
         public System.Windows.Forms.TextBox txt_lz;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1288,17 +1364,11 @@
         private System.Windows.Forms.TextBox txt_fu;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox txt_mxrd;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox txt_vxrd;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox txt_ntrd;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox txt_ncrd;
         public System.Windows.Forms.Label lb_sdrd_my;
         public System.Windows.Forms.Label lb_sdrd_vy;
         public System.Windows.Forms.Label lb_sdrd_vx;
@@ -1306,6 +1376,21 @@
         public System.Windows.Forms.Label lb_sdrd_nt;
         public System.Windows.Forms.Label lb_sdrd_nc;
         public System.Windows.Forms.Label txt_ntrd_esb;
+        public System.Windows.Forms.TextBox txt_myrd;
+        public System.Windows.Forms.TextBox txt_mxrd;
+        public System.Windows.Forms.TextBox txt_vyrd;
+        public System.Windows.Forms.TextBox txt_vxrd;
+        public System.Windows.Forms.TextBox txt_ntrd;
+        public System.Windows.Forms.TextBox txt_ncrd;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txt_cb;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btn_cb;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label txt_ncrd_esb;
+        private System.Windows.Forms.Label lbl_perfil;
     }
 }
 

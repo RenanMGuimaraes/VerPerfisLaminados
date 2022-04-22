@@ -143,6 +143,7 @@ namespace VerPerfisLaminados
             }
 
             pai.lb_sdrd_nt.Text = $"Sd/Rd = {taxa:F2}";
+            pai.txt_ntrd.Text = ntrd1.ToString("F2");
 
             /*
 

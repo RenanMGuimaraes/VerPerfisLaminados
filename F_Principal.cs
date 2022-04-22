@@ -50,8 +50,22 @@ namespace VerPerfisLaminados
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-
-            lbl_verifTracao.Text = "";
+            txt_lx.Text = "0";
+            txt_ly.Text = "0";
+            txt_lz.Text = "0";
+            txt_ncsd.Text = "0";
+            txt_ntsd.Text = "0";
+            txt_vxsd.Text = "0";
+            txt_vysd.Text = "0";
+            txt_mxsd.Text = "0";
+            txt_mysd.Text = "0";
+            txt_ncrd.Text = "";
+            txt_ntrd.Text = "";
+            txt_vxrd.Text = "";
+            txt_vyrd.Text = "";
+            txt_mxrd.Text = "";
+            txt_myrd.Text = "";
+            txt_cb.Text = "1";
         }    
 
         //PLOTA OS PERFIS DO LB_LIST NO TXT_PROP
@@ -189,17 +203,9 @@ namespace VerPerfisLaminados
             
         }
 
-        private void compressãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_DadosCompressao f_DadosCompressao = new F_DadosCompressao();
-            f_DadosCompressao.ShowDialog();
-        }
+ 
 
-        private void flexãoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_DadosFlexao f_DadosFlexao = new F_DadosFlexao();
-            f_DadosFlexao.ShowDialog();
-        }
+ 
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -219,30 +225,53 @@ namespace VerPerfisLaminados
 
         private void btn_calc_Click(object sender, EventArgs e)
         {
-            //Propriedades gerais 
-            double lx = double.Parse(txt_lx.Text);
-            double ly = double.Parse(txt_ly.Text);
-            double lz = double.Parse(txt_lz.Text);
-            double lb = double.Parse(txt_lb.Text);
+            if(txt_lx.Text == "0" || txt_ly.Text == "0" || txt_lz.Text == "0")
+            {
+                MessageBox.Show("Preencha a geometria da barra!","Atenção",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                //Preenche o texto do perfil
+                if (tipoperfil == "i")
+                {
+                    lbl_perfil.Text = $"PERFIL: {PropPerfilI.perfil}";
+                }
+                if (tipoperfil == "u")
+                {
+                    lbl_perfil.Text = $"PERFIL: {PropPerfilU.perfil}";
+                }
+                if (tipoperfil == "l")
+                {
+                    lbl_perfil.Text = $"PERFIL: {PropPerfilL.perfil}";
+                }
 
-            //Propriedades gerais do aço
-            double fy = double.Parse(txt_fy.Text);
-            double fu = double.Parse(txt_fu.Text);
-            double elast = double.Parse(txt_e.Text);
-            double g = double.Parse(txt_g.Text);
+                //Propriedades gerais 
+                double lx = double.Parse(txt_lx.Text);
+                double ly = double.Parse(txt_ly.Text);
+                double lz = double.Parse(txt_lz.Text);
 
-            //Limpa os textos dos resultados
-            txt_ntrd_esb.Text = "";
+                //Propriedades gerais do aço
+                double fy = double.Parse(txt_fy.Text);
+                double fu = double.Parse(txt_fu.Text);
+                double elast = double.Parse(txt_e.Text);
+                double g = double.Parse(txt_g.Text);
 
-        CalculaCompressao compressao = new CalculaCompressao();
-            CalculaFlexao flexao = new CalculaFlexao();
+                //Limpa os textos dos resultados
+                txt_ntrd_esb.Text = "";
 
-            //Calculo a tracao
-            double ntsd = double.Parse(txt_ntsd.Text);
-            CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+                //Calculo a compressao
+                double ncsd = double.Parse(txt_ncsd.Text);
+                CalculaCompressao compressao = new CalculaCompressao(this, tipoperfil, fy, fu, ncsd, lx, ly, lz, elast, g);
 
-            CalculaCortante cortante = new CalculaCortante();
-            
+
+                CalculaFlexao flexao = new CalculaFlexao();
+
+                //Calculo a tracao
+                double ntsd = double.Parse(txt_ntsd.Text);
+                CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+
+                CalculaCortante cortante = new CalculaCortante();
+            }
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

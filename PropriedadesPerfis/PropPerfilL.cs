@@ -9,40 +9,14 @@ using System.Reflection;
 namespace VerPerfisLaminados
 
 {
-    class PerfilCantoneira
-    {
-        public PerfilCantoneira(string perfil, double peso, double t, double area, double Ix, double Wx, double rx, double rz, double x)
-        {
-            this.perfil = perfil;
-            this.peso = peso;
-            this.t = t;
-            this.area = area;
-            this.Ix = Ix;
-            this.Wx = Wx;
-            this.rx = rx;
-            this.rz = rz;
-            this.x = x;
-        }
-
-        public string perfil;
-        public double peso;
-        public double t;
-        public double area;
-        public double Ix;
-        public double Wx;
-        public double rx;
-        public double rz;
-        public double x;
-
-    }
-
+   
     internal class PropPerfilL
     {
         public static double t, area, Ix, Wx, rx, rz, x, peso, b;
+        public static string perfil;
 
         public string PlotarL(int id)
         {
-            string perfil;
             Assembly ListaPerfil = Assembly.GetExecutingAssembly();
             StreamReader readerPerfil = new StreamReader(ListaPerfil.GetManifestResourceStream("VerPerfisLaminados.Txt.perfisL.txt"));
             string perfis = readerPerfil.ReadToEnd(); //lê todo o arquivo

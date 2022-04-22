@@ -15,9 +15,11 @@ namespace VerPerfisLaminados
     internal class PropPerfilI
     {
         public static double area, Ix, Wx, rx, Zx, Iy, Wy, Zy, ry, h, d, tw, tf, bf, rt, It, Cw, dlinha, peso;
+        public static string perfil;
+
         public string PlotarI(int id)
         {
-            string perfil;
+            
 
             Assembly ListaPerfil = Assembly.GetExecutingAssembly();
             StreamReader readerPerfil = new StreamReader(ListaPerfil.GetManifestResourceStream("VerPerfisLaminados.Txt.perfisI.txt"));

@@ -56,20 +56,6 @@
     <Compile Include="Dimensionamentos\CalculaCortante.cs" />
     <Compile Include="Dimensionamentos\CalculaFlexao.cs" />
     <Compile Include="Dimensionamentos\CalculaCompressao.cs" />
-    <Compile Include="Dimensionamentos\CalculaQ.cs" />
-    <Compile Include="Dimensionamentos\CalculaX.cs" />
-    <Compile Include="F_DadosCompressao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_DadosCompressao.Designer.cs">
-      <DependentUpon>F_DadosCompressao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="F_DadosFlexao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_DadosFlexao.Designer.cs">
-      <DependentUpon>F_DadosFlexao.cs</DependentUpon>
-    </Compile>
     <Compile Include="F_DadosTracaoI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,9 +98,6 @@
     <Compile Include="F_TracaoHelp.Designer.cs">
       <DependentUpon>F_TracaoHelp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="F_DadosFlexao.resx">
-      <DependentUpon>F_DadosFlexao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="F_DadosTracaoI.resx">
       <DependentUpon>F_DadosTracaoI.cs</DependentUpon>
     </EmbeddedResource>
