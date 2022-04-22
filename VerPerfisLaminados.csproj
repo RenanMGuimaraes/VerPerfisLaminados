@@ -53,16 +53,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Flexao\CalculaFlexao.cs" />
-    <Compile Include="F_DadosAco.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_DadosAco.Designer.cs">
-      <DependentUpon>F_DadosAco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Compressao\CalculaCompressao.cs" />
-    <Compile Include="Compressao\CalculaQ.cs" />
-    <Compile Include="Compressao\CalculaX.cs" />
+    <Compile Include="Dimensionamentos\CalculaCortante.cs" />
+    <Compile Include="Dimensionamentos\CalculaFlexao.cs" />
+    <Compile Include="Dimensionamentos\CalculaCompressao.cs" />
+    <Compile Include="Dimensionamentos\CalculaQ.cs" />
+    <Compile Include="Dimensionamentos\CalculaX.cs" />
     <Compile Include="F_DadosCompressao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,18 +82,6 @@
     <Compile Include="F_DadosTracaoL.Designer.cs">
       <DependentUpon>F_DadosTracaoL.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Esforcos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_Esforcos.Designer.cs">
-      <DependentUpon>F_Esforcos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="F_Geometria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="F_Geometria.Designer.cs">
-      <DependentUpon>F_Geometria.cs</DependentUpon>
-    </Compile>
     <Compile Include="F_Sobre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,7 +94,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="PropriedadesPerfis\PropPerfil2U.cs" />
-    <Compile Include="Tracao\CalculaTracao.cs" />
+    <Compile Include="Dimensionamentos\CalculaTracao.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilI.cs" />
     <Compile Include="F_Principal.cs">
       <SubType>Form</SubType>
@@ -129,9 +112,6 @@
     <Compile Include="F_TracaoHelp.Designer.cs">
       <DependentUpon>F_TracaoHelp.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="F_DadosAco.resx">
-      <DependentUpon>F_DadosAco.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="F_DadosFlexao.resx">
       <DependentUpon>F_DadosFlexao.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,12 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_DadosTracaoL.resx">
       <DependentUpon>F_DadosTracaoL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_Esforcos.resx">
-      <DependentUpon>F_Esforcos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_Geometria.resx">
-      <DependentUpon>F_Geometria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>

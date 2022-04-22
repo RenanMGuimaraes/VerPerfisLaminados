@@ -32,10 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Principal));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.pct_perfil = new System.Windows.Forms.PictureBox();
             this.rb_duploL = new System.Windows.Forms.RadioButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.rb_duploU = new System.Windows.Forms.RadioButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.rb_cantoneira = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rb_perfilU = new System.Windows.Forms.RadioButton();
             this.rb_perfilI = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +50,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txt_prop = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_calc = new System.Windows.Forms.Button();
+            this.btn_apagar = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,38 +68,61 @@
             this.otimizarFlexãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarPDFToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_resultadoTracao = new System.Windows.Forms.RichTextBox();
             this.lbl_verifTracao = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lb_sdrd_my = new System.Windows.Forms.Label();
+            this.lb_sdrd_vy = new System.Windows.Forms.Label();
+            this.lb_sdrd_vx = new System.Windows.Forms.Label();
+            this.lb_sdrd_mx = new System.Windows.Forms.Label();
+            this.lb_sdrd_nt = new System.Windows.Forms.Label();
+            this.lb_sdrd_nc = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txt_mxrd = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txt_vxrd = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txt_ntrd = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txt_ncrd = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.txt_g = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txt_fy = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txt_e = new System.Windows.Forms.TextBox();
+            this.txt_fu = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_lb = new System.Windows.Forms.TextBox();
+            this.txt_lz = new System.Windows.Forms.TextBox();
+            this.txt_ly = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.txt_lx = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_mysd = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_mxsd = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_vysd = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_vxsd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_ntsd = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_ncsd = new System.Windows.Forms.TextBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tab_tracao = new System.Windows.Forms.TabPage();
-            this.tab_compressao = new System.Windows.Forms.TabPage();
-            this.txt_resultadoCompressao = new System.Windows.Forms.RichTextBox();
-            this.tab_flexao = new System.Windows.Forms.TabPage();
-            this.txt_resultadoFlexao = new System.Windows.Forms.RichTextBox();
-            this.btn_geo = new System.Windows.Forms.Button();
-            this.btn_calc = new System.Windows.Forms.Button();
-            this.btn_esforcos = new System.Windows.Forms.Button();
-            this.btn_apagar = new System.Windows.Forms.Button();
-            this.btn_propPerfil = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pct_perfil = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txt_ntrd_esb = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tab_tracao.SuspendLayout();
-            this.tab_compressao.SuspendLayout();
-            this.tab_flexao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -94,6 +130,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -129,6 +176,18 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(7, 76);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -140,6 +199,18 @@
             this.radioButton1.Text = "Perfil I - Soldado";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // pct_perfil
+            // 
+            this.pct_perfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Prop_i;
+            this.pct_perfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pct_perfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pct_perfil.Location = new System.Drawing.Point(174, 28);
+            this.pct_perfil.Name = "pct_perfil";
+            this.pct_perfil.Size = new System.Drawing.Size(184, 242);
+            this.pct_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pct_perfil.TabIndex = 14;
+            this.pct_perfil.TabStop = false;
             // 
             // rb_duploL
             // 
@@ -153,6 +224,18 @@
             this.rb_duploL.UseVisualStyleBackColor = true;
             this.rb_duploL.CheckedChanged += new System.EventHandler(this.rb_duploL_CheckedChanged);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_L;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(7, 244);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
             // rb_duploU
             // 
             this.rb_duploU.AutoSize = true;
@@ -165,6 +248,18 @@
             this.rb_duploU.UseVisualStyleBackColor = true;
             this.rb_duploU.CheckedChanged += new System.EventHandler(this.rb_duploU_CheckedChanged);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_C;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(7, 202);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
             // rb_cantoneira
             // 
             this.rb_cantoneira.AutoSize = true;
@@ -175,6 +270,42 @@
             this.rb_cantoneira.Text = "Cantoneira";
             this.rb_cantoneira.UseVisualStyleBackColor = true;
             this.rb_cantoneira.CheckedChanged += new System.EventHandler(this.rb_cantoneira_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.L;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(7, 160);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.C;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 118);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // rb_perfilU
             // 
@@ -330,6 +461,70 @@
             this.txt_prop.Size = new System.Drawing.Size(184, 219);
             this.txt_prop.TabIndex = 0;
             // 
+            // btn_calc
+            // 
+            this.btn_calc.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
+            this.btn_calc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_calc.Location = new System.Drawing.Point(10, 34);
+            this.btn_calc.Name = "btn_calc";
+            this.btn_calc.Size = new System.Drawing.Size(48, 50);
+            this.btn_calc.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
+            this.btn_calc.UseVisualStyleBackColor = true;
+            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
+            // 
+            // btn_apagar
+            // 
+            this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
+            this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_apagar.Location = new System.Drawing.Point(64, 34);
+            this.btn_apagar.Name = "btn_apagar";
+            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
+            this.btn_apagar.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.btn_apagar, "Apagar resultados");
+            this.btn_apagar.UseVisualStyleBackColor = true;
+            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(175, 11);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "KxLx (cm)";
+            this.toolTip1.SetToolTip(this.label12, "Comprimento livre em torno de X ");
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(175, 61);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 13);
+            this.label19.TabIndex = 14;
+            this.label19.Text = "KyLy (cm)";
+            this.toolTip1.SetToolTip(this.label19, "Comprimento livre em torno de Y");
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(339, 11);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "KzLz (cm)";
+            this.toolTip1.SetToolTip(this.label17, "Comprimento livre em torno de Z");
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(339, 64);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(42, 13);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "Lb (cm)";
+            this.toolTip1.SetToolTip(this.label21, "Comprimento destravado entre contenções laterais");
+            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -359,7 +554,7 @@
             // traçãoToolStripMenuItem
             // 
             this.traçãoToolStripMenuItem.Name = "traçãoToolStripMenuItem";
-            this.traçãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.traçãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.traçãoToolStripMenuItem.Text = "Tração";
             this.traçãoToolStripMenuItem.Click += new System.EventHandler(this.traçãoToolStripMenuItem_Click);
             // 
@@ -367,7 +562,7 @@
             // 
             this.compressãoToolStripMenuItem.Enabled = false;
             this.compressãoToolStripMenuItem.Name = "compressãoToolStripMenuItem";
-            this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.compressãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.compressãoToolStripMenuItem.Text = "Compressão";
             this.compressãoToolStripMenuItem.Click += new System.EventHandler(this.compressãoToolStripMenuItem_Click);
             // 
@@ -375,7 +570,7 @@
             // 
             this.flexãoToolStripMenuItem.Enabled = false;
             this.flexãoToolStripMenuItem.Name = "flexãoToolStripMenuItem";
-            this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.flexãoToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.flexãoToolStripMenuItem.Text = "Flexão";
             this.flexãoToolStripMenuItem.Click += new System.EventHandler(this.flexãoToolStripMenuItem_Click);
             // 
@@ -426,17 +621,6 @@
             this.sobreToolStripMenuItem.Text = "Sobre";
             this.sobreToolStripMenuItem.Click += new System.EventHandler(this.sobreToolStripMenuItem_Click);
             // 
-            // txt_resultadoTracao
-            // 
-            this.txt_resultadoTracao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_resultadoTracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_resultadoTracao.Location = new System.Drawing.Point(6, 3);
-            this.txt_resultadoTracao.Name = "txt_resultadoTracao";
-            this.txt_resultadoTracao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txt_resultadoTracao.Size = new System.Drawing.Size(472, 525);
-            this.txt_resultadoTracao.TabIndex = 0;
-            this.txt_resultadoTracao.Text = "";
-            // 
             // lbl_verifTracao
             // 
             this.lbl_verifTracao.AutoSize = true;
@@ -458,26 +642,510 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox7);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox6);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox3);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.label2);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.tabControl1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menuStrip1);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_geo);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_calc);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.lbl_verifTracao);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_esforcos);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_apagar);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.btn_propPerfil);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(911, 676);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(932, 676);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(911, 676);
+            this.toolStripContainer1.Size = new System.Drawing.Size(932, 676);
             this.toolStripContainer1.TabIndex = 21;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.txt_ntrd_esb);
+            this.groupBox7.Controls.Add(this.lb_sdrd_my);
+            this.groupBox7.Controls.Add(this.lb_sdrd_vy);
+            this.groupBox7.Controls.Add(this.lb_sdrd_vx);
+            this.groupBox7.Controls.Add(this.lb_sdrd_mx);
+            this.groupBox7.Controls.Add(this.lb_sdrd_nt);
+            this.groupBox7.Controls.Add(this.lb_sdrd_nc);
+            this.groupBox7.Controls.Add(this.label29);
+            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.label30);
+            this.groupBox7.Controls.Add(this.txt_mxrd);
+            this.groupBox7.Controls.Add(this.label39);
+            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.Controls.Add(this.label40);
+            this.groupBox7.Controls.Add(this.txt_vxrd);
+            this.groupBox7.Controls.Add(this.label41);
+            this.groupBox7.Controls.Add(this.txt_ntrd);
+            this.groupBox7.Controls.Add(this.label42);
+            this.groupBox7.Controls.Add(this.txt_ncrd);
+            this.groupBox7.Location = new System.Drawing.Point(408, 461);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(487, 191);
+            this.groupBox7.TabIndex = 23;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Esforços Resistentes";
+            // 
+            // lb_sdrd_my
+            // 
+            this.lb_sdrd_my.AutoSize = true;
+            this.lb_sdrd_my.Location = new System.Drawing.Point(250, 149);
+            this.lb_sdrd_my.Name = "lb_sdrd_my";
+            this.lb_sdrd_my.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_my.TabIndex = 18;
+            this.lb_sdrd_my.Text = "Sd/Rd";
+            // 
+            // lb_sdrd_vy
+            // 
+            this.lb_sdrd_vy.AutoSize = true;
+            this.lb_sdrd_vy.Location = new System.Drawing.Point(250, 94);
+            this.lb_sdrd_vy.Name = "lb_sdrd_vy";
+            this.lb_sdrd_vy.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_vy.TabIndex = 17;
+            this.lb_sdrd_vy.Text = "Sd/Rd";
+            // 
+            // lb_sdrd_vx
+            // 
+            this.lb_sdrd_vx.AutoSize = true;
+            this.lb_sdrd_vx.Location = new System.Drawing.Point(250, 41);
+            this.lb_sdrd_vx.Name = "lb_sdrd_vx";
+            this.lb_sdrd_vx.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_vx.TabIndex = 16;
+            this.lb_sdrd_vx.Text = "Sd/Rd";
+            // 
+            // lb_sdrd_mx
+            // 
+            this.lb_sdrd_mx.AutoSize = true;
+            this.lb_sdrd_mx.Location = new System.Drawing.Point(87, 149);
+            this.lb_sdrd_mx.Name = "lb_sdrd_mx";
+            this.lb_sdrd_mx.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_mx.TabIndex = 15;
+            this.lb_sdrd_mx.Text = "Sd/Rd";
+            // 
+            // lb_sdrd_nt
+            // 
+            this.lb_sdrd_nt.AutoSize = true;
+            this.lb_sdrd_nt.Location = new System.Drawing.Point(87, 94);
+            this.lb_sdrd_nt.Name = "lb_sdrd_nt";
+            this.lb_sdrd_nt.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_nt.TabIndex = 14;
+            this.lb_sdrd_nt.Text = "Sd/Rd";
+            // 
+            // lb_sdrd_nc
+            // 
+            this.lb_sdrd_nc.AutoSize = true;
+            this.lb_sdrd_nc.Location = new System.Drawing.Point(87, 41);
+            this.lb_sdrd_nc.Name = "lb_sdrd_nc";
+            this.lb_sdrd_nc.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_nc.TabIndex = 13;
+            this.lb_sdrd_nc.Text = "Sd/Rd";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(178, 130);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(73, 13);
+            this.label29.TabIndex = 12;
+            this.label29.Text = "My,Rd (kN*m)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(178, 146);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(66, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(15, 130);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(73, 13);
+            this.label30.TabIndex = 10;
+            this.label30.Text = "Mx,Rd (kN*m)";
+            // 
+            // txt_mxrd
+            // 
+            this.txt_mxrd.Location = new System.Drawing.Point(15, 146);
+            this.txt_mxrd.Name = "txt_mxrd";
+            this.txt_mxrd.ReadOnly = true;
+            this.txt_mxrd.Size = new System.Drawing.Size(66, 20);
+            this.txt_mxrd.TabIndex = 9;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(181, 75);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(59, 13);
+            this.label39.TabIndex = 8;
+            this.label39.Text = "Vy,Rd (kN)";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(178, 91);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(66, 20);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(181, 22);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(59, 13);
+            this.label40.TabIndex = 6;
+            this.label40.Text = "Vx,Rd (kN)";
+            // 
+            // txt_vxrd
+            // 
+            this.txt_vxrd.Location = new System.Drawing.Point(178, 38);
+            this.txt_vxrd.Name = "txt_vxrd";
+            this.txt_vxrd.ReadOnly = true;
+            this.txt_vxrd.Size = new System.Drawing.Size(66, 20);
+            this.txt_vxrd.TabIndex = 5;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(15, 75);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(58, 13);
+            this.label41.TabIndex = 4;
+            this.label41.Text = "Nt,Rd (kN)";
+            // 
+            // txt_ntrd
+            // 
+            this.txt_ntrd.Location = new System.Drawing.Point(15, 91);
+            this.txt_ntrd.Name = "txt_ntrd";
+            this.txt_ntrd.ReadOnly = true;
+            this.txt_ntrd.Size = new System.Drawing.Size(66, 20);
+            this.txt_ntrd.TabIndex = 3;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(15, 22);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(61, 13);
+            this.label42.TabIndex = 2;
+            this.label42.Text = "Nc,Rd (kN)";
+            // 
+            // txt_ncrd
+            // 
+            this.txt_ncrd.Location = new System.Drawing.Point(15, 38);
+            this.txt_ncrd.Name = "txt_ncrd";
+            this.txt_ncrd.ReadOnly = true;
+            this.txt_ncrd.Size = new System.Drawing.Size(66, 20);
+            this.txt_ncrd.TabIndex = 1;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.label31);
+            this.groupBox6.Controls.Add(this.pictureBox9);
+            this.groupBox6.Controls.Add(this.txt_g);
+            this.groupBox6.Controls.Add(this.label37);
+            this.groupBox6.Controls.Add(this.txt_fy);
+            this.groupBox6.Controls.Add(this.label35);
+            this.groupBox6.Controls.Add(this.label33);
+            this.groupBox6.Controls.Add(this.txt_e);
+            this.groupBox6.Controls.Add(this.txt_fu);
+            this.groupBox6.Location = new System.Drawing.Point(408, 213);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(487, 117);
+            this.groupBox6.TabIndex = 24;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Aço";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(261, 70);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(201, 13);
+            this.label31.TabIndex = 34;
+            this.label31.Text = "Módulo de elasticidade transversal (MPa)";
+            this.label31.Click += new System.EventHandler(this.label31_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.diagrama2;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(15, 28);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(78, 73);
+            this.pictureBox9.TabIndex = 13;
+            this.pictureBox9.TabStop = false;
+            // 
+            // txt_g
+            // 
+            this.txt_g.Location = new System.Drawing.Point(264, 84);
+            this.txt_g.Name = "txt_g";
+            this.txt_g.Size = new System.Drawing.Size(51, 20);
+            this.txt_g.TabIndex = 35;
+            this.txt_g.Text = "77.000";
+            this.txt_g.TextChanged += new System.EventHandler(this.txt_g_TextChanged);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(104, 15);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(150, 13);
+            this.label37.TabIndex = 25;
+            this.label37.Text = "Tensão de escoamento (MPa)";
+            // 
+            // txt_fy
+            // 
+            this.txt_fy.Location = new System.Drawing.Point(130, 31);
+            this.txt_fy.Name = "txt_fy";
+            this.txt_fy.Size = new System.Drawing.Size(51, 20);
+            this.txt_fy.TabIndex = 26;
+            this.txt_fy.Text = "345";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(261, 14);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(203, 13);
+            this.label35.TabIndex = 28;
+            this.label35.Text = "Módulo de elasticidade longitudinal (MPa)";
+            this.label35.Click += new System.EventHandler(this.label35_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(104, 68);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(106, 13);
+            this.label33.TabIndex = 31;
+            this.label33.Text = "Tensão Última (MPa)";
+            // 
+            // txt_e
+            // 
+            this.txt_e.Location = new System.Drawing.Point(264, 31);
+            this.txt_e.Name = "txt_e";
+            this.txt_e.Size = new System.Drawing.Size(51, 20);
+            this.txt_e.TabIndex = 29;
+            this.txt_e.Text = "200.000";
+            this.txt_e.TextChanged += new System.EventHandler(this.txt_elasticidade_TextChanged);
+            // 
+            // txt_fu
+            // 
+            this.txt_fu.Location = new System.Drawing.Point(130, 84);
+            this.txt_fu.Name = "txt_fu";
+            this.txt_fu.Size = new System.Drawing.Size(51, 20);
+            this.txt_fu.TabIndex = 32;
+            this.txt_fu.Text = "450";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.txt_lb);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.txt_lz);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.txt_ly);
+            this.groupBox3.Controls.Add(this.pictureBox8);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.txt_lx);
+            this.groupBox3.Location = new System.Drawing.Point(408, 90);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(487, 117);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Geometria da barra";
+            // 
+            // txt_lb
+            // 
+            this.txt_lb.Location = new System.Drawing.Point(342, 80);
+            this.txt_lb.Name = "txt_lb";
+            this.txt_lb.Size = new System.Drawing.Size(53, 20);
+            this.txt_lb.TabIndex = 21;
+            this.txt_lb.Text = "0";
+            // 
+            // txt_lz
+            // 
+            this.txt_lz.Location = new System.Drawing.Point(342, 27);
+            this.txt_lz.Name = "txt_lz";
+            this.txt_lz.Size = new System.Drawing.Size(53, 20);
+            this.txt_lz.TabIndex = 18;
+            this.txt_lz.Text = "0";
+            // 
+            // txt_ly
+            // 
+            this.txt_ly.Location = new System.Drawing.Point(178, 80);
+            this.txt_ly.Name = "txt_ly";
+            this.txt_ly.Size = new System.Drawing.Size(53, 20);
+            this.txt_ly.TabIndex = 15;
+            this.txt_ly.Text = "0";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(15, 27);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(78, 73);
+            this.pictureBox8.TabIndex = 13;
+            this.pictureBox8.TabStop = false;
+            // 
+            // txt_lx
+            // 
+            this.txt_lx.Location = new System.Drawing.Point(178, 27);
+            this.txt_lx.Name = "txt_lx";
+            this.txt_lx.Size = new System.Drawing.Size(53, 20);
+            this.txt_lx.TabIndex = 12;
+            this.txt_lx.Text = "0";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txt_mysd);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txt_mxsd);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txt_vysd);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txt_vxsd);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txt_ntsd);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txt_ncsd);
+            this.groupBox1.Controls.Add(this.pictureBox7);
+            this.groupBox1.Location = new System.Drawing.Point(408, 336);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(487, 119);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Esforços Solicitantes";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(362, 70);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "My,Sd (kN*cm)";
+            // 
+            // txt_mysd
+            // 
+            this.txt_mysd.Location = new System.Drawing.Point(362, 86);
+            this.txt_mysd.Name = "txt_mysd";
+            this.txt_mysd.Size = new System.Drawing.Size(66, 20);
+            this.txt_mysd.TabIndex = 11;
+            this.txt_mysd.Text = "0";
+            this.txt_mysd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mysd_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(365, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Mx,Sd (kN*cm)";
+            // 
+            // txt_mxsd
+            // 
+            this.txt_mxsd.Location = new System.Drawing.Point(362, 34);
+            this.txt_mxsd.Name = "txt_mxsd";
+            this.txt_mxsd.Size = new System.Drawing.Size(66, 20);
+            this.txt_mxsd.TabIndex = 9;
+            this.txt_mxsd.Text = "0";
+            this.txt_mxsd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_mxsd_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(256, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Vy,Sd (kN)";
+            // 
+            // txt_vysd
+            // 
+            this.txt_vysd.Location = new System.Drawing.Point(253, 86);
+            this.txt_vysd.Name = "txt_vysd";
+            this.txt_vysd.Size = new System.Drawing.Size(66, 20);
+            this.txt_vysd.TabIndex = 7;
+            this.txt_vysd.Text = "0";
+            this.txt_vysd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_vysd_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(259, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Vx,Sd (kN)";
+            // 
+            // txt_vxsd
+            // 
+            this.txt_vxsd.Location = new System.Drawing.Point(253, 34);
+            this.txt_vxsd.Name = "txt_vxsd";
+            this.txt_vxsd.Size = new System.Drawing.Size(66, 20);
+            this.txt_vxsd.TabIndex = 5;
+            this.txt_vxsd.Text = "0";
+            this.txt_vxsd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_vxsd_KeyPress);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(144, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Nt,Sd (kN)";
+            // 
+            // txt_ntsd
+            // 
+            this.txt_ntsd.Location = new System.Drawing.Point(144, 87);
+            this.txt_ntsd.Name = "txt_ntsd";
+            this.txt_ntsd.Size = new System.Drawing.Size(66, 20);
+            this.txt_ntsd.TabIndex = 3;
+            this.txt_ntsd.Text = "0";
+            this.txt_ntsd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ntsd_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(144, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Nc,Sd (kN)";
+            // 
+            // txt_ncsd
+            // 
+            this.txt_ncsd.Location = new System.Drawing.Point(144, 34);
+            this.txt_ncsd.Name = "txt_ncsd";
+            this.txt_ncsd.Size = new System.Drawing.Size(66, 20);
+            this.txt_ncsd.TabIndex = 1;
+            this.txt_ncsd.Text = "0";
+            this.txt_ncsd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ncsd_KeyPress);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.esforcos;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox7.Location = new System.Drawing.Point(15, 31);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(78, 73);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
             // 
             // label2
             // 
@@ -489,219 +1157,20 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Versão de testes";
             // 
-            // tabControl1
+            // txt_ntrd_esb
             // 
-            this.tabControl1.Controls.Add(this.tab_tracao);
-            this.tabControl1.Controls.Add(this.tab_compressao);
-            this.tabControl1.Controls.Add(this.tab_flexao);
-            this.tabControl1.Location = new System.Drawing.Point(408, 94);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(492, 556);
-            this.tabControl1.TabIndex = 22;
-            // 
-            // tab_tracao
-            // 
-            this.tab_tracao.Controls.Add(this.txt_resultadoTracao);
-            this.tab_tracao.Location = new System.Drawing.Point(4, 22);
-            this.tab_tracao.Name = "tab_tracao";
-            this.tab_tracao.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_tracao.Size = new System.Drawing.Size(484, 530);
-            this.tab_tracao.TabIndex = 0;
-            this.tab_tracao.Text = "Tração";
-            this.tab_tracao.UseVisualStyleBackColor = true;
-            // 
-            // tab_compressao
-            // 
-            this.tab_compressao.Controls.Add(this.txt_resultadoCompressao);
-            this.tab_compressao.Location = new System.Drawing.Point(4, 22);
-            this.tab_compressao.Name = "tab_compressao";
-            this.tab_compressao.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_compressao.Size = new System.Drawing.Size(484, 530);
-            this.tab_compressao.TabIndex = 1;
-            this.tab_compressao.Text = "Compressão";
-            this.tab_compressao.UseVisualStyleBackColor = true;
-            // 
-            // txt_resultadoCompressao
-            // 
-            this.txt_resultadoCompressao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_resultadoCompressao.Location = new System.Drawing.Point(6, 3);
-            this.txt_resultadoCompressao.Name = "txt_resultadoCompressao";
-            this.txt_resultadoCompressao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txt_resultadoCompressao.Size = new System.Drawing.Size(472, 525);
-            this.txt_resultadoCompressao.TabIndex = 1;
-            this.txt_resultadoCompressao.Text = "";
-            // 
-            // tab_flexao
-            // 
-            this.tab_flexao.Controls.Add(this.txt_resultadoFlexao);
-            this.tab_flexao.Location = new System.Drawing.Point(4, 22);
-            this.tab_flexao.Name = "tab_flexao";
-            this.tab_flexao.Size = new System.Drawing.Size(484, 530);
-            this.tab_flexao.TabIndex = 2;
-            this.tab_flexao.Text = "Flexão";
-            this.tab_flexao.UseVisualStyleBackColor = true;
-            // 
-            // txt_resultadoFlexao
-            // 
-            this.txt_resultadoFlexao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_resultadoFlexao.Location = new System.Drawing.Point(6, 3);
-            this.txt_resultadoFlexao.Name = "txt_resultadoFlexao";
-            this.txt_resultadoFlexao.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.txt_resultadoFlexao.Size = new System.Drawing.Size(472, 525);
-            this.txt_resultadoFlexao.TabIndex = 1;
-            this.txt_resultadoFlexao.Text = "";
-            // 
-            // btn_geo
-            // 
-            this.btn_geo.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
-            this.btn_geo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_geo.Location = new System.Drawing.Point(115, 34);
-            this.btn_geo.Name = "btn_geo";
-            this.btn_geo.Size = new System.Drawing.Size(48, 50);
-            this.btn_geo.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.btn_geo, "Geometria do perfil");
-            this.btn_geo.UseVisualStyleBackColor = true;
-            this.btn_geo.Click += new System.EventHandler(this.btn_geo_Click);
-            // 
-            // btn_calc
-            // 
-            this.btn_calc.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
-            this.btn_calc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_calc.Location = new System.Drawing.Point(169, 34);
-            this.btn_calc.Name = "btn_calc";
-            this.btn_calc.Size = new System.Drawing.Size(48, 50);
-            this.btn_calc.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
-            this.btn_calc.UseVisualStyleBackColor = true;
-            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
-            // 
-            // btn_esforcos
-            // 
-            this.btn_esforcos.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.esforcos;
-            this.btn_esforcos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_esforcos.Location = new System.Drawing.Point(63, 34);
-            this.btn_esforcos.Name = "btn_esforcos";
-            this.btn_esforcos.Size = new System.Drawing.Size(48, 50);
-            this.btn_esforcos.TabIndex = 17;
-            this.toolTip1.SetToolTip(this.btn_esforcos, "Esforços solicitantes");
-            this.btn_esforcos.UseVisualStyleBackColor = true;
-            this.btn_esforcos.Click += new System.EventHandler(this.btn_esforcos_Click);
-            // 
-            // btn_apagar
-            // 
-            this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
-            this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_apagar.Location = new System.Drawing.Point(848, 34);
-            this.btn_apagar.Name = "btn_apagar";
-            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
-            this.btn_apagar.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.btn_apagar, "Apagar resultados");
-            this.btn_apagar.UseVisualStyleBackColor = true;
-            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
-            // 
-            // btn_propPerfil
-            // 
-            this.btn_propPerfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.diagrama2;
-            this.btn_propPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_propPerfil.Location = new System.Drawing.Point(9, 34);
-            this.btn_propPerfil.Name = "btn_propPerfil";
-            this.btn_propPerfil.Size = new System.Drawing.Size(48, 50);
-            this.btn_propPerfil.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btn_propPerfil, "Propriedades do aço");
-            this.btn_propPerfil.UseVisualStyleBackColor = true;
-            this.btn_propPerfil.Click += new System.EventHandler(this.btn_propPerfil_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(7, 76);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 15;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pct_perfil
-            // 
-            this.pct_perfil.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Prop_i;
-            this.pct_perfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pct_perfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pct_perfil.Location = new System.Drawing.Point(174, 28);
-            this.pct_perfil.Name = "pct_perfil";
-            this.pct_perfil.Size = new System.Drawing.Size(184, 242);
-            this.pct_perfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pct_perfil.TabIndex = 14;
-            this.pct_perfil.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_L;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(7, 244);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_C;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(7, 202);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 34);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.L;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 160);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.C;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 118);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            this.txt_ntrd_esb.AutoSize = true;
+            this.txt_ntrd_esb.Location = new System.Drawing.Point(88, 110);
+            this.txt_ntrd_esb.Name = "txt_ntrd_esb";
+            this.txt_ntrd_esb.Size = new System.Drawing.Size(0, 13);
+            this.txt_ntrd_esb.TabIndex = 19;
             // 
             // F_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(911, 676);
+            this.ClientSize = new System.Drawing.Size(932, 676);
             this.Controls.Add(this.toolStripContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -714,6 +1183,13 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -722,17 +1198,17 @@
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tab_tracao.ResumeLayout(false);
-            this.tab_compressao.ResumeLayout(false);
-            this.tab_flexao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_perfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -757,35 +1233,79 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Button btn_apagar;
-        public System.Windows.Forms.TextBox txt_prop;
         public System.Windows.Forms.ListBox lb_perfis;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
-        private System.Windows.Forms.Button btn_propPerfil;
         private System.Windows.Forms.ToolStripMenuItem traçãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compressãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flexãoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button btn_esforcos;
         private System.Windows.Forms.ToolStripMenuItem resultadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem;
         private System.Windows.Forms.Button btn_calc;
         private System.Windows.Forms.ToolStripMenuItem otimizarCompressãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem otimizarFlexãoToolStripMenuItem;
-        private System.Windows.Forms.Button btn_geo;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStripMenuItem exportarPDFToolStripMenuItem2;
         public System.Windows.Forms.Label lbl_verifTracao;
-        public System.Windows.Forms.RichTextBox txt_resultadoTracao;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tab_tracao;
-        private System.Windows.Forms.TabPage tab_compressao;
-        private System.Windows.Forms.TabPage tab_flexao;
-        public System.Windows.Forms.RichTextBox txt_resultadoCompressao;
-        public System.Windows.Forms.RichTextBox txt_resultadoFlexao;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox txt_prop;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt_mysd;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_mxsd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_vysd;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_vxsd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_ntsd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_ncsd;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox txt_lx;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TextBox txt_ly;
+        private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.TextBox txt_lb;
+        private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.TextBox txt_lz;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox txt_g;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txt_fy;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txt_e;
+        private System.Windows.Forms.TextBox txt_fu;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txt_mxrd;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txt_vxrd;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox txt_ntrd;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txt_ncrd;
+        public System.Windows.Forms.Label lb_sdrd_my;
+        public System.Windows.Forms.Label lb_sdrd_vy;
+        public System.Windows.Forms.Label lb_sdrd_vx;
+        public System.Windows.Forms.Label lb_sdrd_mx;
+        public System.Windows.Forms.Label lb_sdrd_nt;
+        public System.Windows.Forms.Label lb_sdrd_nc;
+        public System.Windows.Forms.Label txt_ntrd_esb;
     }
 }
 

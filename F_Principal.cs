@@ -23,23 +23,14 @@ namespace VerPerfisLaminados
         //Variáveis gerais
         string tipoperfil = "i"; //Usado para checar o tipo de perfil a ser plotado na listbox
 
-        //Propriedades gerais do aço
-        public double fy = 345;
-        public double fu = 450;
-        public double elast = 200.000;
-        public double g = 77.000;
 
         //Esforços solicitantes
         public double ftsd = 0;
-        public double fnsd = 0;
-        public double fvsd = 0;
+        public double fcsd = 0;
+        public double fvxsd = 0;
+        public double fvysd = 0;
         public double mxsd = 0;
         public double mysd = 0;
-
-        //Geomtria do perfil
-        public double lx = 0;
-        public double ly = 0;
-        public double lz = 0;
 
         //Variaveis gerais - tração
         public int tipoCt = 1;
@@ -59,7 +50,7 @@ namespace VerPerfisLaminados
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
-            txt_resultadoTracao.Text = "";
+
             lbl_verifTracao.Text = "";
         }    
 
@@ -216,11 +207,6 @@ namespace VerPerfisLaminados
             f_Sobre.ShowDialog();
         }
 
-        private void btn_calcular_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void F_Principal_Load(object sender, EventArgs e)
         {
 
@@ -233,35 +219,143 @@ namespace VerPerfisLaminados
 
         private void btn_calc_Click(object sender, EventArgs e)
         {
-            txt_resultadoTracao.Text = "RESULTADO: \r\n \r\n";
+            //Propriedades gerais 
+            double lx = double.Parse(txt_lx.Text);
+            double ly = double.Parse(txt_ly.Text);
+            double lz = double.Parse(txt_lz.Text);
+            double lb = double.Parse(txt_lb.Text);
 
-            CalculaTracao tracao = new CalculaTracao();
-            txt_resultadoTracao.Text += tracao.Tracao(tipoCt, lig, tipoperfil, ac, lc, fy, ftsd, fu, punc, folga,
-            diam, numfuros, numfurosAlma, numfurosMesa, lx, ly, lz, this);
-            CalculaCompressao compressao = new CalculaCompressao();
+            //Propriedades gerais do aço
+            double fy = double.Parse(txt_fy.Text);
+            double fu = double.Parse(txt_fu.Text);
+            double elast = double.Parse(txt_e.Text);
+            double g = double.Parse(txt_g.Text);
+
+            //Limpa os textos dos resultados
+            txt_ntrd_esb.Text = "";
+
+        CalculaCompressao compressao = new CalculaCompressao();
             CalculaFlexao flexao = new CalculaFlexao();
+
+            //Calculo a tracao
+            double ntsd = double.Parse(txt_ntsd.Text);
+            CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+
+            CalculaCortante cortante = new CalculaCortante();
             
         }
 
-        private void btn_propPerfil_Click(object sender, EventArgs e)
-        {
-            F_DadosAco f_DadosAco = new F_DadosAco(this, fy, fu, elast, g);
-            f_DadosAco.ShowDialog();
-        }
-
-        private void btn_esforcos_Click(object sender, EventArgs e)
-        {
-            F_Esforcos f_Esforcos = new F_Esforcos(this, ftsd, fnsd, fvsd, mxsd,mysd );
-            f_Esforcos.ShowDialog();
-        }
-
-        private void btn_geo_Click(object sender, EventArgs e)
-        {
-            F_Geometria f_Geometria = new F_Geometria(this, lx, ly, lz);
-            f_Geometria.ShowDialog();
-        }
-
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void txt_ncsd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_ntsd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_vxsd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_vysd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_mxsd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_mysd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_elasticidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_g_TextChanged(object sender, EventArgs e)
         {
 
         }

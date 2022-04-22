@@ -10,13 +10,23 @@ namespace VerPerfisLaminados
     {
         F_Principal pai;
 
-        public string Tracao(int tipoCt, string lig, string tipoperfil, double ac, double lc, double fy, double ftsd, double fu, double punc, double folga,
-            double diam, double numfuros, double numfurosAlma, double numfurosMesa, double lx, double ly, double lz, F_Principal f_Principal)
+       // public string Tracao(int tipoCt, string lig, string tipoperfil, double ac, double lc, double fy, double ftsd, double fu, double punc, double folga,
+           // double diam, double numfuros, double numfurosAlma, double numfurosMesa, double lx, double ly, double lz, F_Principal f_Principal)
+
+        public CalculaTracao(F_Principal f_principal, string tipoperfil, double fy, double fu, double ntsd, double lx, double ly, double lz)
         {
+            pai = f_principal;
 
-
+            /*
             double ct = CalculoCt(tipoCt, tipoperfil, ac, lc);
-            pai = f_Principal;
+            
+
+            //Variaveis dos perfis
+            punc /= 10.0; //converte de mm para cm
+            folga /= 10.0; //converte de mm para cm
+            diam /= 10.0; //converte de mm para cm
+
+            */
 
             //Variaveis dos perfis
             double area = 0;
@@ -25,7 +35,6 @@ namespace VerPerfisLaminados
             double tw = 0;
             double tf = 0;
 
-            
             //Preenche as variáveis dos perfis em função do tipo de perfil
             if (tipoperfil == "i")
             {
@@ -51,18 +60,15 @@ namespace VerPerfisLaminados
 
             //Variáveis gerais
             double esb; //raio de giracao e esbeltez
-            string verCt;
             string ver1, ver2, ver3, ver4;
             fy /= 10.0; //converte de MPa para kN/cm2
             fu /= 10.0; //converte de MPa para kN/cm2
-            punc /= 10.0; //converte de mm para cm
-            folga /= 10.0; //converte de mm para cm
-            diam /= 10.0; //converte de mm para cm
+
 
             //Calcula a tração na seção bruta
-            double ftrd1 = (area * fy) / 1.10;
+            double ntrd1 = (area * fy) / 1.10;
 
-            if (ftrd1 >= ftsd)
+            if (ntrd1 >= ntsd)
             {
                 ver1 = "PASSOU!";
             }
@@ -70,6 +76,8 @@ namespace VerPerfisLaminados
             {
                 ver1 = "NÃO PASSOU!";
             }
+
+            /*
 
             //Calcula a tração na seção líquida         
             double diamfuro = diam + folga + punc;
@@ -105,10 +113,11 @@ namespace VerPerfisLaminados
                 ver2 = "NÃO PASSOU!";
             }
 
+            */
+
 
             //Calcula a taxa de aproveitamento do perfil
-            double Ftrd = Math.Min(ftrd1, ftrd2);
-            double taxa = (ftsd / Ftrd) * 100.0;
+            double taxa = (ntsd / ntrd1);
 
             //Calcula ELS
             double l = Math.Max(lz, Math.Max(lx, ly)); //determina o maior comprimento do perfil
@@ -120,18 +129,22 @@ namespace VerPerfisLaminados
             else
             {
                 ver3 = "NÃO PASSOU!";
+                pai.txt_ntrd_esb.Text = "Falha na esbeltez";
+                pai.txt_ntrd_esb.ForeColor = System.Drawing.Color.Red;
             }
 
-            if (ver1 == "PASSOU!" && ver2 == "PASSOU!" && ver3 == "PASSOU!" && ver4 == "PASSOU!")
+            if (ver1 == "PASSOU!" &&  ver3 == "PASSOU!")
             {
-                pai.lbl_verifTracao.Text = "PASSOU !";
-                pai.lbl_verifTracao.ForeColor = System.Drawing.Color.Green;
+                pai.lb_sdrd_nt.ForeColor = System.Drawing.Color.Green;
             }
             else
             { 
-                pai.lbl_verifTracao.Text = "NÃO PASSOU !";
-                pai.lbl_verifTracao.ForeColor = System.Drawing.Color.Red;
+                pai.lb_sdrd_nt.ForeColor = System.Drawing.Color.Red;
             }
+
+            pai.lb_sdrd_nt.Text = $"Sd/Rd = {taxa:F2}";
+
+            /*
 
             string resultado = $"1 - ESCOAMENTO DA SEÇÃO BRUTA:{ver1} \r\n" +
                              $"Ft,rd = ({area:F2} x {fy:F2}) / 1,10 = {ftrd1:F2} kN\r\n" +
@@ -246,6 +259,7 @@ namespace VerPerfisLaminados
                     break;
             }
             return ct;
+            */
         }
 
 
@@ -253,7 +267,7 @@ namespace VerPerfisLaminados
 
     }
 
-}
+    }
 
 
 

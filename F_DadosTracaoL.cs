@@ -67,7 +67,6 @@ namespace VerPerfisLaminados
             pai.folga = double.Parse(txt_folgaFuro.Text);
             pai.lc = double.Parse(txt_lc.Text);
             pai.ac = double.Parse(txt_ac.Text);
-            pai.txt_resultadoTracao.Text = "";
             pai.lbl_verifTracao.Text = "";
             this.Close();
         }
