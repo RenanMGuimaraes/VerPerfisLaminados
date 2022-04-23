@@ -60,7 +60,6 @@ namespace VerPerfisLaminados
 
             //Variáveis gerais
             double esb; //raio de giracao e esbeltez
-            string ver1, ver2, ver3, ver4;
             fy /= 10.0; //converte de MPa para kN/cm2
             fu /= 10.0; //converte de MPa para kN/cm2
 
@@ -68,13 +67,18 @@ namespace VerPerfisLaminados
             //Calcula a tração na seção bruta
             double ntrd1 = (area * fy) / 1.10;
 
+            //Calcula a taxa de aproveitamento do perfil
+            double taxa = (ntsd / ntrd1);
+
             if (ntrd1 >= ntsd)
             {
-                ver1 = "PASSOU!";
+                pai.lb_sdrd_nt.ForeColor = System.Drawing.Color.Green;
+                pai.lb_sdrd_nt.Text = $"Sd/Rd = {taxa:F2} ";
             }
             else
             {
-                ver1 = "NÃO PASSOU!";
+                pai.lb_sdrd_nt.ForeColor = System.Drawing.Color.Red;
+                pai.lb_sdrd_nt.Text = $"Sd/Rd = {taxa:F2} ";
             }
 
             /*
@@ -114,35 +118,23 @@ namespace VerPerfisLaminados
             }
 
             */
-
-
-            //Calcula a taxa de aproveitamento do perfil
-            double taxa = (ntsd / ntrd1);
+           
 
             //Calcula ELS
             double l = Math.Max(lz, Math.Max(lx, ly)); //determina o maior comprimento do perfil
             esb = l / rmin;
             if (esb <= 300)
             {
-                ver3 = "PASSOU!";
+                pai.lbl_ntrd_esb.Text = "Esbeltez: OK!";
+                pai.lbl_ntrd_esb.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
-                ver3 = "NÃO PASSOU!";
-                pai.txt_ntrd_esb.Text = "Falha na esbeltez";
-                pai.txt_ntrd_esb.ForeColor = System.Drawing.Color.Red;
+                pai.lbl_ntrd_esb.Text = "Esbeltez: Falhou!";
+                pai.lbl_ntrd_esb.ForeColor = System.Drawing.Color.Red;
             }
 
-            if (ver1 == "PASSOU!" &&  ver3 == "PASSOU!")
-            {
-                pai.lb_sdrd_nt.ForeColor = System.Drawing.Color.Green;
-            }
-            else
-            { 
-                pai.lb_sdrd_nt.ForeColor = System.Drawing.Color.Red;
-            }
-
-            pai.lb_sdrd_nt.Text = $"Sd/Rd = {taxa:F2}";
+            //Preenche o valor da resistencia final no txt_ntrd
             pai.txt_ntrd.Text = ntrd1.ToString("F2");
 
             /*

@@ -76,7 +76,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txt_cb = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.txt_ntrd_esb = new System.Windows.Forms.Label();
+            this.lbl_ntrd_esb = new System.Windows.Forms.Label();
             this.lb_sdrd_my = new System.Windows.Forms.Label();
             this.lb_sdrd_vy = new System.Windows.Forms.Label();
             this.lb_sdrd_vx = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_ncrd_esb = new System.Windows.Forms.Label();
+            this.lbl_ncrd_esb = new System.Windows.Forms.Label();
             this.lbl_perfil = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -271,6 +271,7 @@
             // rb_cantoneira
             // 
             this.rb_cantoneira.AutoSize = true;
+            this.rb_cantoneira.Enabled = false;
             this.rb_cantoneira.Location = new System.Drawing.Point(46, 169);
             this.rb_cantoneira.Name = "rb_cantoneira";
             this.rb_cantoneira.Size = new System.Drawing.Size(76, 17);
@@ -722,8 +723,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.txt_ncrd_esb);
-            this.groupBox7.Controls.Add(this.txt_ntrd_esb);
+            this.groupBox7.Controls.Add(this.lbl_ncrd_esb);
+            this.groupBox7.Controls.Add(this.lbl_ntrd_esb);
             this.groupBox7.Controls.Add(this.lb_sdrd_my);
             this.groupBox7.Controls.Add(this.lb_sdrd_vy);
             this.groupBox7.Controls.Add(this.lb_sdrd_vx);
@@ -749,18 +750,19 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Esforços Resistentes";
             // 
-            // txt_ntrd_esb
+            // lbl_ntrd_esb
             // 
-            this.txt_ntrd_esb.AutoSize = true;
-            this.txt_ntrd_esb.Location = new System.Drawing.Point(88, 110);
-            this.txt_ntrd_esb.Name = "txt_ntrd_esb";
-            this.txt_ntrd_esb.Size = new System.Drawing.Size(0, 13);
-            this.txt_ntrd_esb.TabIndex = 19;
+            this.lbl_ntrd_esb.AutoSize = true;
+            this.lbl_ntrd_esb.Location = new System.Drawing.Point(88, 110);
+            this.lbl_ntrd_esb.Name = "lbl_ntrd_esb";
+            this.lbl_ntrd_esb.Size = new System.Drawing.Size(50, 13);
+            this.lbl_ntrd_esb.TabIndex = 19;
+            this.lbl_ntrd_esb.Text = "Esbeltez:";
             // 
             // lb_sdrd_my
             // 
             this.lb_sdrd_my.AutoSize = true;
-            this.lb_sdrd_my.Location = new System.Drawing.Point(250, 149);
+            this.lb_sdrd_my.Location = new System.Drawing.Point(389, 94);
             this.lb_sdrd_my.Name = "lb_sdrd_my";
             this.lb_sdrd_my.Size = new System.Drawing.Size(39, 13);
             this.lb_sdrd_my.TabIndex = 18;
@@ -787,7 +789,7 @@
             // lb_sdrd_mx
             // 
             this.lb_sdrd_mx.AutoSize = true;
-            this.lb_sdrd_mx.Location = new System.Drawing.Point(87, 149);
+            this.lb_sdrd_mx.Location = new System.Drawing.Point(389, 44);
             this.lb_sdrd_mx.Name = "lb_sdrd_mx";
             this.lb_sdrd_mx.Size = new System.Drawing.Size(39, 13);
             this.lb_sdrd_mx.TabIndex = 15;
@@ -798,23 +800,23 @@
             this.lb_sdrd_nt.AutoSize = true;
             this.lb_sdrd_nt.Location = new System.Drawing.Point(87, 94);
             this.lb_sdrd_nt.Name = "lb_sdrd_nt";
-            this.lb_sdrd_nt.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_nt.Size = new System.Drawing.Size(42, 13);
             this.lb_sdrd_nt.TabIndex = 14;
-            this.lb_sdrd_nt.Text = "Sd/Rd";
+            this.lb_sdrd_nt.Text = "Sd/Rd:";
             // 
             // lb_sdrd_nc
             // 
             this.lb_sdrd_nc.AutoSize = true;
-            this.lb_sdrd_nc.Location = new System.Drawing.Point(87, 41);
+            this.lb_sdrd_nc.Location = new System.Drawing.Point(87, 38);
             this.lb_sdrd_nc.Name = "lb_sdrd_nc";
-            this.lb_sdrd_nc.Size = new System.Drawing.Size(39, 13);
+            this.lb_sdrd_nc.Size = new System.Drawing.Size(42, 13);
             this.lb_sdrd_nc.TabIndex = 13;
-            this.lb_sdrd_nc.Text = "Sd/Rd";
+            this.lb_sdrd_nc.Text = "Sd/Rd:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(178, 130);
+            this.label29.Location = new System.Drawing.Point(317, 75);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(73, 13);
             this.label29.TabIndex = 12;
@@ -822,7 +824,7 @@
             // 
             // txt_myrd
             // 
-            this.txt_myrd.Location = new System.Drawing.Point(178, 146);
+            this.txt_myrd.Location = new System.Drawing.Point(317, 91);
             this.txt_myrd.Name = "txt_myrd";
             this.txt_myrd.ReadOnly = true;
             this.txt_myrd.Size = new System.Drawing.Size(66, 20);
@@ -831,7 +833,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(15, 130);
+            this.label30.Location = new System.Drawing.Point(317, 25);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(73, 13);
             this.label30.TabIndex = 10;
@@ -839,7 +841,7 @@
             // 
             // txt_mxrd
             // 
-            this.txt_mxrd.Location = new System.Drawing.Point(15, 146);
+            this.txt_mxrd.Location = new System.Drawing.Point(317, 41);
             this.txt_mxrd.Name = "txt_mxrd";
             this.txt_mxrd.ReadOnly = true;
             this.txt_mxrd.Size = new System.Drawing.Size(66, 20);
@@ -1223,13 +1225,14 @@
             this.button1.Text = "Ct";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txt_ncrd_esb
+            // lbl_ncrd_esb
             // 
-            this.txt_ncrd_esb.AutoSize = true;
-            this.txt_ncrd_esb.Location = new System.Drawing.Point(88, 59);
-            this.txt_ncrd_esb.Name = "txt_ncrd_esb";
-            this.txt_ncrd_esb.Size = new System.Drawing.Size(0, 13);
-            this.txt_ncrd_esb.TabIndex = 20;
+            this.lbl_ncrd_esb.AutoSize = true;
+            this.lbl_ncrd_esb.Location = new System.Drawing.Point(88, 56);
+            this.lbl_ncrd_esb.Name = "lbl_ncrd_esb";
+            this.lbl_ncrd_esb.Size = new System.Drawing.Size(50, 13);
+            this.lbl_ncrd_esb.TabIndex = 20;
+            this.lbl_ncrd_esb.Text = "Esbeltez:";
             // 
             // lbl_perfil
             // 
@@ -1375,7 +1378,7 @@
         public System.Windows.Forms.Label lb_sdrd_mx;
         public System.Windows.Forms.Label lb_sdrd_nt;
         public System.Windows.Forms.Label lb_sdrd_nc;
-        public System.Windows.Forms.Label txt_ntrd_esb;
+        public System.Windows.Forms.Label lbl_ntrd_esb;
         public System.Windows.Forms.TextBox txt_myrd;
         public System.Windows.Forms.TextBox txt_mxrd;
         public System.Windows.Forms.TextBox txt_vyrd;
@@ -1389,7 +1392,7 @@
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Label txt_ncrd_esb;
+        public System.Windows.Forms.Label lbl_ncrd_esb;
         private System.Windows.Forms.Label lbl_perfil;
     }
 }

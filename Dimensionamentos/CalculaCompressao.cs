@@ -78,8 +78,13 @@ namespace VerPerfisLaminados
 
             if(esb > 200)
             {
-                pai.txt_ncrd_esb.Text = "Falha na esbeltez";
-                pai.txt_ncrd_esb.ForeColor = System.Drawing.Color.Red;
+                pai.lbl_ncrd_esb.Text = "Esbeltez: Falhou!";
+                pai.lbl_ncrd_esb.ForeColor = System.Drawing.Color.Red;
+            }
+            else
+            {
+                pai.lbl_ncrd_esb.Text = "Esbeltez: OK!";
+                pai.lbl_ncrd_esb.ForeColor = System.Drawing.Color.Green;
             }
 
 

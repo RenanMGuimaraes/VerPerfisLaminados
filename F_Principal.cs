@@ -66,6 +66,15 @@ namespace VerPerfisLaminados
             txt_mxrd.Text = "";
             txt_myrd.Text = "";
             txt_cb.Text = "1";
+            lbl_perfil.Text = "PERFIL:";
+            lb_sdrd_nc.Text = "Sd/Rd: ";
+            lb_sdrd_nc.ForeColor = System.Drawing.Color.Black;
+            lbl_ncrd_esb.Text = "Esbeltez: ";
+            lbl_ncrd_esb.ForeColor = System.Drawing.Color.Black;
+            lb_sdrd_nt.Text = "Sd/Rd:";
+            lb_sdrd_nt.ForeColor = System.Drawing.Color.Black;
+            lbl_ntrd_esb.Text = "Esbeltez: ";
+            lbl_ntrd_esb.ForeColor = System.Drawing.Color.Black;
         }    
 
         //PLOTA OS PERFIS DO LB_LIST NO TXT_PROP
@@ -256,21 +265,25 @@ namespace VerPerfisLaminados
                 double elast = double.Parse(txt_e.Text);
                 double g = double.Parse(txt_g.Text);
 
-                //Limpa os textos dos resultados
-                txt_ntrd_esb.Text = "";
+                //Esforços solicitantes
+                double ncsd = double.Parse(txt_ncsd.Text);
+                double ntsd = double.Parse(txt_ntsd.Text);
+                double vxsd = double.Parse(txt_vxsd.Text);
+                double vysd = double.Parse(txt_vysd.Text);
+                double mxsd = double.Parse(txt_mxsd.Text);
+                double mysd = double.Parse(txt_mysd.Text);
 
                 //Calculo a compressao
-                double ncsd = double.Parse(txt_ncsd.Text);
                 CalculaCompressao compressao = new CalculaCompressao(this, tipoperfil, fy, fu, ncsd, lx, ly, lz, elast, g);
 
 
                 CalculaFlexao flexao = new CalculaFlexao();
 
-                //Calculo a tracao
-                double ntsd = double.Parse(txt_ntsd.Text);
+                //Calculo a tracao     
                 CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
 
-                CalculaCortante cortante = new CalculaCortante();
+                //Calculo a cortante
+                CalculaCortante cortante = new CalculaCortante(this, tipoperfil, fy, vxsd, elast);
             }
         }
 
