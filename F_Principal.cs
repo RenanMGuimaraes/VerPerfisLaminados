@@ -22,6 +22,7 @@ namespace VerPerfisLaminados
 
         //Variáveis gerais
         string tipoperfil = "i"; //Usado para checar o tipo de perfil a ser plotado na listbox
+        int id = 0; //Usado para identificar o perfil na lista
 
 
         //Esforços solicitantes
@@ -80,32 +81,37 @@ namespace VerPerfisLaminados
         //PLOTA OS PERFIS DO LB_LIST NO TXT_PROP
         private void lb_perfis_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int id = lb_perfis.SelectedIndex;
+            id = lb_perfis.SelectedIndex;
             if (tipoperfil == "i")
             {
                 PropPerfilI propPerfilI = new PropPerfilI();
-                txt_prop.Text = propPerfilI.PlotarI(id);
+                propPerfilI.PropI(id);
+                lbl_perfil.Text = PropPerfilI.perfil;
             }
             if (tipoperfil == "l")
             {
                 PropPerfilL propPerfilL = new PropPerfilL();
-                txt_prop.Text = propPerfilL.PlotarL(id);
+                propPerfilL.PropL(id);
+                lbl_perfil.Text = PropPerfilL.perfil;
             }
             if (tipoperfil == "u")
             {
                 PropPerfilU propPerfilU = new PropPerfilU();
-                txt_prop.Text = propPerfilU.PlotarU(id);
-            }  
+                propPerfilU.PropU(id);
+                lbl_perfil.Text = PropPerfilU.perfil;
+            }
         }  
 
         private void rb_perfilI_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "i";
-
+            /*
             //Carrega Imagem Perfil I
             Assembly imagemI = Assembly.GetExecutingAssembly();
             Stream streamPerfilI = imagemI.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_i.png");
             pct_perfil.Image = new Bitmap(streamPerfilI);
+            */
+
 
             //Carrega lista de perfis I
             Assembly ListaI = Assembly.GetExecutingAssembly();
@@ -118,11 +124,12 @@ namespace VerPerfisLaminados
         private void rb_cantoneira_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "l";
-
+            /*
             //Carrega Imagem Perfil L
             Assembly imagemL = Assembly.GetExecutingAssembly();
             Stream streamPerfilL = imagemL.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_L.png");
             pct_perfil.Image = new Bitmap(streamPerfilL);
+            */
 
             //Carrega lista de perfis L
             Assembly ListaL = Assembly.GetExecutingAssembly();
@@ -135,11 +142,12 @@ namespace VerPerfisLaminados
         private void rb_perfilU_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "u";
-
+            /*
             //Carrega Imagem Perfil U
             Assembly imagemU = Assembly.GetExecutingAssembly();
             Stream streamPerfilU = imagemU.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_U.png");
             pct_perfil.Image = new Bitmap(streamPerfilU);
+            */
 
             //Carrega lista de perfis U
             Assembly ListaU = Assembly.GetExecutingAssembly();
@@ -152,11 +160,12 @@ namespace VerPerfisLaminados
         private void rb_duploU_CheckedChanged(object sender, EventArgs e)
         {
             tipoperfil = "2u";
-
+            /*
             //Carrega Imagem Perfil 2U
             Assembly imagemU = Assembly.GetExecutingAssembly();
             Stream streamPerfilU = imagemU.GetManifestResourceStream("VerPerfisLaminados.Imagens.Prop_2U.png");
             pct_perfil.Image = new Bitmap(streamPerfilU);
+            */
 
             //Carrega lista de perfis U
             Assembly ListaU = Assembly.GetExecutingAssembly();
@@ -169,23 +178,6 @@ namespace VerPerfisLaminados
         {
             tipoperfil = "2l";
         }
-        private void rb_chapa_CheckedChanged(object sender, EventArgs e)
-        {
-            tipoperfil = "chapa";
-            txt_prop.Text = "";
-           
-
-            //Limpa a Lb_perfis
-            List<string> vazio = new List<string>();
-            vazio.Add("");
-            lb_perfis.DataSource = vazio;
-
-            //Carrega Imagem Chapa
-            Assembly imagemChapa = Assembly.GetExecutingAssembly();
-            Stream streamChapa = imagemChapa.GetManifestResourceStream("VerPerfisLaminados.Imagens.dimChapa.png");
-            pct_perfil.Image = new Bitmap(streamChapa);
-        }
-
 
         private void dadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -211,10 +203,6 @@ namespace VerPerfisLaminados
             }
             
         }
-
- 
-
- 
 
         private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -258,7 +246,8 @@ namespace VerPerfisLaminados
                 double lx = double.Parse(txt_lx.Text);
                 double ly = double.Parse(txt_ly.Text);
                 double lz = double.Parse(txt_lz.Text);
-
+                double cb = double.Parse(txt_cb.Text);
+               
                 //Propriedades gerais do aço
                 double fy = double.Parse(txt_fy.Text);
                 double fu = double.Parse(txt_fu.Text);
@@ -274,16 +263,59 @@ namespace VerPerfisLaminados
                 double mysd = double.Parse(txt_mysd.Text);
 
                 //Calculo a compressao
-                CalculaCompressao compressao = new CalculaCompressao(this, tipoperfil, fy, fu, ncsd, lx, ly, lz, elast, g);
+                if (cb_ncrd.Checked == true)
+                {
+                    CalculaCompressao compressao = new CalculaCompressao(this, tipoperfil, fy, fu, ncsd, lx, ly, lz, elast, g);
+                }
+                
+                if (cb_mxrd.Checked == true)
+                {
+                    //Calculo a flexao em X
+                    if (tipoperfil == "i")
+                    {
+                        CalculaFlexaoI flexao = new CalculaFlexaoI();
+                        flexao.FlexaoX(this,  mxsd,  elast,  cb,  lx,  ly, lz, fy);   
+                    }
+                    if (tipoperfil == "u")
+                    {
+                        // CalculaFlexaoI flexao = new CalculaFlexaoU(this, fy, mxsd, mysd, elast);
+                    }
+                }
 
+                if (cb_myrd.Checked == true)
+                {
+                    //Calculo a flexao em Y
+                    if (tipoperfil == "i")
+                    {
+                        CalculaFlexaoI flexao = new CalculaFlexaoI();
+                        flexao.FlexaoY(this, mysd, elast, cb, lx, ly, lz, fy);
+                    }
+                    if (tipoperfil == "u")
+                    {
+                        // CalculaFlexaoI flexao = new CalculaFlexaoU(this, fy, mxsd, mysd, elast);
+                    }
+                }
 
-                CalculaFlexao flexao = new CalculaFlexao();
+                if (cb_ntrd.Checked == true)
+                {
+                    //Calculo a tracao     
+                    CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+                }
 
-                //Calculo a tracao     
-                CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+                if (cb_vxrd.Checked == true)
+                {
+                    //Calculo a cortante no eixo de maior inércia (X)
+                    CalculaCortante cortante = new CalculaCortante();
+                    cortante.CalculaCortanteX(this, tipoperfil, fy, vxsd, elast);
+                }
 
-                //Calculo a cortante
-                CalculaCortante cortante = new CalculaCortante(this, tipoperfil, fy, vxsd, elast);
+                if (cb_vyrd.Checked == true)
+                {
+                    //Calculo a cortante no eixo de maior inércia (Y)
+                    CalculaCortante cortante = new CalculaCortante();
+                    cortante.CalculaCortanteY(this, tipoperfil, fy, vxsd, elast);
+                }
+
             }
         }
 
@@ -399,6 +431,131 @@ namespace VerPerfisLaminados
 
         private void txt_g_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btn_prop_Click(object sender, EventArgs e)
+        {
+            F_Prop f_prop = new F_Prop(id, tipoperfil);
+            f_prop.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cb_ncrd_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_ncrd.Text = "";
+            lb_sdrd_nc.Text = "Sd/Rd:";
+            lb_sdrd_nc.ForeColor = Color.Black;
+            lbl_ncrd_esb.Text = "Esbeltez:";
+            lbl_ncrd_esb.ForeColor = Color.Black;
+
+            if (cb_ncrd.Checked == true)
+            {
+                txt_ncrd.Enabled = true;
+                lbl_ncrd.Enabled = true;
+            }
+            else
+            {
+                txt_ncrd.Enabled = false;
+                lbl_ncrd.Enabled = false;
+            }
+            
+        }
+
+        private void cb_ntrd_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_ntrd.Text = "";
+            lb_sdrd_nt.Text = "Sd/Rd:";
+            lb_sdrd_nt.ForeColor = Color.Black;
+            lbl_ntrd_esb.Text = "Esbeltez:";
+            lbl_ntrd_esb.ForeColor = Color.Black;
+
+            if (cb_ntrd.Checked == true)
+            {
+                txt_ntrd.Enabled = true;
+                lbl_ntrd.Enabled = true;
+            }
+            else
+            {
+                txt_ntrd.Enabled = false;
+                lbl_ntrd.Enabled = false;
+            }
+        }
+
+        private void cb_vxrd_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_vxrd.Text = "";
+            lb_sdrd_vx.Text = "Sd/Rd:";
+            lb_sdrd_vx.ForeColor = Color.Black;
+
+            if (cb_vxrd.Checked == true)
+            {
+                txt_vxrd.Enabled = true;
+                lbl_vxrd.Enabled = true;
+            }
+            else
+            {
+                txt_vxrd.Enabled = false;
+                lbl_vxrd.Enabled = false;
+            }
+        }
+
+        private void cb_vyrd_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_vyrd.Text = "";
+            lb_sdrd_vy.Text = "Sd/Rd:";
+            lb_sdrd_vy.ForeColor = Color.Black;
+
+            if (cb_vyrd.Checked == true)
+            {
+                txt_vyrd.Enabled = true;
+                lbl_vyrd.Enabled = true;
+            }
+            else
+            {
+                txt_vyrd.Enabled = false;
+                lbl_vyrd.Enabled = false;
+            }
+        }
+
+        private void cb_mxrd_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_mxrd.Text = "";
+            lb_sdrd_mx.Text = "Sd/Rd:";
+            lb_sdrd_mx.ForeColor = Color.Black;
+
+            if (cb_mxrd.Checked == true)
+            {
+                txt_mxrd.Enabled = true;
+                lbl_mxrd.Enabled = true;
+            }
+            else
+            {
+                txt_mxrd.Enabled = false;
+                lbl_mxrd.Enabled = false;
+            }
+        }
+
+        private void cb_myrd_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_myrd.Text = "";
+            lb_sdrd_my.Text = "Sd/Rd:";
+            lb_sdrd_my.ForeColor = Color.Black;
+
+            if (cb_myrd.Checked == true)
+            {
+                txt_myrd.Enabled = true;
+                lbl_myrd.Enabled = true;
+            }
+            else
+            {
+                txt_myrd.Enabled = false;
+                lbl_myrd.Enabled = false;
+            }
 
         }
     }

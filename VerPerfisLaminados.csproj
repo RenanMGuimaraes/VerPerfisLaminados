@@ -54,7 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dimensionamentos\CalculaCortante.cs" />
-    <Compile Include="Dimensionamentos\CalculaFlexao.cs" />
+    <Compile Include="Dimensionamentos\CalculaFlexaoI.cs" />
     <Compile Include="Dimensionamentos\CalculaCompressao.cs" />
     <Compile Include="F_DadosTracaoI.cs">
       <SubType>Form</SubType>
@@ -78,6 +78,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="F_Prop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Prop.Designer.cs">
+      <DependentUpon>F_Prop.cs</DependentUpon>
     </Compile>
     <Compile Include="PropriedadesPerfis\PropPerfil2U.cs" />
     <Compile Include="Dimensionamentos\CalculaTracao.cs" />
@@ -155,6 +161,9 @@
   <ItemGroup>
     <EmbeddedResource Include="F_TracaoHelp.resx">
       <DependentUpon>F_TracaoHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Prop.resx">
+      <DependentUpon>F_Prop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Txt\lista_perfisI.txt" />
     <EmbeddedResource Include="Txt\lista_perfisL.txt" />

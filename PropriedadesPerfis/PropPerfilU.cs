@@ -8,10 +8,38 @@ using System.Reflection;
 
 namespace VerPerfisLaminados
 {
+    //Aqui será realizada a verificação do tipo de perfil, a determinação das suas propriedades geométrica e essas propriedades serão
+    //armazenadas neste arquivo (via variáveis estáticas) para consulta, ou seja, as propriedades do perfil devem ser obtidas sempre 
+    //deste arquivo.
     internal class PropPerfilU
     {
         public static double area, Ix, Wx, rx, Iy, Wy, ry, x, d, tw, tf, bf, peso, It, Cw;
         public static string perfil;
+
+        public void PropU(int id)
+        {
+            Assembly ListaPerfil = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfil = new StreamReader(ListaPerfil.GetManifestResourceStream("VerPerfisLaminados.Txt.perfisU.txt"));
+            string perfis = readerPerfil.ReadToEnd(); //lê todo o arquivo
+            string[] linhas = perfis.Split('\u000A'); //Quebra o arquivo lido em linhas
+            string[] subs = linhas[id].Split(' '); //Quebra as linhas em propriedades
+
+            perfil = $" {subs[0]}";
+            peso = double.Parse($"{subs[1]}");
+            d = double.Parse($"{subs[2]}");
+            tw = double.Parse($"{subs[3]}");
+            bf = double.Parse($"{subs[4]}");
+            tf = double.Parse($"{subs[5]}");
+            area = double.Parse($"{subs[6]}");
+            Ix = double.Parse($"{subs[7]}");
+            Wx = double.Parse($"{subs[8]}");
+            rx = double.Parse($"{subs[9]}");
+            Iy = double.Parse($"{subs[10]}");
+            Wy = double.Parse($"{subs[11]}");
+            ry = double.Parse($"{subs[12]}");
+            x = double.Parse($"{subs[13]}");
+
+        }
 
         public string PlotarU(int id)
         {          

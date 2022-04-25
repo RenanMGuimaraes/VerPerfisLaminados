@@ -12,10 +12,43 @@ using System.Reflection;
 
 namespace VerPerfisLaminados
 {
+    //Aqui será realizada a verificação do tipo de perfil, a determinação das suas propriedades geométrica e essas propriedades serão
+    //armazenadas neste arquivo (via variáveis estáticas) para consulta, ou seja, as propriedades do perfil devem ser obtidas sempre 
+    //deste arquivo.
     internal class PropPerfilI
     {
         public static double area, Ix, Wx, rx, Zx, Iy, Wy, Zy, ry, h, d, tw, tf, bf, rt, It, Cw, dlinha, peso;
         public static string perfil;
+
+        public void PropI(int id)
+        {
+            Assembly ListaPerfil = Assembly.GetExecutingAssembly();
+            StreamReader readerPerfil = new StreamReader(ListaPerfil.GetManifestResourceStream("VerPerfisLaminados.Txt.perfisI.txt"));
+            string perfis = readerPerfil.ReadToEnd(); //lê todo o arquivo
+            string[] linhas = perfis.Split('\u000A'); //Quebra o arquivo lido em linhas
+            string[] subs = linhas[id].Split(' '); //Quebra as linhas em propriedades
+
+            perfil = $"{subs[0]}";
+            peso = double.Parse($"{subs[1]}");
+            d = double.Parse($"{subs[2]}");
+            bf = double.Parse($"{subs[3]}");
+            tw = double.Parse($"{subs[4]}");
+            tf = double.Parse($"{subs[5]}");
+            h = double.Parse($"{subs[6]}");
+            dlinha = double.Parse($"{subs[7]}");
+            area = double.Parse($"{subs[8]}");
+            Ix = double.Parse($"{subs[9]}");
+            Wx = double.Parse($"{subs[10]}");
+            rx = double.Parse($"{subs[11]}");
+            Zx = double.Parse($"{subs[12]}");
+            Iy = double.Parse($"{subs[13]}");
+            Wy = double.Parse($"{subs[14]}");
+            ry = double.Parse($"{subs[15]}");
+            Zy = double.Parse($"{subs[16]}");
+            rt = double.Parse($"{subs[17]}");
+            It = double.Parse($"{subs[18]}");
+            Cw = double.Parse($"{subs[19]}");
+        }
 
         public string PlotarI(int id)
         {
