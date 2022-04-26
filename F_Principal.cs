@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace VerPerfisLaminados
 {
@@ -45,9 +48,8 @@ namespace VerPerfisLaminados
         public double lc = 0;
         public double ac = 0;
 
-        //Variaveis gerais - compressão
-
-        //Variaveis gerais - flexão
+        //Resultados 
+        string res_tracao = "";
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
@@ -262,6 +264,9 @@ namespace VerPerfisLaminados
                 double mxsd = double.Parse(txt_mxsd.Text);
                 double mysd = double.Parse(txt_mysd.Text);
 
+                
+
+
                 //Calculo a compressao
                 if (cb_ncrd.Checked == true)
                 {
@@ -300,6 +305,7 @@ namespace VerPerfisLaminados
                 {
                     //Calculo a tracao     
                     CalculaTracao tracao = new CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+                    res_tracao = tracao.ImprimeTracao();
                 }
 
                 if (cb_vxrd.Checked == true)
@@ -315,6 +321,8 @@ namespace VerPerfisLaminados
                     CalculaCortante cortante = new CalculaCortante();
                     cortante.CalculaCortanteY(this, tipoperfil, fy, vxsd, elast);
                 }
+
+               
 
             }
         }
@@ -557,6 +565,93 @@ namespace VerPerfisLaminados
                 lbl_myrd.Enabled = false;
             }
 
+        }
+
+        private void btn_pdf_Click(object sender, EventArgs e)
+        {
+            //caminho do diretório atual
+            string dir = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string nomeArquivo = dir + @"\Memorial.pdf";
+            FileStream arquivoPDF = new FileStream(nomeArquivo, FileMode.Create);
+            Document doc = new Document(PageSize.A4);
+            PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
+
+
+            string dados = "";
+            string perfil = "";
+
+            //Escreve o nome do perfil
+            if (tipoperfil =="i")
+            {
+                perfil = PropPerfilI.perfil;
+            }
+            if (tipoperfil == "u")
+            {
+                perfil = PropPerfilU.perfil;
+            }
+            if (tipoperfil == "l")
+            {
+                perfil = PropPerfilL.perfil;
+            }
+
+
+            //Cabeçalho
+            Paragraph paragrafo1 = new Paragraph(dados,new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 14, (int)System.Drawing.FontStyle.Bold));
+            paragrafo1.Alignment = Element.ALIGN_CENTER;
+            paragrafo1.Add("MEMORIAL DE CÁLCULO\n\n");
+            paragrafo1.Add($"Perfil: {perfil}\n\n");
+
+            if (cb_ncrd.Checked) //Imprime compressão
+            {
+                //Titulo
+                Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+                paragrafo2.Alignment = Element.ALIGN_CENTER;
+                paragrafo2.Add("DIMENSIONAMENTO A COMPRESSÃO \n\n");
+            }
+
+            if (cb_ntrd.Checked) //Imprime tração
+            {
+                //Titulo
+                
+
+
+            }
+
+            if (cb_vxrd.Checked) //Imprime cortante X
+            {
+                //Titulo
+                Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+                paragrafo2.Alignment = Element.ALIGN_CENTER;
+                paragrafo2.Add("DIMENSIONAMENTO A CORTANTE - EIXO X \n\n");
+            }
+
+            if (cb_vyrd.Checked) //Imprime cortante Y
+            {
+                //Titulo
+                Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+                paragrafo2.Alignment = Element.ALIGN_CENTER;
+                paragrafo2.Add("DIMENSIONAMENTO A CORTANTE - EIXO Y \n\n");
+            }
+
+            if (cb_mxrd.Checked) //Imprime momento x
+            {
+                //Titulo
+                Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+                paragrafo2.Alignment = Element.ALIGN_CENTER;
+                paragrafo2.Add("DIMENSIONAMENTO A MOMENTO FLETOR - EIXO X \n\n");
+            }
+
+            if (cb_myrd.Checked) //Imprime momento y
+            {
+                //Titulo
+                Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, (int)System.Drawing.FontStyle.Bold));
+                paragrafo2.Alignment = Element.ALIGN_CENTER;
+                paragrafo2.Add("DIMENSIONAMENTO A MOMENTO FLETOR - EIXO Y \n\n");
+            }
+
+            doc.Open();
+            doc.Add(paragrafo1);
+            doc.Close();
         }
     }
 

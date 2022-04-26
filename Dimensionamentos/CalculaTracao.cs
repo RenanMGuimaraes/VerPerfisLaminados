@@ -8,6 +8,13 @@ namespace VerPerfisLaminados
 {
     internal class CalculaTracao
     {
+        //Variaveis dos perfis
+        double area = 0;
+        double t = 0;
+        double rmin = 0;
+        double tw = 0;
+        double tf = 0;
+        double ntrd1 = 0;
         F_Principal pai;
 
        // public string Tracao(int tipoCt, string lig, string tipoperfil, double ac, double lc, double fy, double ftsd, double fu, double punc, double folga,
@@ -28,12 +35,7 @@ namespace VerPerfisLaminados
 
             */
 
-            //Variaveis dos perfis
-            double area = 0;
-            double t = 0;
-            double rmin = 0;
-            double tw = 0;
-            double tf = 0;
+            
 
             //Preenche as variáveis dos perfis em função do tipo de perfil
             if (tipoperfil == "i")
@@ -65,7 +67,7 @@ namespace VerPerfisLaminados
 
 
             //Calcula a tração na seção bruta
-            double ntrd1 = (area * fy) / 1.10;
+            ntrd1 = (area * fy) / 1.10;
 
             //Calcula a taxa de aproveitamento do perfil
             double taxa = (ntsd / ntrd1);
@@ -253,9 +255,17 @@ namespace VerPerfisLaminados
             }
             return ct;
             */
+
+           
         }
 
-
+        public string ImprimeTracao()
+        {
+            string resultado = $"1 - ESCOAMENTO DA SEÇÃO BRUTA: \r\n" +
+                             $"Ft,rd = ({area:F2} x {fy:F2}) / 1,10 = {ntrd1:F2} kN\r\n" +
+                             $"Ft,sd: {ftsd:F2} kN \r\n \r\n" +
+            return resultado;
+        }
 
 
     }
