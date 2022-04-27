@@ -6,48 +6,41 @@ using System.Threading.Tasks;
 
 namespace VerPerfisLaminados
 {
-    internal class CalculaFlexaoI
+    internal class FlexaoI
     {
-        F_Principal pai;
-   
-        double zx = PropPerfilI.Zx;
-        double zy = PropPerfilI.Zy;
-        double wx = PropPerfilI.Wx;
-        double wy = PropPerfilI.Wy;
-        double d = PropPerfilI.d;
-        double bf = PropPerfilI.bf;
-        double tf = PropPerfilI.tf;
-        double tw = PropPerfilI.tw;
-        double ry = PropPerfilI.ry;
-        double rx = PropPerfilI.rx;
-        double iy = PropPerfilI.Iy;
-        double ix = PropPerfilI.Ix;
-        double it = PropPerfilI.It;
-        double cw = PropPerfilI.Cw;
-        double dlinha = PropPerfilI.dlinha;
-        double mrd_flm_x = 0;
-        double mrd_fla_x = 0;
-        double mrd_flt = 0;
-        double mxrd = 0;
-        double mrd_flm_y = 0;
-        double mrd_fla_y = 0;
-        double myrd = 0;
-        double fy = 0;
-        double elast = 0;
+        
 
-        public CalculaFlexaoI()
+        public static void FlexaoX(F_Principal f_principal, double mxsd, double elast, double cb, double lx, double ly, double lz, double fy)
         {
-            
-        }
+            //Propriedades do perfil
+            double zx = PropPerfilI.Zx;
+            double zy = PropPerfilI.Zy;
+            double wx = PropPerfilI.Wx;
+            double wy = PropPerfilI.Wy;
+            double d = PropPerfilI.d;
+            double bf = PropPerfilI.bf;
+            double tf = PropPerfilI.tf;
+            double tw = PropPerfilI.tw;
+            double ry = PropPerfilI.ry;
+            double rx = PropPerfilI.rx;
+            double iy = PropPerfilI.Iy;
+            double ix = PropPerfilI.Ix;
+            double it = PropPerfilI.It;
+            double cw = PropPerfilI.Cw;
+            double dlinha = PropPerfilI.dlinha;
+            string perfil = PropPerfilI.perfil;
+            double mrd_flm_x = 0;
+            double mrd_fla_x = 0;
+            double mrd_flt = 0;
+            double mxrd = 0;
 
-        public void FlexaoX(F_Principal f_principal, double mxsd, double elast, double cb, double lx, double ly, double lz, double fy)
-        {
-            this.fy = fy;
-            this.elast = elast;
+            //Parametros
             double bt, btp, btr;
             double mx_max;
             double taxa;
+            F_Principal pai;
             pai = f_principal;
+
 
             //Momento Máximo
             mx_max = (1.5 * wx * fy) / 1.10;
@@ -59,17 +52,17 @@ namespace VerPerfisLaminados
 
             if (bt <= btp)
             {
-                mrd_flm_x = Compacta(zx);
+                mrd_flm_x = Compacta(zx, fy);
             }
             else if (bt > btp && bt <= btr)
             {
                 double mr = 0.7 * fy* wx;
-                mrd_flm_x = SemiCompacta(zx,wx, bt, btp, btr, mr);
+                mrd_flm_x = SemiCompacta(zx,wx, bt, btp, btr, mr, fy);
             }
             else if(bt > btr)
             {
                 double mcr = (0.69 * elast * wx) / (bt * bt);
-                mrd_flm_x = Esbelta(mcr, zx);
+                mrd_flm_x = Esbelta(mcr, zx, fy);
             }
 
             //FLA--------------------------------------------------------------
@@ -79,12 +72,12 @@ namespace VerPerfisLaminados
 
             if (bt <= btp)
             {
-                mrd_fla_x = Compacta(zx);
+                mrd_fla_x = Compacta(zx, fy);
             }
             else if (bt > btp && bt <= btr)
             {
                 double mr = fy * wx;
-                mrd_fla_x = SemiCompacta(zx, wx, bt, btp, btr, mr);
+                mrd_fla_x = SemiCompacta(zx, wx, bt, btp, btr, mr, fy);
             }
             else if (bt > btr)
             {
@@ -102,17 +95,17 @@ namespace VerPerfisLaminados
 
             if (bt <= btp)
             {
-                mrd_flt = Compacta(zx);
+                mrd_flt = Compacta(zx, fy);
             }
             else if (bt > btp && bt <= btr)
             {
                 double mr = 0.7 * wx * fy;
-                mrd_flt = SemiCompactaFLT(zx, wx, bt, btp, btr, cb, mr);
+                mrd_flt = SemiCompactaFLT(zx, wx, bt, btp, btr, cb, mr, fy);
             }
             else if (bt > btr)
             {
                 double mcr = ((cb * Math.Pow(Math.PI,2.0) * elast * iy) / (ly * ly)) * Math.Sqrt((cw / iy) * (1 + (0.039* it * ly * ly) / cw ));
-                mrd_flt = Esbelta(mcr, zx);
+                mrd_flt = Esbelta(mcr, zx, fy);
             }
 
             //Verificação do momento fletor final-------------------------------
@@ -133,10 +126,31 @@ namespace VerPerfisLaminados
 
         }
 
-        public void FlexaoY(F_Principal f_principal, double mysd, double elast, double cb, double lx, double ly, double lz, double fy)
+        public static void FlexaoY(F_Principal f_principal, double mysd, double elast, double cb, double lx, double ly, double lz, double fy)
         {
-            this.fy = fy;
-            this.elast = elast;
+            //Propriedades do perfil
+            double zx = PropPerfilI.Zx;
+            double zy = PropPerfilI.Zy;
+            double wx = PropPerfilI.Wx;
+            double wy = PropPerfilI.Wy;
+            double d = PropPerfilI.d;
+            double bf = PropPerfilI.bf;
+            double tf = PropPerfilI.tf;
+            double tw = PropPerfilI.tw;
+            double ry = PropPerfilI.ry;
+            double rx = PropPerfilI.rx;
+            double iy = PropPerfilI.Iy;
+            double ix = PropPerfilI.Ix;
+            double it = PropPerfilI.It;
+            double cw = PropPerfilI.Cw;
+            double dlinha = PropPerfilI.dlinha;
+            string perfil = PropPerfilI.perfil;
+            double mrd_flm_y = 0;
+            double mrd_fla_y = 0;
+            double myrd = 0;
+
+
+            F_Principal pai;
             pai = f_principal;
             double my_max, taxa;
             double bt, btp, btr;
@@ -151,17 +165,17 @@ namespace VerPerfisLaminados
 
             if (bt <= btp)
             {
-                mrd_flm_y = Compacta(zy);
+                mrd_flm_y = Compacta(zy, fy);
             }
             else if (bt > btp && bt <= btr)
             {
                 double mr = 0.7 * wy * fy;
-                mrd_flm_y = SemiCompacta(zy, wy, bt, btp, btr, mr);
+                mrd_flm_y = SemiCompacta(zy, wy, bt, btp, btr, mr, fy);
             }
             else if (bt > btr)
             {
                 double mcr = (0.69 * elast * wy) / (bt * bt);
-                mrd_flm_y = Esbelta(mcr, zy);
+                mrd_flm_y = Esbelta(mcr, zy, fy);
             }
 
             //FLA------------------------------------------------------------------
@@ -171,17 +185,17 @@ namespace VerPerfisLaminados
 
             if (bt <= btp)
             {
-                mrd_fla_y = Compacta(zy);
+                mrd_fla_y = Compacta(zy, fy);
             }
             else if (bt > btp && bt <= btr)
             {
                 double mr = fy * wy;
-                mrd_fla_y = SemiCompacta(zy, wy, bt, btp, btr, mr);
+                mrd_fla_y = SemiCompacta(zy, wy, bt, btp, btr, mr, fy);
             }
             else if (bt > btr)
             {
                 double mcr = wy * fy;
-                mrd_fla_y = Esbelta(mcr, zy);
+                mrd_fla_y = Esbelta(mcr, zy, fy);
             }
 
             myrd = Math.Min(my_max,Math.Min(mrd_flm_y, mrd_fla_y));
@@ -202,7 +216,7 @@ namespace VerPerfisLaminados
 
         }
 
-        public double Compacta(double z)
+        public static double Compacta(double z, double fy)
         {
             double mrd;
             double mpl = z * fy;
@@ -210,7 +224,7 @@ namespace VerPerfisLaminados
             return mrd;
         }
 
-        public double SemiCompacta(double z, double wx, double bt, double btp, double btr, double mr)
+        public static double SemiCompacta(double z, double wx, double bt, double btp, double btr, double mr, double fy)
         {
             double mrd;
             double mpl = z * fy;
@@ -218,14 +232,14 @@ namespace VerPerfisLaminados
             
         }
 
-        public double SemiCompactaFLT(double z, double wx, double bt, double btp, double btr, double cb, double mr)
+        public static double SemiCompactaFLT(double z, double wx, double bt, double btp, double btr, double cb, double mr, double fy)
         {
             double mrd;
             double mpl = z * fy;
             return mrd = (cb / 1.10) * (mpl - (mpl - mr) * ((bt - btp) / (btr - btp)));
         }
 
-        public double Esbelta(double mcr, double z)
+        public static double Esbelta(double mcr, double z, double fy)
         {
             double mrd;
             double mpl = z * fy;

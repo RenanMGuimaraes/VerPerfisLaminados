@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace VerPerfisLaminados
 {
-    internal class CalculaCortante
+    public class CalculaCortante
     {
-        F_Principal pai;
+        static F_Principal pai;
+        public static double aw = 0;
+        public static double tw = 0;
+        public static double bt = 0;
+        public static double btp = 0;
+        public static double btr = 0;
+        public static double h = 0; //altura total do perfil
+        public static double vpl = 0;
+        public static double vrd = 0;
+        public static double taxax = 0;
+        public static double taxay = 0;
+        public static double vxsd =0;
+        public static double vxrd = 0;
+        public static string perfil = "";
 
-    public CalculaCortante()
-        {
-            
-        }
-
-        double aw = 0;
-        double tw = 0;
-        double bt = 0;
-        double btp = 0;
-        double btr = 0;
-        double h = 0; //altura total do perfil
-        double vpl = 0;
-        double vrd = 0;
-        double taxa = 0;
-
-        public void CalculaCortanteX(F_Principal f_principal,string tipoperfil, double fy, double vxsd, double elast)
+        public static void CalculaCortanteX(F_Principal f_principal,string tipoperfil, double fy, double vxsd, double elast)
         {
             pai = f_principal;
+            fy /= 10.0; //converte de MPa para kN/cm2
+
             double d = 0;
             if (tipoperfil == "i")
             {
@@ -62,10 +62,10 @@ namespace VerPerfisLaminados
             }
 
             //Preenche o valor da resistencia final no txt_ntrd
-            taxa = vxsd / vrd;
+            taxax = vxsd / vrd;
             pai.txt_vxrd.Text = vrd.ToString("F2");
-            pai.lb_sdrd_vx.Text = $"Sd/Rd = {taxa:F2}";
-            if(taxa <= 1.0)
+            pai.lb_sdrd_vx.Text = $"Sd/Rd = {taxax:F2}";
+            if(taxax <= 1.0)
             {
                 pai.lb_sdrd_vx.ForeColor = System.Drawing.Color.Green;
             }
@@ -75,7 +75,7 @@ namespace VerPerfisLaminados
             }
         }
 
-        public void CalculaCortanteY(F_Principal f_principal, string tipoperfil, double fy, double vysd, double elast)
+        public static void CalculaCortanteY(F_Principal f_principal, string tipoperfil, double fy, double vysd, double elast)
         {
             pai = f_principal;
             double tf = 0;
@@ -115,10 +115,10 @@ namespace VerPerfisLaminados
             }
 
             //Preenche o valor da resistencia final no txt_ntrd
-            taxa = vysd / vrd;
+            taxay = vysd / vrd;
             pai.txt_vyrd.Text = vrd.ToString("F2");
-            pai.lb_sdrd_vy.Text = $"Sd/Rd = {taxa:F2}";
-            if (taxa <= 1.0)
+            pai.lb_sdrd_vy.Text = $"Sd/Rd = {taxay:F2}";
+            if (taxay <= 1.0)
             {
                 pai.lb_sdrd_vy.ForeColor = System.Drawing.Color.Green;
             }

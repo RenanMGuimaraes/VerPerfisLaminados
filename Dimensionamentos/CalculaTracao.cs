@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace VerPerfisLaminados
 {
-    internal class CalculaTracao
+    public class Tracao
     {
         //Variaveis dos perfis
-        double area = 0;
-        double t = 0;
-        double rmin = 0;
-        double tw = 0;
-        double tf = 0;
-        double ntrd1 = 0;
-        F_Principal pai;
+        public static double area = 0;
+        public static double t = 0;
+        public static double rmin = 0;
+        public static double tw = 0;
+        public static double tf = 0;
+        public static double ntrd1 = 0;
+        public static double ntsd1 = 0;
+        static F_Principal pai;
+        public static double taxa = 0;
+        public static double fyt = 0;
 
-       // public string Tracao(int tipoCt, string lig, string tipoperfil, double ac, double lc, double fy, double ftsd, double fu, double punc, double folga,
-           // double diam, double numfuros, double numfurosAlma, double numfurosMesa, double lx, double ly, double lz, F_Principal f_Principal)
-
-        public CalculaTracao(F_Principal f_principal, string tipoperfil, double fy, double fu, double ntsd, double lx, double ly, double lz)
+        public static void CalculaTracao(F_Principal f_principal, string tipoperfil, double fy, double fu, double ntsd, double lx, double ly, double lz)
         {
             pai = f_principal;
+            ntsd1 = ntsd;
+            fyt = fy;
 
             /*
             double ct = CalculoCt(tipoCt, tipoperfil, ac, lc);
@@ -70,7 +72,7 @@ namespace VerPerfisLaminados
             ntrd1 = (area * fy) / 1.10;
 
             //Calcula a taxa de aproveitamento do perfil
-            double taxa = (ntsd / ntrd1);
+           taxa = (ntsd / ntrd1);
 
             if (ntrd1 >= ntsd)
             {
@@ -258,16 +260,16 @@ namespace VerPerfisLaminados
 
            
         }
-
+        /*
         public string ImprimeTracao()
         {
             string resultado = $"1 - ESCOAMENTO DA SEÇÃO BRUTA: \r\n" +
-                             $"Ft,rd = ({area:F2} x {fy:F2}) / 1,10 = {ntrd1:F2} kN\r\n" +
-                             $"Ft,sd: {ftsd:F2} kN \r\n \r\n" +
+                          //   $"Ft,rd = ({area:F2} x {fy:F2}) / 1,10 = {ntrd1:F2} kN\r\n" +
+                            // $"Ft,sd: {ftsd:F2} kN \r\n \r\n" +
             return resultado;
         }
 
-
+        */
     }
 
     }

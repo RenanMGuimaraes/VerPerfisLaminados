@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace VerPerfisLaminados
 {
-    internal class CalculaCompressao
+    internal class Compressao
     {
-        F_Principal pai;
-        public CalculaCompressao(F_Principal f_Principal, string tipoperfil, double fy, double fu, double ncsd, double lx, double ly, double lz, double elast, double g)
+        static F_Principal pai;
+        static double ncrd = 0;
+        static double ag = 0;
+        static double taxa = 0;
+        static double q;
+        static double x;
+        static double rmin = 0;
+        public static void CalculaCompressao(F_Principal f_Principal, string tipoperfil, double fy, double fu, double ncsd, double lx, double ly, double lz, double elast, double g)
         {
-            fy = fy / 10.0; //Converte de MPa para kN/cm2
+            fy /= 10.0; //Converte de MPa para kN/cm2
             elast /= 10.0; //Converte de MPa para kN/cm2
+            q = CalculaQ(tipoperfil, elast, fy);
+            x = CalculaX(tipoperfil, elast, g, lx, ly, lz, q, fy);
             pai = f_Principal;
-            double ncrd = 0;
-            double ag = 0;
-            double taxa = 0;
-            double q = CalculaQ(tipoperfil, elast, fy);
-            double x = CalculaX(tipoperfil, elast, g, lx, ly, lz, q, fy);
-            double rmin = 0;
 
             if (tipoperfil == "i")
             {
@@ -89,7 +91,7 @@ namespace VerPerfisLaminados
 
 
         }
-        public double CalculaQ(string tipoperfil, double elast, double fy)
+        public static double CalculaQ(string tipoperfil, double elast, double fy)
         {
             double q = 0;
             double qa;
@@ -228,7 +230,7 @@ namespace VerPerfisLaminados
             return q;
         }
 
-        public double CalculaX(string tipoperfil, double elast, double g, double lx, double ly, double lz, double q, double fy)
+        public static double CalculaX(string tipoperfil, double elast, double g, double lx, double ly, double lz, double q, double fy)
         {
             double x = 0;
             double ne = 0;
