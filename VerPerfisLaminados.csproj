@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dimensionamentos\CortanteI.cs" />
-    <Compile Include="Dimensionamentos\CalculaFlexaoI.cs" />
+    <Compile Include="Dimensionamentos\FlexaoI.cs" />
     <Compile Include="Dimensionamentos\Compressao\CompressaoI.cs" />
     <Compile Include="Dimensionamentos\Compressao\CompressaoL.cs" />
     <Compile Include="Dimensionamentos\Compressao\CompressaoU.cs" />

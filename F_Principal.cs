@@ -281,7 +281,8 @@ namespace VerPerfisLaminados
                     //Calculo a flexao em X
                     if (tipoperfil == "i")
                     {                      
-                        FlexaoI.FlexaoX(this,  mxsd,  elast,  cb,  lx,  ly, lz, fy);   
+                        FlexaoI flexao = new FlexaoI();
+                        res_mxrd = flexao.FlexaoX(this,  mxsd,  elast,  cb,  lx,  ly, lz, fy);   
                     }
                     if (tipoperfil == "u")
                     {
@@ -294,7 +295,8 @@ namespace VerPerfisLaminados
                     //Calculo a flexao em Y
                     if (tipoperfil == "i")
                     {                      
-                        FlexaoI.FlexaoY(this, mysd, elast, cb, lx, ly, lz, fy);
+                        FlexaoI flexao = new FlexaoI();
+                        res_myrd = flexao.FlexaoY(this, mysd, elast, cb, lx, ly, lz, fy);
                     }
                     if (tipoperfil == "u")
                     {
@@ -603,6 +605,18 @@ namespace VerPerfisLaminados
         private void btn_mem_vy_Click(object sender, EventArgs e)
         {
             F_ResComp resultados = new F_ResComp(tipoperfil, res_vyrd);
+            resultados.ShowDialog();
+        }
+
+        private void btn_mem_mx_Click(object sender, EventArgs e)
+        {
+            F_ResComp resultados = new F_ResComp(tipoperfil, res_mxrd);
+            resultados.ShowDialog();
+        }
+
+        private void btn_mem_my_Click(object sender, EventArgs e)
+        {
+            F_ResComp resultados = new F_ResComp(tipoperfil, res_myrd);
             resultados.ShowDialog();
         }
     }

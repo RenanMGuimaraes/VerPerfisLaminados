@@ -33,10 +33,16 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btn_prop = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rb_duploL = new System.Windows.Forms.RadioButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.rb_duploU = new System.Windows.Forms.RadioButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.rb_cantoneira = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rb_perfilU = new System.Windows.Forms.RadioButton();
             this.rb_perfilI = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +52,12 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btn_mem_tra = new System.Windows.Forms.Button();
+            this.btn_mem_comp = new System.Windows.Forms.Button();
+            this.btn_apagar = new System.Windows.Forms.Button();
+            this.btn_calc = new System.Windows.Forms.Button();
+            this.btn_mem_vx = new System.Windows.Forms.Button();
+            this.btn_mem_vy = new System.Windows.Forms.Button();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.lbl_verifTracao = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -82,6 +94,7 @@
             this.txt_ncrd = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.txt_g = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.txt_fy = new System.Windows.Forms.TextBox();
@@ -92,6 +105,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txt_lz = new System.Windows.Forms.TextBox();
             this.txt_ly = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.txt_lx = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -106,40 +120,28 @@
             this.txt_ntsd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_ncsd = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_mem_tra = new System.Windows.Forms.Button();
-            this.btn_mem_comp = new System.Windows.Forms.Button();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.btn_apagar = new System.Windows.Forms.Button();
-            this.btn_calc = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_mem_vx = new System.Windows.Forms.Button();
-            this.btn_mem_vy = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_mem_my = new System.Windows.Forms.Button();
+            this.btn_mem_mx = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.toolStripContainer1.ContentPanel.SuspendLayout();
-            this.toolStripContainer1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -186,6 +188,18 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(10, 66);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -210,6 +224,18 @@
             this.rb_duploL.UseVisualStyleBackColor = true;
             this.rb_duploL.CheckedChanged += new System.EventHandler(this.rb_duploL_CheckedChanged);
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_L;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(10, 222);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 12;
+            this.pictureBox5.TabStop = false;
+            // 
             // rb_duploU
             // 
             this.rb_duploU.AutoSize = true;
@@ -222,6 +248,18 @@
             this.rb_duploU.UseVisualStyleBackColor = true;
             this.rb_duploU.CheckedChanged += new System.EventHandler(this.rb_duploU_CheckedChanged);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_C;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(10, 274);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 10;
+            this.pictureBox4.TabStop = false;
+            // 
             // rb_cantoneira
             // 
             this.rb_cantoneira.AutoSize = true;
@@ -232,6 +270,42 @@
             this.rb_cantoneira.Text = "Cantoneira";
             this.rb_cantoneira.UseVisualStyleBackColor = true;
             this.rb_cantoneira.CheckedChanged += new System.EventHandler(this.rb_cantoneira_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.L;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(10, 170);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.C;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 118);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(33, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
             // 
             // rb_perfilU
             // 
@@ -409,6 +483,78 @@
             this.label9.Text = "Cb";
             this.toolTip1.SetToolTip(this.label9, "Parâmetro de uniformização dos momentos fletores");
             // 
+            // btn_mem_tra
+            // 
+            this.btn_mem_tra.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
+            this.btn_mem_tra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_mem_tra.Location = new System.Drawing.Point(7, 82);
+            this.btn_mem_tra.Name = "btn_mem_tra";
+            this.btn_mem_tra.Size = new System.Drawing.Size(34, 36);
+            this.btn_mem_tra.TabIndex = 28;
+            this.toolTip1.SetToolTip(this.btn_mem_tra, "Gerar Memorial");
+            this.btn_mem_tra.UseVisualStyleBackColor = true;
+            this.btn_mem_tra.Click += new System.EventHandler(this.btn_mem_tra_Click);
+            // 
+            // btn_mem_comp
+            // 
+            this.btn_mem_comp.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
+            this.btn_mem_comp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_mem_comp.Location = new System.Drawing.Point(7, 29);
+            this.btn_mem_comp.Name = "btn_mem_comp";
+            this.btn_mem_comp.Size = new System.Drawing.Size(34, 36);
+            this.btn_mem_comp.TabIndex = 27;
+            this.toolTip1.SetToolTip(this.btn_mem_comp, "Gerar Memorial");
+            this.btn_mem_comp.UseVisualStyleBackColor = true;
+            this.btn_mem_comp.Click += new System.EventHandler(this.btn_pdf_Click);
+            // 
+            // btn_apagar
+            // 
+            this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
+            this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_apagar.Location = new System.Drawing.Point(924, 45);
+            this.btn_apagar.Name = "btn_apagar";
+            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
+            this.btn_apagar.TabIndex = 8;
+            this.toolTip1.SetToolTip(this.btn_apagar, "Apagar");
+            this.btn_apagar.UseVisualStyleBackColor = true;
+            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
+            // 
+            // btn_calc
+            // 
+            this.btn_calc.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
+            this.btn_calc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_calc.Location = new System.Drawing.Point(870, 45);
+            this.btn_calc.Name = "btn_calc";
+            this.btn_calc.Size = new System.Drawing.Size(48, 50);
+            this.btn_calc.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
+            this.btn_calc.UseVisualStyleBackColor = true;
+            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
+            // 
+            // btn_mem_vx
+            // 
+            this.btn_mem_vx.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
+            this.btn_mem_vx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_mem_vx.Location = new System.Drawing.Point(319, 29);
+            this.btn_mem_vx.Name = "btn_mem_vx";
+            this.btn_mem_vx.Size = new System.Drawing.Size(34, 36);
+            this.btn_mem_vx.TabIndex = 29;
+            this.toolTip1.SetToolTip(this.btn_mem_vx, "Gerar Memorial");
+            this.btn_mem_vx.UseVisualStyleBackColor = true;
+            this.btn_mem_vx.Click += new System.EventHandler(this.btn_mem_vx_Click);
+            // 
+            // btn_mem_vy
+            // 
+            this.btn_mem_vy.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
+            this.btn_mem_vy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_mem_vy.Location = new System.Drawing.Point(319, 82);
+            this.btn_mem_vy.Name = "btn_mem_vy";
+            this.btn_mem_vy.Size = new System.Drawing.Size(34, 36);
+            this.btn_mem_vy.TabIndex = 30;
+            this.toolTip1.SetToolTip(this.btn_mem_vy, "Gerar Memorial");
+            this.btn_mem_vy.UseVisualStyleBackColor = true;
+            this.btn_mem_vy.Click += new System.EventHandler(this.btn_mem_vy_Click);
+            // 
             // lbl_verifTracao
             // 
             this.lbl_verifTracao.AutoSize = true;
@@ -493,6 +639,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.btn_mem_my);
+            this.groupBox7.Controls.Add(this.btn_mem_mx);
             this.groupBox7.Controls.Add(this.btn_mem_vy);
             this.groupBox7.Controls.Add(this.btn_mem_vx);
             this.groupBox7.Controls.Add(this.btn_mem_tra);
@@ -535,7 +683,7 @@
             this.cb_myrd.AutoSize = true;
             this.cb_myrd.Checked = true;
             this.cb_myrd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_myrd.Location = new System.Drawing.Point(791, 93);
+            this.cb_myrd.Location = new System.Drawing.Point(586, 97);
             this.cb_myrd.Name = "cb_myrd";
             this.cb_myrd.Size = new System.Drawing.Size(15, 14);
             this.cb_myrd.TabIndex = 26;
@@ -547,7 +695,7 @@
             this.cb_mxrd.AutoSize = true;
             this.cb_mxrd.Checked = true;
             this.cb_mxrd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_mxrd.Location = new System.Drawing.Point(791, 41);
+            this.cb_mxrd.Location = new System.Drawing.Point(586, 44);
             this.cb_mxrd.Name = "cb_mxrd";
             this.cb_mxrd.Size = new System.Drawing.Size(15, 14);
             this.cb_mxrd.TabIndex = 25;
@@ -559,7 +707,7 @@
             this.cb_vyrd.AutoSize = true;
             this.cb_vyrd.Checked = true;
             this.cb_vyrd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_vyrd.Location = new System.Drawing.Point(593, 93);
+            this.cb_vyrd.Location = new System.Drawing.Point(360, 97);
             this.cb_vyrd.Name = "cb_vyrd";
             this.cb_vyrd.Size = new System.Drawing.Size(15, 14);
             this.cb_vyrd.TabIndex = 24;
@@ -571,7 +719,7 @@
             this.cb_vxrd.AutoSize = true;
             this.cb_vxrd.Checked = true;
             this.cb_vxrd.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_vxrd.Location = new System.Drawing.Point(593, 41);
+            this.cb_vxrd.Location = new System.Drawing.Point(360, 44);
             this.cb_vxrd.Name = "cb_vxrd";
             this.cb_vxrd.Size = new System.Drawing.Size(15, 14);
             this.cb_vxrd.TabIndex = 23;
@@ -623,7 +771,7 @@
             // lb_sdrd_my
             // 
             this.lb_sdrd_my.AutoSize = true;
-            this.lb_sdrd_my.Location = new System.Drawing.Point(884, 94);
+            this.lb_sdrd_my.Location = new System.Drawing.Point(679, 96);
             this.lb_sdrd_my.Name = "lb_sdrd_my";
             this.lb_sdrd_my.Size = new System.Drawing.Size(42, 13);
             this.lb_sdrd_my.TabIndex = 18;
@@ -632,7 +780,7 @@
             // lb_sdrd_vy
             // 
             this.lb_sdrd_vy.AutoSize = true;
-            this.lb_sdrd_vy.Location = new System.Drawing.Point(691, 94);
+            this.lb_sdrd_vy.Location = new System.Drawing.Point(458, 97);
             this.lb_sdrd_vy.Name = "lb_sdrd_vy";
             this.lb_sdrd_vy.Size = new System.Drawing.Size(42, 13);
             this.lb_sdrd_vy.TabIndex = 17;
@@ -641,7 +789,7 @@
             // lb_sdrd_vx
             // 
             this.lb_sdrd_vx.AutoSize = true;
-            this.lb_sdrd_vx.Location = new System.Drawing.Point(691, 41);
+            this.lb_sdrd_vx.Location = new System.Drawing.Point(458, 44);
             this.lb_sdrd_vx.Name = "lb_sdrd_vx";
             this.lb_sdrd_vx.Size = new System.Drawing.Size(42, 13);
             this.lb_sdrd_vx.TabIndex = 16;
@@ -650,7 +798,7 @@
             // lb_sdrd_mx
             // 
             this.lb_sdrd_mx.AutoSize = true;
-            this.lb_sdrd_mx.Location = new System.Drawing.Point(884, 41);
+            this.lb_sdrd_mx.Location = new System.Drawing.Point(679, 43);
             this.lb_sdrd_mx.Name = "lb_sdrd_mx";
             this.lb_sdrd_mx.Size = new System.Drawing.Size(42, 13);
             this.lb_sdrd_mx.TabIndex = 15;
@@ -677,7 +825,7 @@
             // lbl_myrd
             // 
             this.lbl_myrd.AutoSize = true;
-            this.lbl_myrd.Location = new System.Drawing.Point(812, 75);
+            this.lbl_myrd.Location = new System.Drawing.Point(607, 78);
             this.lbl_myrd.Name = "lbl_myrd";
             this.lbl_myrd.Size = new System.Drawing.Size(79, 13);
             this.lbl_myrd.TabIndex = 12;
@@ -685,7 +833,7 @@
             // 
             // txt_myrd
             // 
-            this.txt_myrd.Location = new System.Drawing.Point(812, 91);
+            this.txt_myrd.Location = new System.Drawing.Point(607, 94);
             this.txt_myrd.Name = "txt_myrd";
             this.txt_myrd.ReadOnly = true;
             this.txt_myrd.Size = new System.Drawing.Size(66, 20);
@@ -694,7 +842,7 @@
             // lbl_mxrd
             // 
             this.lbl_mxrd.AutoSize = true;
-            this.lbl_mxrd.Location = new System.Drawing.Point(812, 22);
+            this.lbl_mxrd.Location = new System.Drawing.Point(607, 25);
             this.lbl_mxrd.Name = "lbl_mxrd";
             this.lbl_mxrd.Size = new System.Drawing.Size(79, 13);
             this.lbl_mxrd.TabIndex = 10;
@@ -702,7 +850,7 @@
             // 
             // txt_mxrd
             // 
-            this.txt_mxrd.Location = new System.Drawing.Point(812, 38);
+            this.txt_mxrd.Location = new System.Drawing.Point(607, 41);
             this.txt_mxrd.Name = "txt_mxrd";
             this.txt_mxrd.ReadOnly = true;
             this.txt_mxrd.Size = new System.Drawing.Size(66, 20);
@@ -711,7 +859,7 @@
             // lbl_vyrd
             // 
             this.lbl_vyrd.AutoSize = true;
-            this.lbl_vyrd.Location = new System.Drawing.Point(622, 75);
+            this.lbl_vyrd.Location = new System.Drawing.Point(389, 78);
             this.lbl_vyrd.Name = "lbl_vyrd";
             this.lbl_vyrd.Size = new System.Drawing.Size(59, 13);
             this.lbl_vyrd.TabIndex = 8;
@@ -719,7 +867,7 @@
             // 
             // txt_vyrd
             // 
-            this.txt_vyrd.Location = new System.Drawing.Point(614, 91);
+            this.txt_vyrd.Location = new System.Drawing.Point(381, 94);
             this.txt_vyrd.Name = "txt_vyrd";
             this.txt_vyrd.ReadOnly = true;
             this.txt_vyrd.Size = new System.Drawing.Size(66, 20);
@@ -728,7 +876,7 @@
             // lbl_vxrd
             // 
             this.lbl_vxrd.AutoSize = true;
-            this.lbl_vxrd.Location = new System.Drawing.Point(616, 22);
+            this.lbl_vxrd.Location = new System.Drawing.Point(383, 25);
             this.lbl_vxrd.Name = "lbl_vxrd";
             this.lbl_vxrd.Size = new System.Drawing.Size(59, 13);
             this.lbl_vxrd.TabIndex = 6;
@@ -736,7 +884,7 @@
             // 
             // txt_vxrd
             // 
-            this.txt_vxrd.Location = new System.Drawing.Point(614, 38);
+            this.txt_vxrd.Location = new System.Drawing.Point(381, 41);
             this.txt_vxrd.Name = "txt_vxrd";
             this.txt_vxrd.ReadOnly = true;
             this.txt_vxrd.Size = new System.Drawing.Size(66, 20);
@@ -803,6 +951,16 @@
             this.label31.TabIndex = 34;
             this.label31.Text = "Módulo de elasticidade transversal (MPa)";
             this.label31.Click += new System.EventHandler(this.label31_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.diagrama2;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox9.Location = new System.Drawing.Point(27, 28);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(78, 73);
+            this.pictureBox9.TabIndex = 13;
+            this.pictureBox9.TabStop = false;
             // 
             // txt_g
             // 
@@ -897,6 +1055,16 @@
             this.txt_ly.Size = new System.Drawing.Size(53, 20);
             this.txt_ly.TabIndex = 15;
             this.txt_ly.Text = "350";
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Location = new System.Drawing.Point(27, 27);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(78, 73);
+            this.pictureBox8.TabIndex = 13;
+            this.pictureBox8.TabStop = false;
             // 
             // txt_lx
             // 
@@ -1036,6 +1204,16 @@
             this.txt_ncsd.Text = "500";
             this.txt_ncsd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ncsd_KeyPress);
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.esforcos;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox7.Location = new System.Drawing.Point(27, 31);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(78, 73);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1047,179 +1225,29 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Desenvolvido por: Eng. Renan M. Guimarães";
             // 
-            // btn_mem_tra
+            // btn_mem_my
             // 
-            this.btn_mem_tra.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
-            this.btn_mem_tra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_mem_tra.Location = new System.Drawing.Point(12, 78);
-            this.btn_mem_tra.Name = "btn_mem_tra";
-            this.btn_mem_tra.Size = new System.Drawing.Size(34, 36);
-            this.btn_mem_tra.TabIndex = 28;
-            this.toolTip1.SetToolTip(this.btn_mem_tra, "Gerar Memorial");
-            this.btn_mem_tra.UseVisualStyleBackColor = true;
-            this.btn_mem_tra.Click += new System.EventHandler(this.btn_mem_tra_Click);
+            this.btn_mem_my.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
+            this.btn_mem_my.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_mem_my.Location = new System.Drawing.Point(539, 82);
+            this.btn_mem_my.Name = "btn_mem_my";
+            this.btn_mem_my.Size = new System.Drawing.Size(34, 36);
+            this.btn_mem_my.TabIndex = 32;
+            this.toolTip1.SetToolTip(this.btn_mem_my, "Gerar Memorial");
+            this.btn_mem_my.UseVisualStyleBackColor = true;
+            this.btn_mem_my.Click += new System.EventHandler(this.btn_mem_my_Click);
             // 
-            // btn_mem_comp
+            // btn_mem_mx
             // 
-            this.btn_mem_comp.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
-            this.btn_mem_comp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_mem_comp.Location = new System.Drawing.Point(12, 25);
-            this.btn_mem_comp.Name = "btn_mem_comp";
-            this.btn_mem_comp.Size = new System.Drawing.Size(34, 36);
-            this.btn_mem_comp.TabIndex = 27;
-            this.toolTip1.SetToolTip(this.btn_mem_comp, "Gerar Memorial");
-            this.btn_mem_comp.UseVisualStyleBackColor = true;
-            this.btn_mem_comp.Click += new System.EventHandler(this.btn_pdf_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.diagrama2;
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Location = new System.Drawing.Point(27, 28);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(78, 73);
-            this.pictureBox9.TabIndex = 13;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.pilar;
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox8.Location = new System.Drawing.Point(27, 27);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(78, 73);
-            this.pictureBox8.TabIndex = 13;
-            this.pictureBox8.TabStop = false;
-            // 
-            // btn_apagar
-            // 
-            this.btn_apagar.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.borracha;
-            this.btn_apagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_apagar.Location = new System.Drawing.Point(924, 45);
-            this.btn_apagar.Name = "btn_apagar";
-            this.btn_apagar.Size = new System.Drawing.Size(52, 50);
-            this.btn_apagar.TabIndex = 8;
-            this.toolTip1.SetToolTip(this.btn_apagar, "Apagar");
-            this.btn_apagar.UseVisualStyleBackColor = true;
-            this.btn_apagar.Click += new System.EventHandler(this.btn_apagar_Click);
-            // 
-            // btn_calc
-            // 
-            this.btn_calc.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.varinha;
-            this.btn_calc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_calc.Location = new System.Drawing.Point(870, 45);
-            this.btn_calc.Name = "btn_calc";
-            this.btn_calc.Size = new System.Drawing.Size(48, 50);
-            this.btn_calc.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btn_calc, "Calcular");
-            this.btn_calc.UseVisualStyleBackColor = true;
-            this.btn_calc.Click += new System.EventHandler(this.btn_calc_Click);
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.esforcos;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox7.Location = new System.Drawing.Point(27, 31);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(78, 73);
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(10, 66);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 15;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_L;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(10, 222);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.Duplo_C;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(10, 274);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 10;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.I;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.L;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 170);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.C;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 118);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btn_mem_vx
-            // 
-            this.btn_mem_vx.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
-            this.btn_mem_vx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_mem_vx.Location = new System.Drawing.Point(552, 25);
-            this.btn_mem_vx.Name = "btn_mem_vx";
-            this.btn_mem_vx.Size = new System.Drawing.Size(34, 36);
-            this.btn_mem_vx.TabIndex = 29;
-            this.toolTip1.SetToolTip(this.btn_mem_vx, "Gerar Memorial");
-            this.btn_mem_vx.UseVisualStyleBackColor = true;
-            this.btn_mem_vx.Click += new System.EventHandler(this.btn_mem_vx_Click);
-            // 
-            // btn_mem_vy
-            // 
-            this.btn_mem_vy.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
-            this.btn_mem_vy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_mem_vy.Location = new System.Drawing.Point(552, 78);
-            this.btn_mem_vy.Name = "btn_mem_vy";
-            this.btn_mem_vy.Size = new System.Drawing.Size(34, 36);
-            this.btn_mem_vy.TabIndex = 30;
-            this.toolTip1.SetToolTip(this.btn_mem_vy, "Gerar Memorial");
-            this.btn_mem_vy.UseVisualStyleBackColor = true;
-            this.btn_mem_vy.Click += new System.EventHandler(this.btn_mem_vy_Click);
+            this.btn_mem_mx.BackgroundImage = global::VerPerfisLaminados.Properties.Resources.relatorio;
+            this.btn_mem_mx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_mem_mx.Location = new System.Drawing.Point(539, 29);
+            this.btn_mem_mx.Name = "btn_mem_mx";
+            this.btn_mem_mx.Size = new System.Drawing.Size(34, 36);
+            this.btn_mem_mx.TabIndex = 31;
+            this.toolTip1.SetToolTip(this.btn_mem_mx, "Gerar Memorial");
+            this.btn_mem_mx.UseVisualStyleBackColor = true;
+            this.btn_mem_mx.Click += new System.EventHandler(this.btn_mem_mx_Click);
             // 
             // F_Principal
             // 
@@ -1239,6 +1267,12 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ContentPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
@@ -1249,19 +1283,13 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1360,6 +1388,8 @@
         private System.Windows.Forms.Button btn_mem_tra;
         private System.Windows.Forms.Button btn_mem_vx;
         private System.Windows.Forms.Button btn_mem_vy;
+        private System.Windows.Forms.Button btn_mem_my;
+        private System.Windows.Forms.Button btn_mem_mx;
     }
 }
 
