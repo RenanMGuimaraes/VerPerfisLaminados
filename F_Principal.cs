@@ -34,6 +34,14 @@ namespace VerPerfisLaminados
         public double mxsd = 0;
         public double mysd = 0;
 
+        //Resultados dos cálculos
+        public string res_ntrd = "";
+        public string res_ncrd = "";
+        public string res_vxrd = "";
+        public string res_vyrd = "";
+        public string res_mxrd = "";
+        public string res_myrd = "";
+
         //Variaveis gerais - tração
         public int tipoCt = 1;
         public string lig = "alma"; // define se a ligação é feita na alma, na mesa ou ambos.
@@ -83,19 +91,19 @@ namespace VerPerfisLaminados
             {
                 PropPerfilI propPerfilI = new PropPerfilI();
                 propPerfilI.PropI(id);
-                lbl_perfil.Text = PropPerfilI.perfil;
+                lbl_perfil.Text = "PERFIL: " + PropPerfilI.perfil;
             }
             if (tipoperfil == "l")
             {
                 PropPerfilL propPerfilL = new PropPerfilL();
                 propPerfilL.PropL(id);
-                lbl_perfil.Text = PropPerfilL.perfil;
+                lbl_perfil.Text = "PERFIL: " + PropPerfilL.perfil;
             }
             if (tipoperfil == "u")
             {
                 PropPerfilU propPerfilU = new PropPerfilU();
                 propPerfilU.PropU(id);
-                lbl_perfil.Text = PropPerfilU.perfil;
+                lbl_perfil.Text = "PERFIL: " + PropPerfilU.perfil;
             }
         }  
 
@@ -201,18 +209,7 @@ namespace VerPerfisLaminados
             
         }
 
-        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            F_Sobre f_Sobre = new F_Sobre();
-            f_Sobre.ShowDialog();
-        }
-
         private void F_Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exportarPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -257,13 +254,26 @@ namespace VerPerfisLaminados
                 double vxsd = double.Parse(txt_vxsd.Text);
                 double vysd = double.Parse(txt_vysd.Text);
                 double mxsd = double.Parse(txt_mxsd.Text);
-                double mysd = double.Parse(txt_mysd.Text);        
-
+                double mysd = double.Parse(txt_mysd.Text);
 
                 //Calculo a compressao
                 if (cb_ncrd.Checked == true)
                 {
-                    Compressao.CalculaCompressao(this, tipoperfil, fy, fu, ncsd, lx, ly, lz, elast, g);
+                    if (tipoperfil == "i")
+                    {
+                        CompressaoI compressao = new CompressaoI();
+                        res_ncrd = compressao.CalculaCompressao(this, fy,  ncsd, lx, ly, lz, elast, g);
+                    }
+                    if (tipoperfil == "u")
+                    {
+                        CompressaoU compressao = new CompressaoU();
+                        res_ncrd = compressao.CalculaCompressao(this, fy, ncsd, lx, ly, lz, elast, g);
+                    }
+                    if (tipoperfil == "l")
+                    {
+
+                    }
+                    
                 }
                 
                 if (cb_mxrd.Checked == true)
@@ -294,21 +304,24 @@ namespace VerPerfisLaminados
 
                 if (cb_ntrd.Checked == true)
                 {
-                    //Calculo a tracao     
-                    Tracao.CalculaTracao(this, tipoperfil, fy, fu, ntsd, lx, ly, lz);
+                    //Calculo a tracao
+                    TracaoI tracao = new TracaoI();
+                    res_ntrd = tracao.CalculaTracao(this, fy, fu, ntsd, lx, ly, lz);
                 }
 
                 if (cb_vxrd.Checked == true)
                 {
                     //Calculo a cortante no eixo de maior inércia (X)
-                   CalculaCortante.CalculaCortanteX(this, tipoperfil, fy, vxsd, elast);
+                    CortanteI cortante = new CortanteI();
+                   res_vxrd = cortante.CalculaCortanteX(this, fy, vxsd, elast);
 
                 }
 
                 if (cb_vyrd.Checked == true)
                 {
                     //Calculo a cortante no eixo de maior inércia (Y)              
-                    CalculaCortante.CalculaCortanteY(this, tipoperfil, fy, vxsd, elast);
+                    CortanteI cortante = new CortanteI();
+                    res_vyrd = cortante.CalculaCortanteY(this, fy, vxsd, elast);
                 }
 
                
@@ -558,9 +571,40 @@ namespace VerPerfisLaminados
 
         private void btn_pdf_Click(object sender, EventArgs e)
         {
-            PlotaPDF plotar = new PlotaPDF();
-            plotar.Plotar(this, tipoperfil);
-        }    
+            F_ResComp resultados = new F_ResComp(tipoperfil, res_ncrd);
+            resultados.ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
+                F_Sobre f_Sobre = new F_Sobre();
+                f_Sobre.ShowDialog();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_mem_tra_Click(object sender, EventArgs e)
+        {
+            F_ResComp resultados = new F_ResComp(tipoperfil, res_ntrd);
+            resultados.ShowDialog();
+        }
+
+        private void btn_mem_vx_Click(object sender, EventArgs e)
+        {
+            F_ResComp resultados = new F_ResComp(tipoperfil, res_vxrd);
+            resultados.ShowDialog();
+        }
+
+        private void btn_mem_vy_Click(object sender, EventArgs e)
+        {
+            F_ResComp resultados = new F_ResComp(tipoperfil, res_vyrd);
+            resultados.ShowDialog();
+        }
     }
 
 }

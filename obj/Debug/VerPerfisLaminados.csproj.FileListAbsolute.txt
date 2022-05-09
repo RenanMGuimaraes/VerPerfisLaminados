@@ -18,3 +18,5 @@ C:\Users\renan\Documents\GitHub\VerPerfisLaminados\bin\Debug\BouncyCastle.Crypto
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\bin\Debug\itextsharp.dll
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\bin\Debug\itextsharp.xml
 C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.csproj.CopyComplete
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_ResComp.resources
+C:\Users\renan\Documents\GitHub\VerPerfisLaminados\obj\Debug\VerPerfisLaminados.F_Cb.resources

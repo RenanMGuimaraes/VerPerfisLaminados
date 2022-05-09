@@ -59,9 +59,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dimensionamentos\CalculaCortante.cs" />
+    <Compile Include="Dimensionamentos\CortanteI.cs" />
     <Compile Include="Dimensionamentos\CalculaFlexaoI.cs" />
-    <Compile Include="Dimensionamentos\CalculaCompressao.cs" />
+    <Compile Include="Dimensionamentos\Compressao\CompressaoI.cs" />
+    <Compile Include="Dimensionamentos\Compressao\CompressaoL.cs" />
+    <Compile Include="Dimensionamentos\Compressao\CompressaoU.cs" />
+    <Compile Include="F_Cb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Cb.Designer.cs">
+      <DependentUpon>F_Cb.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_DadosTracaoI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,13 +82,18 @@
     <Compile Include="F_DadosTracaoL.Designer.cs">
       <DependentUpon>F_DadosTracaoL.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Resultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Resultados.Designer.cs">
+      <DependentUpon>F_Resultados.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Sobre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_Sobre.Designer.cs">
       <DependentUpon>F_Sobre.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlotaPDF.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,7 +106,7 @@
       <DependentUpon>F_Prop.cs</DependentUpon>
     </Compile>
     <Compile Include="PropriedadesPerfis\PropPerfil2U.cs" />
-    <Compile Include="Dimensionamentos\CalculaTracao.cs" />
+    <Compile Include="Dimensionamentos\Tracao\TracaoI.cs" />
     <Compile Include="PropriedadesPerfis\PropPerfilI.cs" />
     <Compile Include="F_Principal.cs">
       <SubType>Form</SubType>
@@ -111,6 +124,9 @@
     <Compile Include="F_TracaoHelp.Designer.cs">
       <DependentUpon>F_TracaoHelp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="F_Cb.resx">
+      <DependentUpon>F_Cb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_DadosTracaoI.resx">
       <DependentUpon>F_DadosTracaoI.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Principal.resx">
       <DependentUpon>F_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Resultados.resx">
+      <DependentUpon>F_Resultados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Sobre.resx">
       <DependentUpon>F_Sobre.cs</DependentUpon>
@@ -214,6 +233,7 @@
     <EmbeddedResource Include="Imagens\ntrd.png" />
     <EmbeddedResource Include="Imagens\vx1.png" />
     <EmbeddedResource Include="Imagens\vx2.png" />
+    <Content Include="Imagens\relatorio.png" />
     <Content Include="viga.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
