@@ -137,38 +137,36 @@ namespace VerPerfisLaminados
                $"Mx,sd: {mxsd:F2} kN \n" +
                $"Mx,rd: {mxrd:F2} kN \n\n" +
                $"1 - FLAMBAGEM LOCAL DA ALMA: \r\n" +
-                            $"λ = b/t = {dlinha: F2} / {tw:F2} = {btalma:F1}\r\n";
+                            $"λ = b/t = {dlinha:F2} / {tw:F2} = {btalma:F1}\r\n" +
+                            $"λp = b/t = 3,76 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btpalma:F1} \n" +
+                            $"λr = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btralma:F1} \n";
                             if (btalma <= btpalma)
-            {
-                resultado += $"λp = b/t = 3,76 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btpalma:F1} \n"+
-                    $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_fla_x:F2} kN*cm\n\n";
+            {              
+                   resultado += $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_fla_x:F2} kN*cm\n\n";
             }
             else if (btalma > btpalma && btalma <= btralma)
             {
-                resultado += $"λp = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btralma:F1} \n" +
-                    $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_fla_x:F2} kN*cm\n\n";
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_fla_x:F2} kN*cm\n\n";
             }
             else if (btalma > btralma)
             {
-                resultado += $"λp = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btralma:F1} \n" +
-                    $"SEÇÂO ESBELTA - NÃO SE APLICA À FLA\n\n";
+                resultado += $"SEÇÂO ESBELTA - NÃO SE APLICA À FLA\n\n";
             }
             resultado += $"2 - FLAMBAGEM LOCAL DA MESA: \r\n" +
-            $"λ = b/t = {bf: F2} / 2,0 * {tf:F2} = {btmesa:F1}\r\n";
+            $"λ = b/t = {bf:F2} / 2,0 * {tf:F2} = {btmesa:F1}\r\n" +
+            $"λp = b/t = 0,38 * Sqrt(E/ fy) = 0,38 * Raiz({elast:F0} / {fy:F1}) = {btpmesa:F1} \n" +
+            $"λr = b/t = 0,83 * Sqrt(E/ fy) = 0,83 * Raiz({elast:F0} / {fy:F1}) = {btrmesa:F1} \n";
                             if (btmesa <= btpmesa)
             {
-                resultado += $"λp = b/t = 0,38 * Sqrt(E/ fy) = 0,38 * Sqrt{elast:F0} / {fy:F0} = {btpmesa:F1} \n" +
-                    $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_flm_x:F2} kN*cm\n\n";
+                resultado += $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_flm_x:F2} kN*cm\n\n";
             }
             else if (btmesa > btpmesa && btmesa <= btrmesa)
             {
-                resultado += $"λp = b/t = 0,83 * Sqrt(E/ fy) = 0,83 * Sqrt{elast:F0} / {fy:F0} = {btrmesa:F1} \n" +
-                    $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_x:F2}\n\n";
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_x:F2}\n\n";
             }
             else if (btmesa > btrmesa)
             {
-                resultado += $"λp = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btralma:F1} \n" +
-                    $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_x:F2}\n\n";
+                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_x:F2}\n\n";
             }
             resultado += $"A taxa de aproveitamento do perfil é de {taxa * 100.0:F2} % \r\n \r\n";
 
@@ -206,7 +204,6 @@ namespace VerPerfisLaminados
             F_Principal pai;
             pai = f_principal;
             double my_max, taxa;
-            double bt, btp, btr;
 
             //Momento Máximo--------------------------------------------------------
             my_max = (1.5 * wy * fy) / 1.10;
@@ -270,38 +267,36 @@ namespace VerPerfisLaminados
                $"Mx,sd: {mysd:F2} kN \n" +
                $"Mx,rd: {myrd:F2} kN \n\n" +
                $"1 - FLAMBAGEM LOCAL DA ALMA: \r\n" +
-                            $"λ = b/t = {dlinha: F2} / {tw:F2} = {btalma:F1}\r\n";
+                            $"λ = b/t = {dlinha:F2}/ {tw:F2} = {btalma:F1}\r\n" +
+                            $"λp = b/t = 3,76 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btpalma:F1} \n" +
+                            $"λr = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btralma:F1} \n";
             if (btalma <= btpalma)
             {
-                resultado += $"λp = b/t = 3,76 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btpalma:F1} \n" +
-                    $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_fla_y:F2} kN*cm\n\n";
+                resultado += $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_fla_y:F2} kN*cm\n\n";
             }
             else if (btalma > btpalma && btalma <= btralma)
             {
-                resultado += $"λp = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btralma:F1} \n" +
-                    $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_fla_y:F2} kN*cm\n\n";
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_fla_y:F2} kN*cm\n\n";
             }
             else if (btalma > btralma)
             {
-                resultado += $"λp = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btralma:F1} \n" +
-                    $"SEÇÂO ESBELTA: Mrd = {mrd_fla_y:F2} \n\n";
+                resultado += $"SEÇÂO ESBELTA: Mrd = {mrd_fla_y:F2} \n\n";
             }
             resultado += $"2 - FLAMBAGEM LOCAL DA MESA: \r\n" +
-            $"λ = b/t = {bf: F2} / 2,0 * {tf:F2} = {btmesa:F1}\r\n";
+            $"λ = b/t = {bf:F2} / 2,0 * {tf:F2} = {btmesa:F1}\r\n" +
+            $"λp = b/t = 0,38 * Sqrt(E/ fy) = 0,38 * Raiz({elast:F0} / {fy:F1}) = {btpmesa:F1} \n" +
+            $"λp = b/t = 0,83 * Sqrt(E/ fy) = 0,83 * Raiz({elast:F0} / {fy:F1}) = {btrmesa:F1} \n";
             if (btmesa <= btpmesa)
             {
-                resultado += $"λp = b/t = 0,38 * Sqrt(E/ fy) = 0,38 * Sqrt{elast:F0} / {fy:F0} = {btpmesa:F1} \n" +
-                    $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_flm_y:F2} kN*cm\n\n";
+                resultado += $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_flm_y:F2} kN*cm\n\n";
             }
             else if (btmesa > btpmesa && btmesa <= btrmesa)
             {
-                resultado += $"λp = b/t = 0,83 * Sqrt(E/ fy) = 0,83 * Sqrt{elast:F0} / {fy:F0} = {btrmesa:F1} \n" +
-                    $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_y:F2}\n\n";
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_y:F2}\n\n";
             }
             else if (btmesa > btrmesa)
             {
-                resultado += $"λp = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Sqrt{elast:F0} / {fy:F0} = {btralma:F1} \n" +
-                    $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_y:F2}\n\n";
+                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_y:F2}\n\n";
             }
             resultado += $"A taxa de aproveitamento do perfil é de {taxa * 100.0:F2} % \r\n \r\n";
 

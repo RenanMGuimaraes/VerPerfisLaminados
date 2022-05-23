@@ -15,6 +15,7 @@ namespace VerPerfisLaminados
             pai = f_Principal;
             fy /= 10.0; //Converte de MPa para kN/cm2
             elast /= 10.0; //Converte de MPa para kN/cm2  
+            g /= 10;
 
             //Propriedades do Perfil
             double ag = PropPerfilI.area;
@@ -90,7 +91,8 @@ namespace VerPerfisLaminados
             //Flambagem elastica em torno de X e Y e por torção
             double nex = (Math.Pow(Math.PI, 2.0) * elast * ix) / Math.Pow(lx, 2.0);
             double ney = (Math.Pow(Math.PI, 2.0) * elast * iy) / Math.Pow(ly, 2.0);
-            double nez = (1.0 / Math.Pow(r0, 2.0)) * ((Math.Pow(Math.PI, 2.0) * elast * cw) / Math.Pow(lz, 2.0) + g * it);
+            double nez = (1.0 / (r0 * r0)) * (((9.869 * elast * cw) / (lz * lz) + g * it));
+            
 
             ne = Math.Min(nex, Math.Min(ney, nez));
             lamb0 = Math.Sqrt((q * ag * fy) / ne);
@@ -170,7 +172,7 @@ namespace VerPerfisLaminados
             }
             resultado += $" - Flambagem local de alma comprimida: \n" +
             $"Esbeltez da alma: b / t = {dlinha:F2} / {tw:F2} = {btalma:F2}\n" +
-            $"Esbeltez limite da mesa: 0,56 * sqrt(E/fy) = 0,56 * Sqrt({elast:F0} / {fy:F1}) = {btlim_mesa:F2}\n";
+            $"Esbeltez limite da alma: 1,49 * sqrt(E/fy) = 1,49 * Sqrt({elast:F0} / {fy:F1}) = {btlim_alma:F2}\n";
             if (btalma <= btlim_alma)
             {
                 resultado += $"{btalma:F2} < = {btlim_alma:F2} \n" +
@@ -187,7 +189,7 @@ namespace VerPerfisLaminados
                 $"X (Fator de redução associado à flambagem global):{x:F2} \n" +
                 $"Nex: (π^2 * E * Ix) / ( Kx * Lx)^2 = (π^2 * {elast:F0} * {ix:F2}) / ({lx:F0})^2 = {nex:F2} kN \n" +
                 $"Nex: (π^2 * E * Iy) / ( Ky * Ly)^2 = (π^2 * {elast:F0} * {iy:F2}) / ({ly:F0})^2 = {ney:F2} kN \n" +
-                $"Nez: (1 / ro^2) * ((π^2 * E * Cw) / ( Kz * Lz)^2) + G * It = 1 / {r0:F2}^2) * ((π^2 * {elast:F0} * {cw:F0}) / ({lz:F0})^2) + {g:F0} * {it:F2} = {nez:F2} kN \n" +
+                $"Nez: (1 / ro^2) * ((π^2 * E * Cw) / ( Kz * Lz)^2) + G * It = 1 / ({r0:F2}^2) * ((π^2 * {elast:F0} * {cw:F0}) / ({lz:F0})^2) + {g:F0} * {it:F2} = {nez:F2} kN \n" +
                 $"Índice de esbeltez reduzido(λ0): Sqrt((Q * Ag * fy) / Ne) = Sqrt(({q:F2} * {ag:F2} * {fy:F1}) / {ne:F2}) = {lamb0:F2} \n ";
             if (lamb0 <= 1.5)
             {

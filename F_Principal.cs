@@ -56,6 +56,7 @@ namespace VerPerfisLaminados
 
         private void btn_apagar_Click(object sender, EventArgs e)
         {
+            /*
             txt_lx.Text = "0";
             txt_ly.Text = "0";
             txt_lz.Text = "0";
@@ -64,17 +65,25 @@ namespace VerPerfisLaminados
             txt_vxsd.Text = "0";
             txt_vysd.Text = "0";
             txt_mxsd.Text = "0";
-            txt_mysd.Text = "0";
+            txt_mysd.Text = "0"; */
             txt_ncrd.Text = "";
             txt_ntrd.Text = "";
             txt_vxrd.Text = "";
             txt_vyrd.Text = "";
             txt_mxrd.Text = "";
             txt_myrd.Text = "";
-            txt_cb.Text = "1";
+            txt_cb.Text = "1"; 
             lbl_perfil.Text = "PERFIL:";
             lb_sdrd_nc.Text = "Sd/Rd: ";
+            lb_sdrd_vx.Text = "Sd/Rd: ";
+            lb_sdrd_vx.ForeColor = System.Drawing.Color.Black;
+            lb_sdrd_vy.Text = "Sd/Rd: ";
+            lb_sdrd_vy.ForeColor = System.Drawing.Color.Black;
             lb_sdrd_nc.ForeColor = System.Drawing.Color.Black;
+            lb_sdrd_mx.Text = "Sd/Rd: ";
+            lb_sdrd_mx.ForeColor = System.Drawing.Color.Black;
+            lb_sdrd_my.Text = "Sd/Rd: ";
+            lb_sdrd_my.ForeColor = System.Drawing.Color.Black;
             lbl_ncrd_esb.Text = "Esbeltez: ";
             lbl_ncrd_esb.ForeColor = System.Drawing.Color.Black;
             lb_sdrd_nt.Text = "Sd/Rd:";
