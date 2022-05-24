@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Sobre));
             this.btn_ok = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_ok
             // 
             this.btn_ok.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_ok.Location = new System.Drawing.Point(265, 303);
+            this.btn_ok.Location = new System.Drawing.Point(269, 205);
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(78, 23);
             this.btn_ok.TabIndex = 0;
@@ -67,7 +65,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(567, 33);
             this.label2.TabIndex = 2;
-            this.label2.Text = "O autor não se responsabiliza pela uso dos resultados emitidos. Confira sempre os" +
+            this.label2.Text = "O autor não se responsabiliza pelo uso dos resultados emitidos. Confira sempre os" +
     " cálculos realizados !";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -92,22 +90,12 @@
             this.label4.Text = "Visite meu site e conheça meu trabalho e outros aplicativos desenvolvidos: www.re" +
     "nanguimaraes.eng.br";
             // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 217);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(572, 48);
-            this.label5.TabIndex = 5;
-            this.label5.Text = resources.GetString("label5.Text");
-            // 
             // F_Sobre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(635, 338);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(635, 240);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -128,6 +116,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
     }
 }

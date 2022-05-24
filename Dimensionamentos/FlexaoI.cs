@@ -134,8 +134,8 @@ namespace VerPerfisLaminados
             }
 
             string resultado = "DIMENSIONAMENTO A FLEXÃO - EIXO X: \n\n" +
-               $"Mx,sd: {mxsd:F2} kN \n" +
-               $"Mx,rd: {mxrd:F2} kN \n\n" +
+               $"Mx,sd: {mxsd:F2} kN*cm \n" +
+               $"Mx,rd: {mxrd:F2} kN*cm \n\n" +
                $"1 - FLAMBAGEM LOCAL DA ALMA: \r\n" +
                             $"λ = b/t = {dlinha:F2} / {tw:F2} = {btalma:F1}\r\n" +
                             $"λp = b/t = 3,76 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btpalma:F1} \n" +
@@ -162,11 +162,27 @@ namespace VerPerfisLaminados
             }
             else if (btmesa > btpmesa && btmesa <= btrmesa)
             {
-                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_x:F2}\n\n";
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_x:F2} kN*cm\n\n";
             }
             else if (btmesa > btrmesa)
             {
-                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_x:F2}\n\n";
+                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_x:F2} kN*cm \n\n";
+            }
+            resultado += $"3 - FLAMBAGEM LATERAL COM TORÇÃO: \r\n" +
+            $"λ = Lb/ry = {ly:F2} / {ry:F2} = {btperfil:F1}\r\n" +
+            $"λp = 1,76 * Sqrt(E/ fy) = 1,76 * Raiz({elast:F0} / {fy:F1}) = {btpperfil:F1} \n" +
+            $"λr = {btrperfil:F1} \n";
+            if (btperfil <= btpperfil)
+            {
+                resultado += $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_flt:F2} kN*cm\n\n";
+            }
+            else if (btperfil > btpperfil && btperfil <= btrperfil)
+            {
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flt:F2} kN*cm\n\n";
+            }
+            else if (btperfil> btrperfil)
+            {
+                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flt:F2} kN*cm \n\n";
             }
             resultado += $"A taxa de aproveitamento do perfil é de {taxa * 100.0:F2} % \r\n \r\n";
 
@@ -264,12 +280,12 @@ namespace VerPerfisLaminados
                 pai.lb_sdrd_my.ForeColor = System.Drawing.Color.Red;
             }
             string resultado = "DIMENSIONAMENTO A FLEXÃO - EIXO Y: \n\n" +
-               $"Mx,sd: {mysd:F2} kN \n" +
-               $"Mx,rd: {myrd:F2} kN \n\n" +
+               $"Mx,sd: {mysd:F2} kN*cm \n" +
+               $"Mx,rd: {myrd:F2} kN*cm \n\n" +
                $"1 - FLAMBAGEM LOCAL DA ALMA: \r\n" +
                             $"λ = b/t = {dlinha:F2}/ {tw:F2} = {btalma:F1}\r\n" +
-                            $"λp = b/t = 3,76 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btpalma:F1} \n" +
-                            $"λr = b/t = 5,70 * Sqrt(E/ fy) = 3,76 * Raiz({elast:F0} / {fy:F1}) = {btralma:F1} \n";
+                            $"λp = b/t = 1,12 * Sqrt(E/ fy) = 1,12 * Raiz({elast:F0} / {fy:F1}) = {btpalma:F1} \n" +
+                            $"λr = b/t = 1,40 * Sqrt(E/ fy) = 1,40 * Raiz({elast:F0} / {fy:F1}) = {btralma:F1} \n";
             if (btalma <= btpalma)
             {
                 resultado += $"SEÇÂO COMPACTA: Mrd = Mpl /1,10 = {mrd_fla_y:F2} kN*cm\n\n";
@@ -280,7 +296,7 @@ namespace VerPerfisLaminados
             }
             else if (btalma > btralma)
             {
-                resultado += $"SEÇÂO ESBELTA: Mrd = {mrd_fla_y:F2} \n\n";
+                resultado += $"SEÇÂO ESBELTA: Mrd = {mrd_fla_y:F2} kN*cm\n\n";
             }
             resultado += $"2 - FLAMBAGEM LOCAL DA MESA: \r\n" +
             $"λ = b/t = {bf:F2} / 2,0 * {tf:F2} = {btmesa:F1}\r\n" +
@@ -292,11 +308,11 @@ namespace VerPerfisLaminados
             }
             else if (btmesa > btpmesa && btmesa <= btrmesa)
             {
-                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_y:F2}\n\n";
+                resultado += $"SEÇÂO SEMI-COMPACTA: Mrd = {mrd_flm_y:F2} kN*cm\n\n";
             }
             else if (btmesa > btrmesa)
             {
-                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_y:F2}\n\n";
+                resultado += $"SEÇÂO ESBELTA: Mrd = Mcr / 1,10 = {mrd_flm_y:F2} kN*cm\n\n";
             }
             resultado += $"A taxa de aproveitamento do perfil é de {taxa * 100.0:F2} % \r\n \r\n";
 

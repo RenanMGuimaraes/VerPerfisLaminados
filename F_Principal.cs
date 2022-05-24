@@ -628,6 +628,12 @@ namespace VerPerfisLaminados
             F_ResComp resultados = new F_ResComp(tipoperfil, res_myrd);
             resultados.ShowDialog();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            F_Sobre f_Sobre = new F_Sobre();
+            f_Sobre.ShowDialog();
+        }
     }
 
 }

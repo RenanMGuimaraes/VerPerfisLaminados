@@ -123,6 +123,7 @@
             this.txt_ncsd = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -601,6 +602,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.button1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.lbl_perfil);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox8);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.groupBox7);
@@ -1240,6 +1242,18 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Desenvolvido por: Eng. Renan M. Guimarães - renanguimaraes@live.com";
             // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(914, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 22);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Sobre";
+            this.toolTip1.SetToolTip(this.button1, "Propriedades Geométricas do Perfil");
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // F_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1380,6 +1394,7 @@
         private System.Windows.Forms.Button btn_mem_vy;
         private System.Windows.Forms.Button btn_mem_my;
         private System.Windows.Forms.Button btn_mem_mx;
+        private System.Windows.Forms.Button button1;
     }
 }
 
